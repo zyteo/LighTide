@@ -43,6 +43,11 @@ To use the app, user should:
 ---
 
 ## Planning and Development Process
+Plan:
+App should have 3 useState, for sun/tide/map  
+every click on map will update the coordinates for map (controlled input)  
+1 useEffect, with 2 fetch API for sun/tide. changes the sun/tide state. On every [toggle], which is button click  
+
 
 ```
 Timeline
