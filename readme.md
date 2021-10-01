@@ -32,7 +32,7 @@ Your step by step planning sketch of your project, that you can post them as an 
 ```
 To use the app, user should:
 
-- Click a point on the map
+- Click a point on the map / Search a place in search box
 - Click registers a coordinate, gets a lat/long (useState)
 - User confirms that is the point they are interested in, selects "get details" button
 - Button will parse lat/long info into API, get the results and display on screen
@@ -45,7 +45,7 @@ To use the app, user should:
 ## Planning and Development Process
 Plan:
 App should have 3 useState, for sun/tide/map  
-every click on map will update the coordinates for map (controlled input)  
+every click on map will update the coordinates for map (controlled input) [Forward geocoding]
 1 useEffect, with 2 fetch API for sun/tide. changes the sun/tide state. On every [toggle], which is button click  
 
 
@@ -53,13 +53,13 @@ every click on map will update the coordinates for map (controlled input)
 Timeline
 
 30 Sept - look through the given APIs, selected the sunrise/sunset one. Couldn't find any on tides in the list so did own research and found one. Also decided to use the google maps one to incorporate my map
-1 Oct - Created readme and react app, started planning further details.
+1 Oct - Created readme and react app, started planning further details. Changed map API to geoapify/leaflet
 
 ```
 
 ### Problem-Solving Strategy
 
-What strategy did you use to solve your problems.
+Google geocode API wasn't technically free since credit details were required. Had to research and switch to another geocode API
 
 ### Unsolved problems
 
@@ -69,7 +69,9 @@ List unsolved problems which would be fixed in future iterations.
 
 List your APIs you have used in this project and explain why did you use it.
 
-Map API to get coordinates (lat/long) https://developers.google.com/maps/documentation/geocoding/overview  
+Map API to get coordinates (lat/long)  
+https://apidocs.geoapify.com/playground/geocoding  
+https://leafletjs.com/examples/quick-start/  
 Sunrise/sunset API https://sunrise-sunset.org/api  
 Tides API https://docs.stormglass.io/#/  
 
