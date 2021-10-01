@@ -29,18 +29,14 @@ Your step by step planning sketch of your project, that you can post them as an 
 ### User Stories
 
 
-A story of the project user, that explains the use of the project.
-
 ```
-Example:
+To use the app, user should:
 
-User must be able to:
-
-- View Example
-- Blablabla
-- Search Example
-- Fine Example
-- etc..
+- Click a point on the map
+- Click registers a coordinate, gets a lat/long (useState)
+- User confirms that is the point they are interested in, selects "get details" button
+- Button will parse lat/long info into API, get the results and display on screen
+- Bonus will be including a date selection so user can select the date they want and check the sunrise/tide information for that particular date
 
 ```
 
@@ -48,7 +44,13 @@ User must be able to:
 
 ## Planning and Development Process
 
-A basic story of your planning and developing this project.
+```
+Timeline
+
+30 Sept - look through the given APIs, selected the sunrise/sunset one. Couldn't find any on tides in the list so did own research and found one. Also decided to use the google maps one to incorporate my map
+1 Oct - Created readme and react app, started planning further details.
+
+```
 
 ### Problem-Solving Strategy
 
