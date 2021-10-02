@@ -3,20 +3,20 @@
 
 import React from "react";
 
-function Sun({ props }) {
+function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate }) {
   return (
     <div className="sun">
       <ol>Sunrise & Sunset:</ol>
-      {/* <li> Sunrise: {props.sr}</li>
-      <li> Sunset: {props.ss}</li>
-      <li> Solar noon: {props.sn}</li>
-      <li> Day length: {props.dl}</li>
-      <li> Civil twilight begin: {props.ctb}</li>
-      <li> Civil twilight end: {props.cte}</li>
-      <li> Nautical twilight begin: {props.ntb}</li>
-      <li> Nautical twilight end: {props.nte}</li>
-      <li> Astronomical twilight begin: {props.atb}</li>
-      <li> Astronomical twilight end: {props.ate}</li> */}
+      <li> Sunrise: {sr}</li>
+      <li> Sunset: {ss}</li>
+      <li> Solar noon: {sn}</li>
+      <li> Day length: {dl}</li>
+      <li> Civil twilight begin: {ctb}</li>
+      <li> Civil twilight end: {cte}</li>
+      <li> Nautical twilight begin: {ntb}</li>
+      <li> Nautical twilight end: {nte}</li>
+      <li> Astronomical twilight begin: {atb}</li>
+      <li> Astronomical twilight end: {ate}</li>
     </div>
   );
 }

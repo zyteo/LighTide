@@ -14,7 +14,8 @@ function App() {
   });
   const [date, setDate] = useState("2021-10-02");
   const [sun, setSun] = useState();
-
+  const [tide, setTide] = useState();
+  
   // for sunrise/sunset data
   useEffect(() => {
     fetch(
@@ -22,7 +23,7 @@ function App() {
     )
       .then((response) => response.json())
       .then((data) => setSun(data));
-  });
+  }, []);
 
   // for geocoding
   useEffect(() => {
@@ -33,12 +34,23 @@ function App() {
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-  });
+  }, []);
 
   return (
     <div className="App">
-      <p>Testing</p>
-      <Sun />
+      <p>Date: {date}</p>
+      <Sun
+        sr={sun?.results?.sunrise}
+        ss={sun?.results?.sunrise}
+        sn={sun?.results?.sunrise}
+        dl={sun?.results?.sunrise}
+        ctb={sun?.results?.sunrise}
+        cte={sun?.results?.sunrise}
+        ntb={sun?.results?.sunrise}
+        nte={sun?.results?.sunrise}
+        atb={sun?.results?.astronomical_twilight_begin}
+        ate={sun?.results?.astronomical_twilight_end}
+      />
       <Tides tide={"8m"} />
       <Attribution />
     </div>
