@@ -24,7 +24,8 @@ What technologies you used that helped you build this project.
 
 ### Wireframes
 
-Your step by step planning sketch of your project, that you can post them as an image in here.
+Your step by step planning sketch of your project, that you can post them as an image in here.]
+<img src="./wireframe.png">
 
 ### User Stories
 
@@ -52,8 +53,13 @@ every click on map will update the coordinates for map (controlled input) [Forwa
 ```
 Timeline
 
-30 Sept - look through the given APIs, selected the sunrise/sunset one. Couldn't find any on tides in the list so did own research and found one. Also decided to use the google maps one to incorporate my map
-1 Oct - Created readme and react app, started planning further details. Changed map API to geoapify/leaflet
+30 Sept - look through the given APIs, selected the sunrise/sunset one. 
+Couldn't find any on tides in the list so did own research and found one. 
+Also decided to use the google maps one to incorporate my map
+1 Oct - Created readme and react app, started planning further details. 
+Changed map API to geoapify/leaflet
+2 Oct - Test out APIs
+
 
 ```
 

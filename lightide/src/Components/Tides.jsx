@@ -3,8 +3,13 @@
 
 import React from "react";
 
-function Tides() {
-  return (<div className="tides">tide</div>);
+function Tides({ tide }) {
+  return (
+    <div className="tides">
+      <p>Tides:</p>
+      {tide}
+    </div>
+  );
 }
 
 export default Tides;
