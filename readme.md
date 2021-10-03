@@ -59,7 +59,7 @@ Also decided to use the google maps one to incorporate my map.
 1 Oct - Created readme and react app, started planning further details. 
 Changed map API to geoapify/leaflet.
 2 Oct - Test out sunrise/sunset API.
-3 Oct - Test out tides API. 
+3 Oct - Test out tides API + map API.
 
 
 ```
@@ -97,3 +97,5 @@ Had to do some research to better understand the topic and here are some website
 
 Read on tide details https://oceanservice.noaa.gov/education/tutorial_tides/tides05_lunarday.html  
 Explore some lat/long coordinates https://www.satsig.net/maps/lat-long-finder.htm  
+To hide API key https://stackoverflow.com/questions/48699820/how-do-i-hide-api-key-in-create-react-app  
+Looking at space in URL https://stackoverflow.com/questions/13900835/the-origin-on-why-20-is-used-as-a-space-in-urls  

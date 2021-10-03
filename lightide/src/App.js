@@ -22,20 +22,19 @@ function App() {
       `https://api.sunrise-sunset.org/json?lat=${coordinates.lat}&lng=${coordinates.long}&date=${date}`
     )
       .then((response) => response.json())
-      .then((jsonData) => setSun(jsonData));
+      .then((jsonDataSun) => setSun(jsonDataSun));
 
     fetch(
-      `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}`,
+      // `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}`,
       {
         headers: {
-          Authorization:
-            "apikey",
+          Authorization: `${process.env.REACT_APP_TIDE_API_KEY}`,
         },
       }
     )
       .then((response) => response.json())
-      .then((jsonData) => {
-        setTide(jsonData);
+      .then((jsonDataTide) => {
+        setTide(jsonDataTide);
       });
   }, []);
 
@@ -43,10 +42,14 @@ function App() {
   useEffect(() => {
     //geocode API
     fetch(
-      "https://api.geoapify.com/v1/geocode/search?text=38%20Upper%20Montagu%20Street%2C%20Westminster%20W1H%201LJ%2C%20United%20Kingdom&apiKey="
+      `https://api.geoapify.com/v1/geocode/search?text=west%20coast%20park&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
     )
       .then((response) => response.json())
-      .then((jsonData) => console.log(jsonData))
+      .then((jsonDataMapSearch) => {
+        console.log(jsonDataMapSearch);
+        console.log(jsonDataMapSearch.features[0].properties.lon);
+        console.log(jsonDataMapSearch.features[0].properties.lat);
+      })
       .catch((error) => console.log("error", error));
   }, []);
 
