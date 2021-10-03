@@ -11,7 +11,7 @@ My goal is to create an app which would be useful to researchers/scientists/hobb
 
 Knowing the tides are essential to the safety of people going to the sea/ocean/etc, and having the knowledge of sunrise/sunset can help in planning for the activity.
 
-### Technical Used
+### Technology Used
 What technologies you used that helped you build this project. 
 
 ```
@@ -24,7 +24,7 @@ What technologies you used that helped you build this project.
 
 ### Wireframes
 
-Your step by step planning sketch of your project, that you can post them as an image in here.]
+Your step by step planning sketch of your project, that you can post them as an image in here.
 <img src="./wireframe.png">
 
 ### User Stories
@@ -55,17 +55,21 @@ Timeline
 
 30 Sept - look through the given APIs, selected the sunrise/sunset one. 
 Couldn't find any on tides in the list so did own research and found one. 
-Also decided to use the google maps one to incorporate my map
+Also decided to use the google maps one to incorporate my map.
 1 Oct - Created readme and react app, started planning further details. 
-Changed map API to geoapify/leaflet
-2 Oct - Test out APIs
+Changed map API to geoapify/leaflet.
+2 Oct - Test out sunrise/sunset API.
+3 Oct - Test out tides API. 
 
 
 ```
 
 ### Problem-Solving Strategy
 
-Google geocode API wasn't technically free since credit details were required. Had to research and switch to another geocode API
+Google geocode API wasn't technically free since credit details were required.  
+Had to research and switch to another geocode API, decided on geoapify.  
+Realised that sunrise/sunset details could take in date from anytime, but tides only had a 10 day grace period.  
+Now thinking maybe I should split sunrise/tide details?  
 
 ### Unsolved problems
 
@@ -89,3 +93,7 @@ Tides API https://docs.stormglass.io/#/
 ---
 
  ## References
+Had to do some research to better understand the topic and here are some websites I visited:  
+
+Read on tide details https://oceanservice.noaa.gov/education/tutorial_tides/tides05_lunarday.html  
+Explore some lat/long coordinates https://www.satsig.net/maps/lat-long-finder.htm  
