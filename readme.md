@@ -59,7 +59,8 @@ Also decided to use the google maps one to incorporate my map.
 1 Oct - Created readme and react app, started planning further details. 
 Changed map API to geoapify/leaflet.
 2 Oct - Test out sunrise/sunset API.
-3 Oct - Test out tides API + map API.
+3 Oct - Test out tides API + geoapifymap API.
+4 Oct - Exploring leaflet and testing out various maps with react.
 
 
 ```
@@ -69,7 +70,7 @@ Changed map API to geoapify/leaflet.
 Google geocode API wasn't technically free since credit details were required.  
 Had to research and switch to another geocode API, decided on geoapify.  
 Realised that sunrise/sunset details could take in date from anytime, but tides only had a 10 day grace period.  
-Now thinking maybe I should split sunrise/tide details?  
+
 
 ### Unsolved problems
 
@@ -82,6 +83,7 @@ List your APIs you have used in this project and explain why did you use it.
 Map API to get coordinates (lat/long)  
 https://apidocs.geoapify.com/playground/geocoding  
 https://leafletjs.com/examples/quick-start/  
+Map static tiles API https://account.mapbox.com/  
 Sunrise/sunset API https://sunrise-sunset.org/api  
 Tides API https://docs.stormglass.io/#/  
 
@@ -99,3 +101,5 @@ Read on tide details https://oceanservice.noaa.gov/education/tutorial_tides/tide
 Explore some lat/long coordinates https://www.satsig.net/maps/lat-long-finder.htm  
 To hide API key https://stackoverflow.com/questions/48699820/how-do-i-hide-api-key-in-create-react-app  
 Looking at space in URL https://stackoverflow.com/questions/13900835/the-origin-on-why-20-is-used-as-a-space-in-urls  
+Leaflet https://leafletjs.com/examples/quick-start/  
+React leaflet https://react-leaflet.js.org/  

@@ -5,14 +5,39 @@ import "./App.css";
 import Sun from "./Components/Sun";
 import Tides from "./Components/Tides";
 import Attribution from "./Components/Attribution";
+import Home from "./Components/Home";
+import L from "leaflet";
 
+// get today's date
+const todayDateTime = new Date();
+const yyyy = todayDateTime.getFullYear();
+const mm = todayDateTime.getMonth() + 1;
+const dd = todayDateTime.getDate();
+const todayDate = `${yyyy}-${mm}-${dd}`;
+
+//test out leaflet
+////////////////////////////////////LEAFLET///////////////////////////////////////////
+let mapboxTiles = L.tileLayer(
+  "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=" +
+    `${process.env.REACT_APP_MAPBOX_KEY}`,
+  {
+    attribution:
+      'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: "mapbox/streets-v11",
+    tileSize: 512,
+  }
+);
+let mymap = L.map("mapid").setView([51.505, -0.09], 13).addLayer(mapboxTiles);
+
+////////////////////////////////////LEAFLET///////////////////////////////////////////
 function App() {
   // set useState for coordinates (lat/long)
   const [coordinates, setCoordinates] = useState({
     lat: 1.357107,
     long: 103.8194992,
   });
-  const [date, setDate] = useState("2021-10-02");
+  const [date, setDate] = useState(todayDate);
   const [sun, setSun] = useState();
   const [tide, setTide] = useState();
 
@@ -41,9 +66,8 @@ function App() {
   // for geocoding
   useEffect(() => {
     //geocode API
-    fetch(
-      `https://api.geoapify.com/v1/geocode/search?text=west%20coast%20park&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
-    )
+    fetch()
+    // `https://api.geoapify.com/v1/geocode/search?text=west%20coast%20park&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
       .then((response) => response.json())
       .then((jsonDataMapSearch) => {
         console.log(jsonDataMapSearch);
@@ -55,7 +79,16 @@ function App() {
 
   return (
     <div className="App">
-      <p>Date: {date}</p>
+      <Home />
+      <label for="start">Date:</label>
+      <input
+        type="date"
+        id="date"
+        name="selectdate"
+        min="2000-01-01"
+        max="2100-12-31"
+      />
+
       <Sun
         sr={sun?.results?.sunrise}
         ss={sun?.results?.sunrise}
@@ -294,4 +327,72 @@ export default App;
 // 			"source": "sg"
 // 		}
 // 	}
+// }
+
+////SAMPLE MAP DATA////////////////
+// {
+//   "type": "FeatureCollection",
+//   "features": [
+//     {
+//       "type": "Feature",
+//       "properties": {
+//         "datasource": {
+//           "sourcename": "openstreetmap",
+//           "attribution": "© OpenStreetMap contributors",
+//           "license": "Open Database License",
+//           "url": "https://www.openstreetmap.org/copyright"
+//         },
+//         "housenumber": "38",
+//         "street": "Upper Montagu Street",
+//         "suburb": "Marylebone",
+//         "city": "Westminster",
+//         "county": "Greater London",
+//         "state": "England",
+//         "postcode": "W1H 1LJ",
+//         "country": "United Kingdom",
+//         "country_code": "gb",
+//         "lon": -0.16030636023550826,
+//         "lat": 51.52016005,
+//         "formatted": "38 Upper Montagu Street, Westminster W1H 1LJ, United Kingdom",
+//         "address_line1": "38 Upper Montagu Street",
+//         "address_line2": "Westminster W1H 1LJ, United Kingdom",
+//         "state_code": "ENG",
+//         "category": "building.residential",
+//         "result_type": "building",
+//         "rank": {
+//           "importance": 0.811,
+//           "popularity": 8.988490181891963,
+//           "confidence": 1,
+//           "confidence_city_level": 1,
+//           "confidence_street_level": 1,
+//           "match_type": "full_match"
+//         },
+//         "place_id": "51dcb14637eb84c4bf59c6b7c19a94c24940f00102f901370cef1100000000c00203"
+//       },
+//       "geometry": {
+//         "type": "Point",
+//         "coordinates": [
+//           -0.16030636023550826,
+//           51.52016005
+//         ]
+//       },
+//       "bbox": [
+//         -0.160394,
+//         51.5201061,
+//         -0.1602251,
+//         51.5202273
+//       ]
+//     }
+//   ],
+//   "query": {
+//     "text": "38 Upper Montagu Street, Westminster W1H 1LJ, United Kingdom",
+//     "parsed": {
+//       "housenumber": "38",
+//       "street": "upper montagu street",
+//       "postcode": "w1h 1lj",
+//       "district": "westminster",
+//       "country": "united kingdom",
+//       "expected_type": "building"
+//     }
+//   }
 // }
