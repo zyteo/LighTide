@@ -60,7 +60,7 @@ Also decided to use the google maps one to incorporate my map.
 Changed map API to geoapify/leaflet.
 2 Oct - Test out sunrise/sunset API.
 3 Oct - Test out tides API + geoapifymap API.
-4 Oct - Exploring leaflet and testing out various maps with react.
+4 Oct - Exploring leaflet and testing out various maps with react. Installed react leaflet to experiment too.
 
 
 ```

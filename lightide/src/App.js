@@ -6,8 +6,8 @@ import Sun from "./Components/Sun";
 import Tides from "./Components/Tides";
 import Attribution from "./Components/Attribution";
 import Home from "./Components/Home";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import L from "leaflet";
-
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -15,22 +15,6 @@ const mm = todayDateTime.getMonth() + 1;
 const dd = todayDateTime.getDate();
 const todayDate = `${yyyy}-${mm}-${dd}`;
 
-//test out leaflet
-////////////////////////////////////LEAFLET///////////////////////////////////////////
-let mapboxTiles = L.tileLayer(
-  "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=" +
-    `${process.env.REACT_APP_MAPBOX_KEY}`,
-  {
-    attribution:
-      'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: "mapbox/streets-v11",
-    tileSize: 512,
-  }
-);
-let mymap = L.map("mapid").setView([51.505, -0.09], 13).addLayer(mapboxTiles);
-
-////////////////////////////////////LEAFLET///////////////////////////////////////////
 function App() {
   // set useState for coordinates (lat/long)
   const [coordinates, setCoordinates] = useState({
@@ -40,6 +24,24 @@ function App() {
   const [date, setDate] = useState(todayDate);
   const [sun, setSun] = useState();
   const [tide, setTide] = useState();
+
+  //test out leaflet
+  ////////////////////////////////////LEAFLET///////////////////////////////////////////
+  let mapboxTiles = L.tileLayer(
+    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=" +
+      `${process.env.REACT_APP_MAPBOX_KEY}`,
+    {
+      attribution:
+        'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: "mapbox/streets-v11",
+    }
+  );
+  let mymap = L.map("mapid")
+    .setView([`${coordinates.lat}`, `${coordinates.long}`], 13)
+    .addLayer(mapboxTiles);
+
+  ////////////////////////////////////LEAFLET///////////////////////////////////////////
 
   // for sunrise/sunset data
   useEffect(() => {
@@ -67,7 +69,7 @@ function App() {
   useEffect(() => {
     //geocode API
     fetch()
-    // `https://api.geoapify.com/v1/geocode/search?text=west%20coast%20park&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
+      // `https://api.geoapify.com/v1/geocode/search?text=west%20coast%20park&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
       .then((response) => response.json())
       .then((jsonDataMapSearch) => {
         console.log(jsonDataMapSearch);
