@@ -27,19 +27,6 @@ function App() {
 
   //test out leaflet
   ////////////////////////////////////LEAFLET///////////////////////////////////////////
-  let mapboxTiles = L.tileLayer(
-    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=" +
-      `${process.env.REACT_APP_MAPBOX_KEY}`,
-    {
-      attribution:
-        'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: "mapbox/streets-v11",
-    }
-  );
-  let mymap = L.map("mapid")
-    .setView([`${coordinates.lat}`, `${coordinates.long}`], 13)
-    .addLayer(mapboxTiles);
 
   ////////////////////////////////////LEAFLET///////////////////////////////////////////
 
@@ -80,34 +67,51 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Home />
-      <label for="start">Date:</label>
-      <input
-        type="date"
-        id="date"
-        name="selectdate"
-        min="2000-01-01"
-        max="2100-12-31"
-      />
+    <>
+      <div className="App">
+        <Home />
+        <label for="start">Date:</label>
+        <input
+          type="date"
+          id="date"
+          name="selectdate"
+          min="2000-01-01"
+          max="2100-12-31"
+        />
 
-      <Sun
-        sr={sun?.results?.sunrise}
-        ss={sun?.results?.sunrise}
-        sn={sun?.results?.sunrise}
-        dl={sun?.results?.sunrise}
-        ctb={sun?.results?.sunrise}
-        cte={sun?.results?.sunrise}
-        ntb={sun?.results?.sunrise}
-        nte={sun?.results?.sunrise}
-        atb={sun?.results?.astronomical_twilight_begin}
-        ate={sun?.results?.astronomical_twilight_end}
-      />
-      <Tides tide={"8m"} />
-      <p>{tide?.data?.[0]?.height}</p>
-      <p>{tide?.meta?.station?.name}</p>
-      <Attribution />
-    </div>
+        <MapContainer
+          center={[`${coordinates.lat}`, `${coordinates.long}`]}
+          zoom={13}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </MapContainer>
+        <Sun
+          sr={sun?.results?.sunrise}
+          ss={sun?.results?.sunrise}
+          sn={sun?.results?.sunrise}
+          dl={sun?.results?.sunrise}
+          ctb={sun?.results?.sunrise}
+          cte={sun?.results?.sunrise}
+          ntb={sun?.results?.sunrise}
+          nte={sun?.results?.sunrise}
+          atb={sun?.results?.astronomical_twilight_begin}
+          ate={sun?.results?.astronomical_twilight_end}
+        />
+        <Tides tide={"8m"} />
+        <p>{tide?.data?.[0]?.height}</p>
+        <p>{tide?.meta?.station?.name}</p>
+        <Attribution />
+      </div>
+    </>
   );
 }
 
