@@ -11,12 +11,19 @@ My goal is to create an app which would be useful to researchers/scientists/hobb
 
 Knowing the tides are essential to the safety of people going to the sea/ocean/etc, and having the knowledge of sunrise/sunset can help in planning for the activity.
 
+Screenshot from https://sunrise-sunset.org/ suggesting who might require sunset/sunrise details
+<img src="Images/sunrise_sunset.png"/>
+
 ### Technology Used
-What technologies you used that helped you build this project. 
+Technologies used to build this project. 
 
 ```
-
 - React
+- React Router
+- Leaflet
+- React-leaflet
+- Axios
+- CSS
 ```
 <!-- - Bootstrap with react
 - Ajax (axios) for API
@@ -25,7 +32,7 @@ What technologies you used that helped you build this project.
 ### Wireframes
 
 Your step by step planning sketch of your project, that you can post them as an image in here.
-<img src="./wireframe.png">
+<img src="Images/wireframe.png"/>
 
 ### User Stories
 
@@ -61,6 +68,7 @@ Changed map API to geoapify/leaflet.
 2 Oct - Test out sunrise/sunset API.
 3 Oct - Test out tides API + geoapifymap API.
 4 Oct - Exploring leaflet and testing out various maps with react. Installed react leaflet to experiment too.
+5 Oct - Added route/link and navbar, installed Axios.
 
 
 ```

@@ -7,21 +7,15 @@ function Attribution() {
   return (
     <footer className="attribution">
       <p>
-        Sunrise/sunset API:
+        API Attribution:
         <a href="https://sunrise-sunset.org/">
-          <span style={{ color: "green" }}> Sunrise Sunset</span>
-        </a>
-      </p>
-      <p>
-        Tides API:
+          <span style={{ color: "green" }}> Sunrise Sunset,</span>
+        </a> 
         <a href="https://stormglass.io/marine-weather/">
-          <span style={{ color: "lightblue" }}> Stormglass </span>
-        </a>
-      </p>
-      <p>
-        Maps API:
+          <span style={{ color: "lightblue" }}>Stormglass,</span>
+        </a> 
         <a href="https://www.geoapify.com/">
-          <span style={{ color: "lightblue" }}> Geoapify </span>
+          <span style={{ color: "lightblue" }}>Geoapify</span>
         </a>
       </p>
       <p>
