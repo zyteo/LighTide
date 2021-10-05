@@ -1,5 +1,3 @@
-@import "~leaflet/dist/leaflet.css";
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -16,6 +14,7 @@ code {
 
 .leaflet-container {
   height: 400px;
-  display: flex;
-  justify-content: center;
+  width: 100vw;
 }
+
+

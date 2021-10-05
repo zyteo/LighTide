@@ -1,13 +1,15 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 1 Oct 2021
 import React, { useEffect, useState } from "react";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { Route } from "react-router";
 import "./App.css";
-import Sun from "./Components/Sun";
-import Tides from "./Components/Tides";
 import Attribution from "./Components/Attribution";
 import Home from "./Components/Home";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import L from "leaflet";
+import Nav from "./Components/Nav";
+import Sun from "./Components/Sun";
+import Tides from "./Components/Tides";
+
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -69,47 +71,55 @@ function App() {
   return (
     <>
       <div className="App">
-        <Home />
-        <label for="start">Date:</label>
-        <input
-          type="date"
-          id="date"
-          name="selectdate"
-          min="2000-01-01"
-          max="2100-12-31"
-        />
+        <Nav />
+        <main>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-        <MapContainer
-          center={[`${coordinates.lat}`, `${coordinates.long}`]}
-          zoom={13}
-          scrollWheelZoom={false}
-        >
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </MapContainer>
-        <Sun
-          sr={sun?.results?.sunrise}
-          ss={sun?.results?.sunrise}
-          sn={sun?.results?.sunrise}
-          dl={sun?.results?.sunrise}
-          ctb={sun?.results?.sunrise}
-          cte={sun?.results?.sunrise}
-          ntb={sun?.results?.sunrise}
-          nte={sun?.results?.sunrise}
-          atb={sun?.results?.astronomical_twilight_begin}
-          ate={sun?.results?.astronomical_twilight_end}
-        />
-        <Tides tide={"8m"} />
-        <p>{tide?.data?.[0]?.height}</p>
-        <p>{tide?.meta?.station?.name}</p>
-        <Attribution />
+          <Route path="/maps">
+            <label for="start">Date:</label>
+            <input
+              type="date"
+              id="date"
+              name="selectdate"
+              min="2000-01-01"
+              max="2100-12-31"
+            />
+
+            <MapContainer
+              center={[`${coordinates.lat}`, `${coordinates.long}`]}
+              zoom={13}
+              scrollWheelZoom={false}
+            >
+              <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
+                <Popup>
+                  A pretty CSS3 popup. <br /> Easily customizable.
+                </Popup>
+              </Marker>
+            </MapContainer>
+            <Sun
+              sr={sun?.results?.sunrise}
+              ss={sun?.results?.sunrise}
+              sn={sun?.results?.sunrise}
+              dl={sun?.results?.sunrise}
+              ctb={sun?.results?.sunrise}
+              cte={sun?.results?.sunrise}
+              ntb={sun?.results?.sunrise}
+              nte={sun?.results?.sunrise}
+              atb={sun?.results?.astronomical_twilight_begin}
+              ate={sun?.results?.astronomical_twilight_end}
+            />
+            <Tides tide={"8m"} />
+            <p>{tide?.data?.[0]?.height}</p>
+            <p>{tide?.meta?.station?.name}</p>
+            <Attribution />
+          </Route>
+        </main>
       </div>
     </>
   );
