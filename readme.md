@@ -44,7 +44,7 @@ To use the app, user should:
 - Click registers a coordinate, gets a lat/long (useState)
 - User confirms that is the point they are interested in, selects "get details" button
 - Button will parse lat/long info into API, get the results and display on screen
-- Bonus will be including a date selection so user can select the date they want and check the sunrise/tide information for that particular date
+- Date selection included so user can select the date they want and check the sunrise/tide information for that particular date
 
 ```
 
@@ -66,11 +66,10 @@ Also decided to use the google maps one to incorporate my map.
 1 Oct - Created readme and react app, started planning further details. 
 Changed map API to geoapify/leaflet.
 2 Oct - Test out sunrise/sunset API.
-3 Oct - Test out tides API + geoapifymap API.
+3 Oct - Test out tides API + geoapify map API.
 4 Oct - Exploring leaflet and testing out various maps with react. Installed react leaflet to experiment too.
-5 Oct - Added route/link and navbar, installed Axios.
-
-
+5 Oct - Added route/link and navbar, installed Axios and replaced fetch.
+Added the search bar + submit button for the geoapify map search.
 ```
 
 ### Problem-Solving Strategy

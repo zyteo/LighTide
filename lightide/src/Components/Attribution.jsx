@@ -21,6 +21,7 @@ function Attribution() {
       <p>
         Nature is unpredictable. Use the information presented at your own risk.
       </p>
+      Created Oct 2021 by ZY of GA SEI-32. Github code here.
     </footer>
   );
 }

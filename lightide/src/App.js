@@ -102,7 +102,7 @@ function App() {
             <MapContainer
               center={[`${coordinates.lat}`, `${coordinates.long}`]}
               zoom={13}
-              scrollWheelZoom={false}
+              scrollWheelZoom={true}
             >
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
