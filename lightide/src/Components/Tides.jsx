@@ -26,7 +26,6 @@ function Tides({ tide }) {
         Station name: {tide.meta.station.name}
         <br />
         Distance between station and requested coordinate: {tide.meta.station.distance} km
-        
         <br />
         Station coordinates: {tide.meta.station.lat} (Latitude), {tide.meta.station.lng} (Longitude)
       </div>
