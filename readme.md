@@ -76,6 +76,7 @@ Adjusted leaflet map + explore leaflet marker.
 Added get details button to retrive and update sun/tide details.
 Successfully shifted Map from App to its own component.
 Added Mapbox static tile layer.
+Got the map to focus on position on searching a place.
 ```
 
 ### Problem-Solving Strategy
