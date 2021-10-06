@@ -2,7 +2,12 @@
 // ZY, 1 Oct 2021
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer
+} from "react-leaflet";
 import { Route } from "react-router";
 import "./App.css";
 import Attribution from "./Components/Attribution";
@@ -19,7 +24,7 @@ const dd = todayDateTime.getDate();
 const todayDate = `${yyyy}-${mm}-${dd}`;
 
 function App() {
-  // set useState for coordinates (lat/long)
+  //////////////////////////////// Start of useState/useRef ///////////////////////////////////////////
   const [coordinates, setCoordinates] = useState({
     lat: 1.357107,
     long: 103.8194992,
@@ -28,9 +33,14 @@ function App() {
   const [sun, setSun] = useState();
   const [tide, setTide] = useState(exampletidedata);
   const inputTextSearch = useRef();
-  const [cleanedText, setCleanedText] = useState();
+  const [cleanedText, setCleanedText] = useState("");
+  //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
-  // on submitting search text for map, clean the text and update state
+  // on changing the date field, update date state
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
+  // on submitting search text for map, clean the text and update text state
   const handleSubmit = () => {
     const searchText = inputTextSearch.current.value;
     // use regex + replace to url encode symbols
@@ -42,6 +52,7 @@ function App() {
     setCleanedText(cleanedSearchText);
   };
 
+  // To get sun + tides data for particular lat/long/date
   useEffect(() => {
     // for sunrise/sunset data
     axios
@@ -62,21 +73,22 @@ function App() {
     //   });
   }, []);
 
-  // for geocoding
-  useEffect(() => {
-    //geocode API
-    axios
-      .get(
-        `https://api.geoapify.com/v1/geocode/search?text=${cleanedText}&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
-      )
-      .then((response) => {
-        setCoordinates({
-          long: response.data.features[0].properties.lon,
-          lat: response.data.features[0].properties.lat,
-        });
-      });
-    console.log("updated", coordinates.lat, coordinates.long);
-  }, [cleanedText]);
+  // Geocoding - to get lat/long based on the text searched, renders on every cleanedText change
+  // useEffect(() => {
+  //   //geocode API
+  //   axios
+  //     .get(
+  //       `https://api.geoapify.com/v1/geocode/search?text=${cleanedText}&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
+  //     )
+  //     .then((response) => {
+  //       setCoordinates({
+  //         long: response.data.features[0].properties.lon,
+  //         lat: response.data.features[0].properties.lat,
+  //       });
+  //     });
+  //   console.log("updated", coordinates.lat, coordinates.long);
+  // }, [cleanedText]);
+
   return (
     <>
       <div className="App">
@@ -94,6 +106,7 @@ function App() {
               name="selectdate"
               min="2000-01-01"
               max="2100-12-31"
+              onChange={handleDateChange}
             />
             <label>Search a place:</label>
             <input type="text" ref={inputTextSearch} />
@@ -101,7 +114,7 @@ function App() {
 
             <MapContainer
               center={[`${coordinates.lat}`, `${coordinates.long}`]}
-              zoom={13}
+              zoom={14}
               scrollWheelZoom={true}
             >
               <TileLayer
@@ -110,7 +123,7 @@ function App() {
               />
               <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
                 <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
+                  Selected point<br /> Latitude: {coordinates.lat}<br />Longitude: {coordinates.long}
                 </Popup>
               </Marker>
             </MapContainer>
