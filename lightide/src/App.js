@@ -2,12 +2,7 @@
 // ZY, 1 Oct 2021
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  MapContainer,
-  Marker,
-  Popup,
-  TileLayer
-} from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Route } from "react-router";
 import "./App.css";
 import Attribution from "./Components/Attribution";
@@ -41,7 +36,7 @@ function App() {
     setDate(e.target.value);
   };
   // on submitting search text for map, clean the text and update text state
-  const handleSubmit = () => {
+  const handleSearch = () => {
     const searchText = inputTextSearch.current.value;
     // use regex + replace to url encode symbols
     const cleanedSearchText = searchText
@@ -50,6 +45,10 @@ function App() {
       .replace(".", "%2E")
       .replace(/#/, "%23");
     setCleanedText(cleanedSearchText);
+  };
+
+  const handleGetDetails = () => {
+    console.log("get sun/tide!");
   };
 
   // To get sun + tides data for particular lat/long/date
@@ -108,9 +107,13 @@ function App() {
               max="2100-12-31"
               onChange={handleDateChange}
             />
-            <label>Search a place:</label>
-            <input type="text" ref={inputTextSearch} />
-            <input type="submit" value="submit" onClick={handleSubmit} />
+            <label>Locate a place:</label>
+            <input
+              type="text"
+              ref={inputTextSearch}
+              placeholder="Address / Place name"
+            />
+            <input type="submit" value="Search" onClick={handleSearch} />
 
             <MapContainer
               center={[`${coordinates.lat}`, `${coordinates.long}`]}
@@ -123,10 +126,18 @@ function App() {
               />
               <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
                 <Popup>
-                  Selected point<br /> Latitude: {coordinates.lat}<br />Longitude: {coordinates.long}
+                  Selected point
+                  <br /> Latitude: {coordinates.lat}
+                  <br />
+                  Longitude: {coordinates.long}
                 </Popup>
               </Marker>
             </MapContainer>
+            <input
+              type="submit"
+              value="Get details!"
+              onClick={handleGetDetails}
+            />
             <Sun
               sr={sun?.results?.sunrise}
               ss={sun?.results?.sunset}
