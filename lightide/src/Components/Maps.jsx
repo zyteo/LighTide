@@ -1,17 +1,16 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 6 Oct 2021
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   MapContainer,
   Marker,
   Popup,
   TileLayer,
   useMapEvents,
-  useMap,
 } from "react-leaflet";
 
-function Map({ handleClick, coordinates, setCoordinates, cleanedText }) {
+function Map({ coordinates, setCoordinates, cleanedText }) {
   // Get the coordinates of the map when clicking map
   function ClickMap() {
     const map = useMapEvents({
@@ -23,14 +22,15 @@ function Map({ handleClick, coordinates, setCoordinates, cleanedText }) {
         map.flyTo(e.latlng);
       },
     });
+
+    // update map to flyover when searching text
+    useEffect(() => {
+      console.log("flyto searched position");
+      map.flyTo([`${coordinates.lat}`, `${coordinates.long}`]);
+    }, [cleanedText]);
+
     return null;
   }
-
-  // update map to flyover when searching text
-  
-  useEffect(() => {
-    console.log("hi")
-  }, [cleanedText]);
 
   return (
     <>
@@ -39,14 +39,9 @@ function Map({ handleClick, coordinates, setCoordinates, cleanedText }) {
         zoom={14}
         scrollWheelZoom={true}
       >
-        {/* <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        /> */}
         <TileLayer
-          attribution= '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url= {`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${process.env.REACT_APP_MAPBOX_KEY}`}
-        
+          attribution='© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${process.env.REACT_APP_MAPBOX_KEY}`}
         />
         <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
           <Popup>

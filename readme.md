@@ -113,3 +113,4 @@ Looking at space in URL https://stackoverflow.com/questions/13900835/the-origin-
 Leaflet https://leafletjs.com/examples/quick-start/  
 React leaflet https://react-leaflet.js.org/  
 Registering an event on clicking map https://stackoverflow.com/questions/64937948/adding-onclick-function-to-a-mapcontainer-from-react-leaflet-in-typescript-f  
+Getting map to flyto position on searching https://stackoverflow.com/questions/65979955/how-to-set-the-map-to-a-geolocation-on-map-load-with-react-leaflet-v3  
