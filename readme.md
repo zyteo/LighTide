@@ -26,13 +26,8 @@ Technologies used to build this project.
 - Axios
 - CSS
 ```
-<!-- - Bootstrap with react
-- Ajax (axios) for API
-- etc.. -->
 
 ### Wireframes
-
-Your step by step planning sketch of your project, that you can post them as an image in here.
 <img src="Images/wireframe.png"/>
 
 ### User Stories
@@ -76,14 +71,13 @@ Adjusted leaflet map + explore leaflet marker.
 Added get details button to retrive and update sun/tide details.
 Successfully shifted Map from App to its own component.
 Added Mapbox static tile layer.
-Got the map to focus on position on searching a place.
+Got the map to focus on position on searching a place. MVP Done!
 ```
 
 ### Problem-Solving Strategy
 
 Google geocode API wasn't technically free since credit details were required.  
-Had to research and switch to another geocode API, decided on geoapify.  
-Realised that sunrise/sunset details could take in date from anytime, but tides only had a 10 day grace period.  
+Had to research and switch to another geocode API, decided on geoapify.   
 
 
 ### Unsolved problems
