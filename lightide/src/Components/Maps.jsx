@@ -8,6 +8,7 @@ import {
   Popup,
   TileLayer,
   useMapEvents,
+  useMap,
 } from "react-leaflet";
 
 function Map({ handleClick, coordinates, setCoordinates, cleanedText }) {
@@ -26,8 +27,9 @@ function Map({ handleClick, coordinates, setCoordinates, cleanedText }) {
   }
 
   // update map to flyover when searching text
+  
   useEffect(() => {
-    console.log("TESTING SRCH");
+    console.log("hi")
   }, [cleanedText]);
 
   return (
@@ -37,9 +39,14 @@ function Map({ handleClick, coordinates, setCoordinates, cleanedText }) {
         zoom={14}
         scrollWheelZoom={true}
       >
-        <TileLayer
+        {/* <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        /> */}
+        <TileLayer
+          attribution= '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url= {`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${process.env.REACT_APP_MAPBOX_KEY}`}
+        
         />
         <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
           <Popup>

@@ -22,6 +22,7 @@ Technologies used to build this project.
 - React Router
 - Leaflet
 - React-leaflet
+- Openstreetmaps
 - Axios
 - CSS
 ```
@@ -74,6 +75,7 @@ Added the search bar + submit button for the geoapify map search.
 Adjusted leaflet map + explore leaflet marker.
 Added get details button to retrive and update sun/tide details.
 Successfully shifted Map from App to its own component.
+Added Mapbox static tile layer.
 ```
 
 ### Problem-Solving Strategy
@@ -89,12 +91,8 @@ List unsolved problems which would be fixed in future iterations.
 
 ## APIs Used
 
-List your APIs you have used in this project and explain why did you use it.
-
-Map API to get coordinates (lat/long)  
-https://apidocs.geoapify.com/playground/geocoding  
-https://leafletjs.com/examples/quick-start/  
-Map static tiles API https://account.mapbox.com/  
+Geocoding API https://apidocs.geoapify.com/playground/geocoding  
+Map static tiles API https://www.mapbox.com/  
 Sunrise/sunset API https://sunrise-sunset.org/api  
 Tides API https://docs.stormglass.io/#/  
 
