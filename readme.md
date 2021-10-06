@@ -70,7 +70,9 @@ Changed map API to geoapify/leaflet.
 4 Oct - Exploring leaflet and testing out various maps with react. Installed react leaflet to experiment too.
 5 Oct - Added route/link and navbar, installed Axios and replaced fetch.
 Added the search bar + submit button for the geoapify map search.
-6 Oct - Added function to update the date state. Adjusted leaflet map + explore leaflet marker.
+6 Oct - Added function to update the date state. 
+Adjusted leaflet map + explore leaflet marker.
+Added get details button to retrive and update sun/tide details.
 ```
 
 ### Problem-Solving Strategy

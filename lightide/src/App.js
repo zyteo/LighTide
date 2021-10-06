@@ -2,7 +2,13 @@
 // ZY, 1 Oct 2021
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+  useMapEvents,
+} from "react-leaflet";
 import { Route } from "react-router";
 import "./App.css";
 import Attribution from "./Components/Attribution";
@@ -28,9 +34,15 @@ function App() {
   const [sun, setSun] = useState();
   const [tide, setTide] = useState(exampletidedata);
   const inputTextSearch = useRef();
-  const [cleanedText, setCleanedText] = useState("");
+  const [cleanedText, setCleanedText] = useState();
+  const [toggle, setToggle] = useState(false);
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
+  ///////////////////////TEST MAP CLICK///////////////////////////////////////////////////
+  const handleMapClick = (e) => {
+    console.log("hi", e);
+  };
+  //////////////////////////////////////////////////////////////////////////////////////////////////
   // on changing the date field, update date state
   const handleDateChange = (e) => {
     setDate(e.target.value);
@@ -47,8 +59,10 @@ function App() {
     setCleanedText(cleanedSearchText);
   };
 
-  const handleGetDetails = () => {
-    console.log("get sun/tide!");
+  // for the "get details" button
+  const handleToggle = () => {
+    setToggle(!toggle);
+    console.log("getting sun/tide data...");
   };
 
   // To get sun + tides data for particular lat/long/date
@@ -62,7 +76,7 @@ function App() {
         setSun(response.data);
       });
 
-    //////////////////////for tide data
+    ////////////////////for tide data
     // axios
     //   .get(
     //     `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
@@ -70,23 +84,23 @@ function App() {
     //   .then((response) => {
     //     setTide(response.data);
     //   });
-  }, []);
+  }, [toggle]);
 
   // Geocoding - to get lat/long based on the text searched, renders on every cleanedText change
-  // useEffect(() => {
-  //   //geocode API
-  //   axios
-  //     .get(
-  //       `https://api.geoapify.com/v1/geocode/search?text=${cleanedText}&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
-  //     )
-  //     .then((response) => {
-  //       setCoordinates({
-  //         long: response.data.features[0].properties.lon,
-  //         lat: response.data.features[0].properties.lat,
-  //       });
-  //     });
-  //   console.log("updated", coordinates.lat, coordinates.long);
-  // }, [cleanedText]);
+  useEffect(() => {
+    //geocode API
+    axios
+      .get(
+        `https://api.geoapify.com/v1/geocode/search?text=${cleanedText}&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
+      )
+      .then((response) => {
+        setCoordinates({
+          long: response.data.features[0].properties.lon,
+          lat: response.data.features[0].properties.lat,
+        });
+      });
+    console.log("updated", coordinates.lat, coordinates.long);
+  }, [cleanedText]);
 
   return (
     <>
@@ -133,11 +147,7 @@ function App() {
                 </Popup>
               </Marker>
             </MapContainer>
-            <input
-              type="submit"
-              value="Get details!"
-              onClick={handleGetDetails}
-            />
+            <input type="submit" value="Get details!" onClick={handleToggle} />
             <Sun
               sr={sun?.results?.sunrise}
               ss={sun?.results?.sunset}
