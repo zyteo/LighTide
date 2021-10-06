@@ -1,7 +1,7 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 6 Oct 2021
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   MapContainer,
   Marker,
@@ -10,7 +10,26 @@ import {
   useMapEvents,
 } from "react-leaflet";
 
-function Map({ handleClick, coordinates }) {
+function Map({ handleClick, coordinates, setCoordinates, cleanedText }) {
+  // Get the coordinates of the map when clicking map
+  function ClickMap() {
+    const map = useMapEvents({
+      click(e) {
+        setCoordinates({
+          long: e.latlng.lng,
+          lat: e.latlng.lat,
+        });
+        map.flyTo(e.latlng);
+      },
+    });
+    return null;
+  }
+
+  // update map to flyover when searching text
+  useEffect(() => {
+    console.log("TESTING SRCH");
+  }, [cleanedText]);
+
   return (
     <>
       <MapContainer
@@ -22,10 +41,7 @@ function Map({ handleClick, coordinates }) {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker
-          position={[`${coordinates.lat}`, `${coordinates.long}`]}
-          eventHandlers={{ click: handleClick }}
-        >
+        <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
           <Popup>
             Selected point
             <br /> Latitude: {coordinates.lat}
@@ -33,6 +49,7 @@ function Map({ handleClick, coordinates }) {
             Longitude: {coordinates.long}
           </Popup>
         </Marker>
+        <ClickMap />
       </MapContainer>
     </>
   );

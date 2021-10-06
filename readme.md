@@ -114,3 +114,4 @@ To hide API key https://stackoverflow.com/questions/48699820/how-do-i-hide-api-k
 Looking at space in URL https://stackoverflow.com/questions/13900835/the-origin-on-why-20-is-used-as-a-space-in-urls  
 Leaflet https://leafletjs.com/examples/quick-start/  
 React leaflet https://react-leaflet.js.org/  
+Registering an event on clicking map https://stackoverflow.com/questions/64937948/adding-onclick-function-to-a-mapcontainer-from-react-leaflet-in-typescript-f  

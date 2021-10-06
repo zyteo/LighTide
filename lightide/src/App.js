@@ -27,16 +27,11 @@ function App() {
   const [sun, setSun] = useState();
   const [tide, setTide] = useState(exampletidedata);
   const inputTextSearch = useRef();
-  const [cleanedText, setCleanedText] = useState();
+  const [cleanedText, setCleanedText] = useState("Singapore");
   const [toggle, setToggle] = useState(false);
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
   //////////////////////////////// Start of handle functions ////////////////////////////////////////////
-  ///////////////////////TEST MAP CLICK///////////////////////////////////////////////////
-  const handleMapClick = (e) => {
-    console.log("hi", e);
-  };
-  //////////////////////////////////////////////////////////////////////////////////////////////////
   // on changing the date field, update date state
   const handleDateChange = (e) => {
     setDate(e.target.value);
@@ -126,7 +121,7 @@ function App() {
             />
             <input type="submit" value="Search" onClick={handleSearch} />
 
-            <Map coordinates={coordinates} handleClick={handleMapClick} />
+            <Map coordinates={coordinates} setCoordinates={setCoordinates} cleanedText={cleanedText}/>
             <input type="submit" value="Get details!" onClick={handleToggle} />
             {/* </Route>
           <Route path="/results"> */}
