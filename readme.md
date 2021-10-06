@@ -73,6 +73,7 @@ Added the search bar + submit button for the geoapify map search.
 6 Oct - Added function to update the date state. 
 Adjusted leaflet map + explore leaflet marker.
 Added get details button to retrive and update sun/tide details.
+Successfully shifted Map from App to its own component.
 ```
 
 ### Problem-Solving Strategy

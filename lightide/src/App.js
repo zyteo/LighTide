@@ -2,13 +2,6 @@
 // ZY, 1 Oct 2021
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  MapContainer,
-  Marker,
-  Popup,
-  TileLayer,
-  useMapEvents,
-} from "react-leaflet";
 import { Route } from "react-router";
 import "./App.css";
 import Attribution from "./Components/Attribution";
@@ -16,7 +9,7 @@ import Home from "./Components/Home";
 import Nav from "./Components/Nav";
 import Sun from "./Components/Sun";
 import Tides from "./Components/Tides";
-
+import Map from "./Components/Maps";
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -38,6 +31,7 @@ function App() {
   const [toggle, setToggle] = useState(false);
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
+  //////////////////////////////// Start of handle functions ////////////////////////////////////////////
   ///////////////////////TEST MAP CLICK///////////////////////////////////////////////////
   const handleMapClick = (e) => {
     console.log("hi", e);
@@ -64,7 +58,9 @@ function App() {
     setToggle(!toggle);
     console.log("getting sun/tide data...");
   };
+  //////////////////////////////// End of handle functions ////////////////////////////////////////////
 
+  //////////////////////////////// Start of useEffect ////////////////////////////////////////////
   // To get sun + tides data for particular lat/long/date
   useEffect(() => {
     // for sunrise/sunset data
@@ -101,6 +97,7 @@ function App() {
       });
     console.log("updated", coordinates.lat, coordinates.long);
   }, [cleanedText]);
+  //////////////////////////////// End of useEffect ////////////////////////////////////////////
 
   return (
     <>
@@ -129,25 +126,10 @@ function App() {
             />
             <input type="submit" value="Search" onClick={handleSearch} />
 
-            <MapContainer
-              center={[`${coordinates.lat}`, `${coordinates.long}`]}
-              zoom={14}
-              scrollWheelZoom={true}
-            >
-              <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
-                <Popup>
-                  Selected point
-                  <br /> Latitude: {coordinates.lat}
-                  <br />
-                  Longitude: {coordinates.long}
-                </Popup>
-              </Marker>
-            </MapContainer>
+            <Map coordinates={coordinates} handleClick={handleMapClick} />
             <input type="submit" value="Get details!" onClick={handleToggle} />
+            {/* </Route>
+          <Route path="/results"> */}
             <Sun
               sr={sun?.results?.sunrise}
               ss={sun?.results?.sunset}
@@ -388,71 +370,3 @@ const exampletidedata = {
     },
   },
 };
-
-////SAMPLE MAP DATA////////////////
-// {
-//   "type": "FeatureCollection",
-//   "features": [
-//     {
-//       "type": "Feature",
-//       "properties": {
-//         "datasource": {
-//           "sourcename": "openstreetmap",
-//           "attribution": "© OpenStreetMap contributors",
-//           "license": "Open Database License",
-//           "url": "https://www.openstreetmap.org/copyright"
-//         },
-//         "housenumber": "38",
-//         "street": "Upper Montagu Street",
-//         "suburb": "Marylebone",
-//         "city": "Westminster",
-//         "county": "Greater London",
-//         "state": "England",
-//         "postcode": "W1H 1LJ",
-//         "country": "United Kingdom",
-//         "country_code": "gb",
-//         "lon": -0.16030636023550826,
-//         "lat": 51.52016005,
-//         "formatted": "38 Upper Montagu Street, Westminster W1H 1LJ, United Kingdom",
-//         "address_line1": "38 Upper Montagu Street",
-//         "address_line2": "Westminster W1H 1LJ, United Kingdom",
-//         "state_code": "ENG",
-//         "category": "building.residential",
-//         "result_type": "building",
-//         "rank": {
-//           "importance": 0.811,
-//           "popularity": 8.988490181891963,
-//           "confidence": 1,
-//           "confidence_city_level": 1,
-//           "confidence_street_level": 1,
-//           "match_type": "full_match"
-//         },
-//         "place_id": "51dcb14637eb84c4bf59c6b7c19a94c24940f00102f901370cef1100000000c00203"
-//       },
-//       "geometry": {
-//         "type": "Point",
-//         "coordinates": [
-//           -0.16030636023550826,
-//           51.52016005
-//         ]
-//       },
-//       "bbox": [
-//         -0.160394,
-//         51.5201061,
-//         -0.1602251,
-//         51.5202273
-//       ]
-//     }
-//   ],
-//   "query": {
-//     "text": "38 Upper Montagu Street, Westminster W1H 1LJ, United Kingdom",
-//     "parsed": {
-//       "housenumber": "38",
-//       "street": "upper montagu street",
-//       "postcode": "w1h 1lj",
-//       "district": "westminster",
-//       "country": "united kingdom",
-//       "expected_type": "building"
-//     }
-//   }
-// }
