@@ -11,6 +11,41 @@ import Sun from "./Components/Sun";
 import Tides from "./Components/Tides";
 import Map from "./Components/Maps";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const Input = styled.input`
+padding: 3px 3px;
+margin: 6px 0;
+border: 1px solid black;
+border-radius: 6px;
+box-sizing: border-box;
+cursor: pointer;
+font-size: 16px;
+  }
+`;
+const SearchInput = styled(Input)`
+  width: 6vw;
+  &:hover {
+    background-color: grey;
+  }
+`;
+const Button = styled.button`
+  padding: 3px 3px;
+  margin: 6px 0;
+  border: 1px solid black;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
+  width: 8vw;
+  &:hover {
+    background-color: grey;
+  }
+`;
+const Label = styled.label`
+  padding: 10px 5px;
+  font-size: 16px;
+`;
 
 // get today's date
 const todayDateTime = new Date();
@@ -107,8 +142,8 @@ function App() {
           </Route>
 
           <Route path="/maps">
-            <label for="start">Date:</label>
-            <input
+            <Label for="start">Date:</Label>
+            <Input
               type="date"
               id="date"
               name="selectdate"
@@ -116,22 +151,24 @@ function App() {
               max="2100-12-31"
               onChange={handleDateChange}
             />
-            <label>Locate a place:</label>
-            <input
+            <Label>Locate a place:</Label>
+            <Input
               type="text"
               ref={inputTextSearch}
               placeholder="Address / Place name"
             />
-            <input type="submit" value="Search" onClick={handleSearch} />
+            <SearchInput type="submit" value="Search" onClick={handleSearch} />
 
             <Map
               coordinates={coordinates}
               setCoordinates={setCoordinates}
               cleanedText={cleanedText}
             />
-            <button type="submit" onClick={handleToggle}>
-              <Link to="/results">Get details!</Link>
-            </button>
+            <Button type="submit" onClick={handleToggle}>
+              <Link to="/results" style={{ textDecoration: "none" }}>
+                Get details!
+              </Link>
+            </Button>
             <Attribution />
           </Route>
           <Route path="/results">

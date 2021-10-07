@@ -10,10 +10,10 @@ function Attribution() {
         API Attribution:
         <a href="https://sunrise-sunset.org/">
           <span style={{ color: "green" }}> Sunrise Sunset,</span>
-        </a> 
+        </a>
         <a href="https://stormglass.io/marine-weather/">
           <span style={{ color: "lightblue" }}>Stormglass,</span>
-        </a> 
+        </a>
         <a href="https://www.geoapify.com/">
           <span style={{ color: "lightblue" }}>Geoapify</span>
         </a>
@@ -21,7 +21,11 @@ function Attribution() {
       <p>
         Nature is unpredictable. Use the information presented at your own risk.
       </p>
-      Created Oct 2021 by ZY of GA SEI-32. Github code here.
+      Created Oct 2021 by ZY of GA SEI-32. Github code
+      <a href="https://github.com/zyteo/LighTide">
+        <span> here</span>
+      </a>
+      .
     </footer>
   );
 }

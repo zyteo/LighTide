@@ -24,7 +24,7 @@ Technologies used to build this project.
 - React-leaflet
 - Openstreetmaps
 - Axios
-- CSS
+- Styled components CSS
 ```
 
 ### Wireframes
@@ -73,6 +73,7 @@ Successfully shifted Map from App to its own component.
 Added Mapbox static tile layer.
 Got the map to focus on position on searching a place. MVP Done!
 7 Oct - Results now show in another page. "get details" changed from input to button type.
+Installed styled components for CSS styling.
 ```
 
 ### Problem-Solving Strategy
@@ -110,3 +111,4 @@ Leaflet https://leafletjs.com/examples/quick-start/
 React leaflet https://react-leaflet.js.org/  
 Registering an event on clicking map https://stackoverflow.com/questions/64937948/adding-onclick-function-to-a-mapcontainer-from-react-leaflet-in-typescript-f  
 Getting map to flyto position on searching https://stackoverflow.com/questions/65979955/how-to-set-the-map-to-a-geolocation-on-map-load-with-react-leaflet-v3  
+Styled components CSS https://styled-components.com/docs/basics#getting-started  
