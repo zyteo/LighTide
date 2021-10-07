@@ -72,6 +72,7 @@ Added get details button to retrive and update sun/tide details.
 Successfully shifted Map from App to its own component.
 Added Mapbox static tile layer.
 Got the map to focus on position on searching a place. MVP Done!
+7 Oct - Results now show in another page. "get details" changed from input to button type.
 ```
 
 ### Problem-Solving Strategy

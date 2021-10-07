@@ -10,6 +10,8 @@ import Nav from "./Components/Nav";
 import Sun from "./Components/Sun";
 import Tides from "./Components/Tides";
 import Map from "./Components/Maps";
+import { Link } from "react-router-dom";
+
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -101,6 +103,7 @@ function App() {
         <main>
           <Route exact path="/">
             <Home />
+            <Attribution />
           </Route>
 
           <Route path="/maps">
@@ -121,10 +124,17 @@ function App() {
             />
             <input type="submit" value="Search" onClick={handleSearch} />
 
-            <Map coordinates={coordinates} setCoordinates={setCoordinates} cleanedText={cleanedText}/>
-            <input type="submit" value="Get details!" onClick={handleToggle} />
-            {/* </Route>
-          <Route path="/results"> */}
+            <Map
+              coordinates={coordinates}
+              setCoordinates={setCoordinates}
+              cleanedText={cleanedText}
+            />
+            <button type="submit" onClick={handleToggle}>
+              <Link to="/results">Get details!</Link>
+            </button>
+            <Attribution />
+          </Route>
+          <Route path="/results">
             <Sun
               sr={sun?.results?.sunrise}
               ss={sun?.results?.sunset}

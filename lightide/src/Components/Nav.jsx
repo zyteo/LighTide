@@ -11,9 +11,11 @@ function Nav() {
         <li>
           <Link to="/">Home</Link>
         </li>
-
         <li>
           <Link to="/maps">LighTide</Link>
+        </li>
+        <li>
+          <Link to="/results">Results</Link>
         </li>
       </nav>
     </>

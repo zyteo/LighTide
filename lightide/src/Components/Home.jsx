@@ -8,13 +8,11 @@ function Home() {
     <>
       <h1>Welcome to LighTide Maps!</h1>
       <h2>Using this App</h2>
+      <p>Search a place or select a point on the map to pinpoint a location.</p>
+      <p>By default, the date is set to today.</p>
       <p>
-        Select a point on the map/search a point on the map to retrieve
-        sunrise/sunset and tide details.
-      </p>
-      <p>
-        By default, the date is set to today. You can choose a particular date
-        by setting the date at the top.
+        Retrieve sunrise/sunset and tide details based on the location and date
+        selected.
       </p>
     </>
   );
