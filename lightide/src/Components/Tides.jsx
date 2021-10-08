@@ -2,6 +2,7 @@
 // ZY, 1 Oct 2021
 
 import React from "react";
+import styled from "styled-components";
 
 function Tides({ tide }) {
   // take the tide prop (JSON data) and map the array, save as tidedetails
@@ -21,7 +22,7 @@ function Tides({ tide }) {
 
   return (
     <div className="tides">
-      <p>Tides:</p>
+      <p><strong>Tides:</strong></p>
       <div className="stationdetails">
         Station name: {tide.meta.station.name}
         <br />
