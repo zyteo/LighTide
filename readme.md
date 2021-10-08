@@ -89,7 +89,7 @@ Had to research and switch to another geocode API, decided on geoapify.
 ### Unsolved problems
 
 Search currently only accepts English, might add support for other languages.
-Tide API limit is 10 requests/day, too little...
+Tide API limit is 50 requests/day, too little...
 
 ## APIs Used
 
@@ -121,4 +121,5 @@ Styling Link https://stackoverflow.com/questions/37669391/how-to-get-rid-of-unde
 Favicon https://favicon.io/  
 Eslint ignore file https://eslint.org/docs/user-guide/configuring/ignoring-code  
 App deployment https://github.com/vercel/vercel/discussions/5566  
-media queries for styled components https://jsramblings.com/how-to-use-media-queries-with-styled-components/  
+Media queries for styled components https://jsramblings.com/how-to-use-media-queries-with-styled-components/  
+Adding local image https://stackoverflow.com/questions/34582405/react-wont-load-local-images  
