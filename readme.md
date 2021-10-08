@@ -4,6 +4,7 @@
 # LighTide
 
 Get sunset/sunrise details + tide details based on the selected position on the map.  
+
 ============Explore the app here: https://lightide.vercel.app/ ================
 
 ## Description
@@ -115,6 +116,7 @@ React leaflet https://react-leaflet.js.org/
 Registering an event on clicking map https://stackoverflow.com/questions/64937948/adding-onclick-function-to-a-mapcontainer-from-react-leaflet-in-typescript-f  
 Getting map to flyto position on searching https://stackoverflow.com/questions/65979955/how-to-set-the-map-to-a-geolocation-on-map-load-with-react-leaflet-v3  
 Styled components CSS https://styled-components.com/docs/basics#getting-started  
+Styling Link https://stackoverflow.com/questions/37669391/how-to-get-rid-of-underline-for-link-component-of-react-router  
 Favicon https://favicon.io/  
 Eslint ignore file https://eslint.org/docs/user-guide/configuring/ignoring-code  
 App deployment https://github.com/vercel/vercel/discussions/5566  

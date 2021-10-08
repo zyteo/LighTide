@@ -19,6 +19,11 @@ function Home() {
         Retrieve sunrise/sunset and tide details based on the location and date
         selected.
       </P>
+      <P>
+        There is a limit on the number of API requests.
+        In the event too many people use this website to retrieve information,
+        the website might break.
+      </P>
     </>
   );
 }
