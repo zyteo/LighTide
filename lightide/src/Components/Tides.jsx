@@ -13,7 +13,7 @@ const Div = styled.div`
 
 function Tides({ tide }) {
   // take the tide Prop (JSON data) and map the array, save as tidedetails
-  const tidedetails = tide.data.map((ele) => {
+  const tidedetails = tide?.data.map((ele) => {
     return (
       <>
         <Div className="tidedetails">
@@ -45,13 +45,13 @@ function Tides({ tide }) {
       </p>
       <div className="stationdetails">
         <strong>Station name: </strong>
-        {tide.meta.station.name}
+        {tide?.meta?.station?.name}
         <br />
         <strong>Distance between station and requested coordinate: </strong>
-        {tide.meta.station.distance} km
+        {tide?.meta?.station?.distance} km
         <br />
         <strong>Station coordinates: </strong>
-        {tide.meta.station.lat} (Latitude), {tide.meta.station.lng} (Longitude)
+        {tide?.meta?.station?.lat} (Latitude), {tide?.meta?.station?.lng} (Longitude)
       </div>
       {tidedetails}
     </div>

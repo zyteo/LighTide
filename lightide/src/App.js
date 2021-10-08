@@ -209,7 +209,7 @@ function App() {
           <Route path="/results">
             <h3>Date: {date}</h3>
             <h3>
-              Results for {coordinates.lat} (latitude), {coordinates.long}{" "}
+              Results for {coordinates.lat} (latitude), {coordinates.long}
               (longitude)
             </h3>
             <Results>

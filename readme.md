@@ -88,7 +88,8 @@ Had to research and switch to another geocode API, decided on geoapify.
 
 ### Unsolved problems
 
-List unsolved problems which would be fixed in future iterations.
+Search currently only accepts English, might add support for other languages.
+Tide API limit is 10 requests/day, too little...
 
 ## APIs Used
 
