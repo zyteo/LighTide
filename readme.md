@@ -3,7 +3,7 @@
 
 # LighTide
 
-Get sunset/sunrise details + tide details based on the selected position on the map.
+Get sunset/sunrise details + tide details based on the selected position on the map.  
 ============Explore the app here: https://lightide.vercel.app/ ================
 
 ## Description
@@ -115,5 +115,5 @@ Registering an event on clicking map https://stackoverflow.com/questions/6493794
 Getting map to flyto position on searching https://stackoverflow.com/questions/65979955/how-to-set-the-map-to-a-geolocation-on-map-load-with-react-leaflet-v3  
 Styled components CSS https://styled-components.com/docs/basics#getting-started  
 Favicon https://favicon.io/  
-eslint ignore file https://eslint.org/docs/user-guide/configuring/ignoring-code  
+Eslint ignore file https://eslint.org/docs/user-guide/configuring/ignoring-code  
 App deployment https://github.com/vercel/vercel/discussions/5566  
