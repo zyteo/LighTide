@@ -3,7 +3,7 @@
 
 import React from "react";
 import styled from "styled-components";
-
+import TideExceed from "./Tide_exceed.png";
 const P = styled.p`
   margin: 20px;
 `;
@@ -20,10 +20,15 @@ function Home() {
         selected.
       </P>
       <P>
-        There is a limit on the number of API requests.
-        In the event too many people use this website to retrieve information,
-        the website might break.
+        There is a limit on the number of API requests. In the event too many
+        people use this website to retrieve information, the website might
+        break.
       </P>
+      <P>
+        If you see a screen like this, please try again tomorrow. Tide requests
+        are capped at 50 per day, although you can still retrieve sunrise/sunset information.
+      </P>
+      <img src={TideExceed} alt="..." />
     </>
   );
 }
