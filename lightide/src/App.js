@@ -3,15 +3,15 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Route } from "react-router";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import "./App.css";
 import Attribution from "./Components/Attribution";
 import Home from "./Components/Home";
+import Map from "./Components/Maps";
 import Nav from "./Components/Nav";
 import Sun from "./Components/Sun";
 import Tides from "./Components/Tides";
-import Map from "./Components/Maps";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
 
 const Input = styled.input`
   padding: 3px 3px;
@@ -21,10 +21,21 @@ const Input = styled.input`
   box-sizing: border-box;
   cursor: pointer;
   font-size: 16px;
+
+  @media only screen and (max-width: 600px) {
+    
+    border: 1px solid black;
+    border-radius: 6px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+    position:relative;
+  
+}
+
   }
 `;
 const SearchInput = styled(Input)`
-  width: 6vw;
   &:hover {
     background-color: rgb(228, 228, 228);
   }
@@ -34,13 +45,22 @@ const SearchInput = styled(Input)`
 `;
 const Button = styled.button`
   padding: 3px 3px;
-  margin: 6px 0;
+  margin: 6px 2px;
   border: 1px solid black;
   border-radius: 6px;
   box-sizing: border-box;
   cursor: pointer;
   font-size: 16px;
-  width: 8vw;
+
+  @media only screen and (max-width: 600px) {
+    border: 1px solid black;
+    border-radius: 6px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+  }
+
   &:hover {
     background-color: rgb(228, 228, 228);
   }
@@ -61,6 +81,7 @@ const LinkStyled = styled(Link)`
 const Results = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 // get today's date
@@ -186,8 +207,11 @@ function App() {
             <Attribution />
           </Route>
           <Route path="/results">
-              <h3>Date: {date}</h3>
-              <h3>Results for {coordinates.lat} (latitude), {coordinates.long} (longitude)</h3>
+            <h3>Date: {date}</h3>
+            <h3>
+              Results for {coordinates.lat} (latitude), {coordinates.long}{" "}
+              (longitude)
+            </h3>
             <Results>
               <Sun
                 sr={sun?.results?.sunrise}
