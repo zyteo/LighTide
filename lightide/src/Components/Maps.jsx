@@ -1,7 +1,7 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 6 Oct 2021
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import {
   MapContainer,
   Marker,
