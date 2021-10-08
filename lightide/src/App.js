@@ -58,6 +58,11 @@ const LinkStyled = styled(Link)`
   color: black;
 `;
 
+const Results = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -181,19 +186,21 @@ function App() {
             <Attribution />
           </Route>
           <Route path="/results">
-            <Sun
-              sr={sun?.results?.sunrise}
-              ss={sun?.results?.sunset}
-              sn={sun?.results?.solar_noon}
-              dl={sun?.results?.day_length}
-              ctb={sun?.results?.civil_twilight_begin}
-              cte={sun?.results?.civil_twilight_end}
-              ntb={sun?.results?.nautical_twilight_begin}
-              nte={sun?.results?.nautical_twilight_end}
-              atb={sun?.results?.astronomical_twilight_begin}
-              ate={sun?.results?.astronomical_twilight_end}
-            />
-            <Tides tide={tide} />
+            <Results>
+              <Sun
+                sr={sun?.results?.sunrise}
+                ss={sun?.results?.sunset}
+                sn={sun?.results?.solar_noon}
+                dl={sun?.results?.day_length}
+                ctb={sun?.results?.civil_twilight_begin}
+                cte={sun?.results?.civil_twilight_end}
+                ntb={sun?.results?.nautical_twilight_begin}
+                nte={sun?.results?.nautical_twilight_end}
+                atb={sun?.results?.astronomical_twilight_begin}
+                ate={sun?.results?.astronomical_twilight_end}
+              />
+              <Tides tide={tide} />
+            </Results>
             <Attribution />
           </Route>
         </main>

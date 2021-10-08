@@ -4,31 +4,54 @@
 import React from "react";
 import styled from "styled-components";
 
+const P = styled.p`
+  margin: 3px;
+`;
+const Div = styled.div`
+  margin: 20px 20px 5px 5px;
+`;
+
 function Tides({ tide }) {
-  // take the tide prop (JSON data) and map the array, save as tidedetails
+  // take the tide Prop (JSON data) and map the array, save as tidedetails
   const tidedetails = tide.data.map((ele) => {
     return (
       <>
-        <div className="tidedetails">
-          Date/Time (in UTC): {ele.time}
-          <br />
-          Tide: {ele.type}
-          <br />
-          Height: {ele.height} meters
-        </div>
+        <Div className="tidedetails">
+          <P>
+            <strong>Date/Time (in UTC): </strong>
+            {ele.time}
+          </P>
+
+          <P>
+            <strong>Tide: </strong>
+            {ele.type}
+          </P>
+
+          <P>
+            <strong>Height: </strong>
+            {ele.height} meters
+          </P>
+        </Div>
       </>
     );
   });
 
   return (
     <div className="tides">
-      <p><strong>Tides:</strong></p>
+      <p>
+        <strong>
+          <u>Tides</u>
+        </strong>
+      </p>
       <div className="stationdetails">
-        Station name: {tide.meta.station.name}
+        <strong>Station name: </strong>
+        {tide.meta.station.name}
         <br />
-        Distance between station and requested coordinate: {tide.meta.station.distance} km
+        <strong>Distance between station and requested coordinate: </strong>
+        {tide.meta.station.distance} km
         <br />
-        Station coordinates: {tide.meta.station.lat} (Latitude), {tide.meta.station.lng} (Longitude)
+        <strong>Station coordinates: </strong>
+        {tide.meta.station.lat} (Latitude), {tide.meta.station.lng} (Longitude)
       </div>
       {tidedetails}
     </div>

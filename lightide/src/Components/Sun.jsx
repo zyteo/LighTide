@@ -1,4 +1,4 @@
-// GA SEI 32 Project 2: </strong>FrontEnd with API
+// GA SEI 32 Project 2: FrontEnd with API
 // ZY, 1 Oct 2021
 
 import React from "react";
@@ -11,12 +11,11 @@ const Li = styled.li`
 margin:6px;
 `;
 
-
 function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate }) {
   return (
     <div className="sun">
       <Ul>
-        <strong><u>Sunrise & Sunset</u></strong>
+        <strong><u>Sunrise & Sunset Times (in UTC)</u></strong>
         <Li><strong> Sunrise: </strong>{sr}</Li>
         <Li><strong> Sunset: </strong>{ss}</Li>
         <Li><strong> Solar noon: </strong>{sn}</Li>
