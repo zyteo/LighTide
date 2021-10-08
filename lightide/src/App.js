@@ -14,18 +14,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Input = styled.input`
-padding: 3px 3px;
-margin: 6px 0;
-border: 1px solid black;
-border-radius: 6px;
-box-sizing: border-box;
-cursor: pointer;
-font-size: 16px;
+  padding: 3px 3px;
+  margin: 6px 2px;
+  border: 1px solid black;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
   }
 `;
 const SearchInput = styled(Input)`
   width: 6vw;
   &:hover {
+    background-color: rgb(228, 228, 228);
+  }
+  &:active {
     background-color: grey;
   }
 `;
@@ -39,12 +42,20 @@ const Button = styled.button`
   font-size: 16px;
   width: 8vw;
   &:hover {
+    background-color: rgb(228, 228, 228);
+  }
+  &:active {
     background-color: grey;
   }
 `;
 const Label = styled.label`
   padding: 10px 5px;
   font-size: 16px;
+`;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+  color: black;
 `;
 
 // get today's date
@@ -165,9 +176,7 @@ function App() {
               cleanedText={cleanedText}
             />
             <Button type="submit" onClick={handleToggle}>
-              <Link to="/results" style={{ textDecoration: "none" }}>
-                Get details!
-              </Link>
+              <LinkStyled to="/results">Get details!</LinkStyled>
             </Button>
             <Attribution />
           </Route>

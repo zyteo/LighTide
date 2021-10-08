@@ -75,7 +75,8 @@ Added Mapbox static tile layer.
 Got the map to focus on position on searching a place. MVP Done!
 7 Oct - Results now show in another page. "get details" changed from input to button type.
 Installed styled components for CSS styling.
-8 Oct - Added favicon and testing deployment.
+8 Oct - Added favicon and tested deployment.
+Edited CSS styling.
 ```
 
 ### Problem-Solving Strategy

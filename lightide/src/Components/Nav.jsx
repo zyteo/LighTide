@@ -11,35 +11,42 @@ const Navbar = styled.nav`
   width: 100vw;
   height: 8vh;
   padding: 0 20px;
-  background-color: lightblue;
+  background-color: lightskyblue;
   &:hover {
-    background-color: cyan;
+    background-color: lightblue;
   }
 `;
 const Li = styled.li`
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 14px 36px;
+  padding: 5px 26px;
   font-size: 16px;
-  border-radius: 20px;
+  border-radius: 24px;
   &:hover {
-    background-color: pink;
+    background-color: gold;
   }
+  &:active {
+    background-color: yellowgreen;
+  }
+`;
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+  color: black;
 `;
 function Nav() {
   return (
     <>
       <Navbar>
-        <Li>
-          <Link to="/" style={{ textDecoration: 'none' }}>Home</Link>
-        </Li>
-        <Li>
-          <Link to="/maps" style={{ textDecoration: 'none' }}>LighTide</Link>
-        </Li>
-        <Li>
-          <Link to="/results" style={{ textDecoration: 'none' }}>Results</Link>
-        </Li>
+        <LinkStyled to="/">
+          <Li>Home</Li>
+        </LinkStyled>
+        <LinkStyled to="/maps">
+          <Li>LighTide</Li>
+        </LinkStyled>
+        <LinkStyled to="/results">
+          <Li>Results</Li>
+        </LinkStyled>
       </Navbar>
     </>
   );
