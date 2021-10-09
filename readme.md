@@ -79,6 +79,7 @@ Installed styled components for CSS styling.
 8 Oct - Added favicon and tested deployment.
 CSS styling overhaul to make App look better.
 9 Oct - Modified tide component to account for reaching daily limit.
+Modified home page contents.
 ```
 
 ### Problem-Solving Strategy
