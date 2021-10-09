@@ -3,7 +3,7 @@
 
 import React from "react";
 import styled from "styled-components";
-import TideExceed from "./Tide_exceed.png";
+import TideExceed from "./Tide_exceed.PNG";
 const P = styled.p`
   margin: 20px;
 `;
