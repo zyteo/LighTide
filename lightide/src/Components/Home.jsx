@@ -20,11 +20,8 @@ function Home() {
       </P>
       <P>2. Choose a date. By default, the date is set to today.</P>
       <P>3. Select "Get details!" to retrieve the information.</P>
-      <P>
-        Note that tide requests are capped at 50 per day.
-      </P>
-      <img src={TideExceed} alt="..." />
-      <P>If you see a screen like this, it means the tide request limit has been reached.</P>
+      <P>Note that tide requests are capped at 50 per day.</P>
+      <hr></hr>
     </>
   );
 }

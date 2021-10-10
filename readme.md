@@ -80,6 +80,7 @@ Installed styled components for CSS styling.
 CSS styling overhaul to make App look better.
 9 Oct - Modified tide component to account for reaching daily limit.
 Modified home page contents.
+10 Oct - Edited home page contents for clarity.
 ```
 
 ### Problem-Solving Strategy
