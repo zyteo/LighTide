@@ -83,6 +83,7 @@ CSS styling overhaul to make App look better.
 Modified home page contents.
 10 Oct - Edited home page contents for clarity.
 11 Oct - Converted date/time from ISO format to local format for easier reading.
+Added custom cursor.
 ```
 
 ### Problem-Solving Strategy
