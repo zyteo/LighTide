@@ -65,7 +65,7 @@ function Tides({ tide }) {
         </>
       ) : (
         <>
-          Sorry, no tide data! <br />
+          Sorry, tide request limit reached for today! <br />
           Please try again tomorrow.
         </>
       )}

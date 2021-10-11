@@ -5,7 +5,7 @@
 
 Get sunset/sunrise details + tide details based on the selected position on the map.  
 
-============Explore the app here: https://lightide.vercel.app/ ================
+##### ============Explore the app here: https://lightide.vercel.app/ ================
 
 ## Description
 
@@ -27,6 +27,7 @@ Technologies used to build this project.
 - Openstreetmaps
 - Axios
 - Styled components CSS
+- Date-fns
 ```
 
 ### Wireframes
@@ -39,9 +40,9 @@ Technologies used to build this project.
 To use the app, user should:
 
 - Click a point on the map / Search a place in search box
-- Click registers a coordinate, gets a lat/long (useState)
+- Click / Search registers a coordinate, gets a lat/long
 - User confirms that is the point they are interested in, selects "get details" button
-- Button will parse lat/long info into API, get the results and display on screen
+- On click, button will parse lat/long info into API, get the results and display on screen
 - Date selection included so user can select the date they want and check the sunrise/tide information for that particular date
 
 ```
@@ -81,12 +82,13 @@ CSS styling overhaul to make App look better.
 9 Oct - Modified tide component to account for reaching daily limit.
 Modified home page contents.
 10 Oct - Edited home page contents for clarity.
+11 Oct - Attempt to convert date / time from UTC to local time, exploring date-fns library.
 ```
 
 ### Problem-Solving Strategy
 
-Google geocode API wasn't technically free since credit details were required.  
-Had to research and switch to another geocode API, decided on geoapify.   
+Tides date/time format sample : "2021-10-03T04:21:00+00:00" given in UTC
+Want to change to local time, use date-fns   
 
 
 ### Unsolved problems
