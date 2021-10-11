@@ -87,8 +87,8 @@ Modified home page contents.
 
 ### Problem-Solving Strategy
 
-Tides date/time format sample : "2021-10-03T04:21:00+00:00" given in UTC
-Want to change to local time, use date-fns   
+Tides date/time format was given in ISO format, had to use date-fns to convert to local time (object),
+then format into string
 
 
 ### Unsolved problems
@@ -128,3 +128,4 @@ Eslint ignore file https://eslint.org/docs/user-guide/configuring/ignoring-code
 App deployment https://github.com/vercel/vercel/discussions/5566  
 Media queries for styled components https://jsramblings.com/how-to-use-media-queries-with-styled-components/  
 Adding local image https://stackoverflow.com/questions/34582405/react-wont-load-local-images  
+Formatting date https://date-fns.org/v2.25.0/docs/format  

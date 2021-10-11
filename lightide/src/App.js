@@ -99,7 +99,7 @@ function App() {
   });
   const [date, setDate] = useState(todayDate);
   const [sun, setSun] = useState();
-  const [tide, setTide] = useState();
+  const [tide, setTide] = useState(tidedata);
   const inputTextSearch = useRef();
   const [cleanedText, setCleanedText] = useState("Singapore");
   const [toggle, setToggle] = useState(false);
@@ -141,7 +141,7 @@ function App() {
         setSun(response.data);
       });
 
-    ////////////////for tide data
+    //////////////for tide data
     axios
       .get(
         `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
@@ -236,3 +236,215 @@ function App() {
 }
 
 export default App;
+
+const tidedata = {
+  data: [
+    {
+      height: -0.5481271413265432,
+      time: "2021-10-11T02:23:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.9542709126572888,
+      time: "2021-10-11T08:12:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.9702584786076517,
+      time: "2021-10-11T15:03:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.6437524396012805,
+      time: "2021-10-11T21:06:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.38286853288612077,
+      time: "2021-10-12T03:02:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.856843397740316,
+      time: "2021-10-12T08:55:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.8665751175958126,
+      time: "2021-10-12T16:02:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.4254832763789981,
+      time: "2021-10-12T22:09:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.21446594033693225,
+      time: "2021-10-13T03:49:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.7202437172028018,
+      time: "2021-10-13T09:47:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.7552630050571855,
+      time: "2021-10-13T17:17:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.2611820989878146,
+      time: "2021-10-13T23:45:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.07053629845224806,
+      time: "2021-10-14T05:02:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.5805733683999623,
+      time: "2021-10-14T11:02:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.6950263121196545,
+      time: "2021-10-14T18:52:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.25664790256036535,
+      time: "2021-10-15T01:54:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.01732096490808871,
+      time: "2021-10-15T07:00:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.5213482117967395,
+      time: "2021-10-15T12:49:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.7245328571377131,
+      time: "2021-10-15T20:28:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.357133980747398,
+      time: "2021-10-16T03:12:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.1122906186137319,
+      time: "2021-10-16T08:50:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.5832833414990704,
+      time: "2021-10-16T14:21:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.7941103347209432,
+      time: "2021-10-16T21:40:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.46451544686117824,
+      time: "2021-10-17T03:57:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.27394007745933613,
+      time: "2021-10-17T09:56:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.6870870630903098,
+      time: "2021-10-17T15:26:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.8403781718434267,
+      time: "2021-10-17T22:31:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.5582795018446571,
+      time: "2021-10-18T04:30:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.4353686332648437,
+      time: "2021-10-18T10:42:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.7756509180674519,
+      time: "2021-10-18T16:16:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.8425560614042679,
+      time: "2021-10-18T23:10:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.6376382223175965,
+      time: "2021-10-19T04:59:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.5751031170683268,
+      time: "2021-10-19T11:18:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.8276247051170601,
+      time: "2021-10-19T16:57:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.8049665821966621,
+      time: "2021-10-19T23:42:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.7052101671958809,
+      time: "2021-10-20T05:24:00+00:00",
+      type: "high",
+    },
+    {
+      height: -0.6873451842666715,
+      time: "2021-10-20T11:49:00+00:00",
+      type: "low",
+    },
+    {
+      height: 0.8387108213765858,
+      time: "2021-10-20T17:33:00+00:00",
+      type: "high",
+    },
+  ],
+  meta: {
+    cost: 1,
+    dailyQuota: 50,
+    datum: "MSL",
+    end: "2021-10-21 00:00",
+    lat: 1.357107,
+    lng: 103.8194992,
+    requestCount: 3,
+    start: "2021-10-11 00:00",
+    station: {
+      distance: 9,
+      lat: 1.3,
+      lng: 103.767,
+      name: "west coast",
+      source: "sg",
+    },
+  },
+};
