@@ -82,7 +82,7 @@ CSS styling overhaul to make App look better.
 9 Oct - Modified tide component to account for reaching daily limit.
 Modified home page contents.
 10 Oct - Edited home page contents for clarity.
-11 Oct - Attempt to convert date / time from UTC to local time, exploring date-fns library.
+11 Oct - Converted date/time from ISO format to local format for easier reading.
 ```
 
 ### Problem-Solving Strategy
@@ -129,3 +129,4 @@ App deployment https://github.com/vercel/vercel/discussions/5566
 Media queries for styled components https://jsramblings.com/how-to-use-media-queries-with-styled-components/  
 Adding local image https://stackoverflow.com/questions/34582405/react-wont-load-local-images  
 Formatting date https://date-fns.org/v2.25.0/docs/format  
+Idea for converting seconds to hours/mins/sec https://stackoverflow.com/questions/37096367/how-to-convert-seconds-to-minutes-and-hours-in-javascript  

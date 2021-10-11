@@ -135,7 +135,7 @@ function App() {
     // for sunrise/sunset data
     axios
       .get(
-        `https://api.sunrise-sunset.org/json?lat=${coordinates.lat}&lng=${coordinates.long}&date=${date}`
+        `https://api.sunrise-sunset.org/json?lat=${coordinates.lat}&lng=${coordinates.long}&date=${date}&formatted=0`
       )
       .then((response) => {
         setSun(response.data);
