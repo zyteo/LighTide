@@ -9,7 +9,7 @@ const A = styled.a`
   color: black;
 `;
 const Span = styled.span`
-  color: navy;
+  color: blue;
   border-radius: 10px;
   &:hover {
     background-color: gold;

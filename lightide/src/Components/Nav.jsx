@@ -1,7 +1,7 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 5 Oct 2021
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -40,12 +40,12 @@ const CheckBoxWrapper = styled.div`
 `;
 const CheckBoxLabel = styled.label`
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 3px;
+  left: 2px;
   width: 42px;
   height: 26px;
-  border-radius: 15px;
-  background: #bebebe;
+  border-radius: 14px;
+  background: rgb(133, 143, 143);
   cursor: pointer;
   &::after {
     content: "";
@@ -56,7 +56,7 @@ const CheckBoxLabel = styled.label`
     margin: 3px;
     background: #ffffff;
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
+    transition: 0.5s;
   }
 `;
 const CheckBox = styled.input`
@@ -74,12 +74,29 @@ const CheckBox = styled.input`
       width: 18px;
       height: 18px;
       margin-left: 21px;
-      transition: 0.2s;
+      transition: 0.5s;
     }
   }
 `;
-
 function Nav() {
+  const [darkMode, setDarkMode] = useState(false);
+  const handleDarkMode = () => {
+    if (darkMode === true) {
+      document.body.classList.remove("dark");
+      let spanList = document.getElementsByTagName("span");
+      for (let i = 0; i < spanList.length; i++) {
+        spanList[i].classList.remove("dark");
+      }
+      setDarkMode(false);
+    } else {
+      document.body.classList.add("dark");
+      let spanList = document.getElementsByTagName("span");
+      for (let i = 0; i < spanList.length; i++) {
+        spanList[i].classList.add("dark");
+      }
+      setDarkMode(true);
+    }
+  };
   return (
     <>
       <Navbar>
@@ -93,7 +110,7 @@ function Nav() {
           <Li>Results</Li>
         </LinkStyled>
         <CheckBoxWrapper>
-          <CheckBox id="checkbox" type="checkbox" />
+          <CheckBox id="checkbox" type="checkbox" onClick={handleDarkMode} />
           <CheckBoxLabel htmlFor="checkbox" />
         </CheckBoxWrapper>
         &#127769;

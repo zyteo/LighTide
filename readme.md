@@ -84,6 +84,8 @@ Modified home page contents.
 10 Oct - Edited home page contents for clarity.
 11 Oct - Converted date/time from ISO format to local format for easier reading.
 Added custom cursor.
+12 Oct - Added dark mode to App.
+Work on comments from soft launch (Sun code + URL useparams + chart + marker on station)
 ```
 
 ### Problem-Solving Strategy
@@ -131,3 +133,5 @@ Media queries for styled components https://jsramblings.com/how-to-use-media-que
 Adding local image https://stackoverflow.com/questions/34582405/react-wont-load-local-images  
 Formatting date https://date-fns.org/v2.25.0/docs/format  
 Idea for converting seconds to hours/mins/sec https://stackoverflow.com/questions/37096367/how-to-convert-seconds-to-minutes-and-hours-in-javascript  
+Adding toggle with styled components https://codesandbox.io/s/6v7n1vr8yn?file=/src/index.js:149-287  
+Editing class https://stackoverflow.com/questions/47706903/add-a-class-to-the-html-body-tag-with-react  
