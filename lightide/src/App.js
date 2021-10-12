@@ -195,7 +195,7 @@ function App() {
         <main>
           <Route exact path="/">
             <Home />
-            <Attribution />
+            <Attribution darkMode={darkMode} />
           </Route>
 
           <Route path="/maps">
@@ -224,7 +224,7 @@ function App() {
             <Button type="submit" onClick={handleToggle}>
               <LinkStyled to="/results">Get details!</LinkStyled>
             </Button>
-            <Attribution />
+            <Attribution darkMode={darkMode} />
           </Route>
           <Route path="/results">
             <h3>Date: {date}</h3>
@@ -248,7 +248,7 @@ function App() {
               />
               <Tides tide={tide} />
             </Results>
-            <Attribution />
+            <Attribution darkMode={darkMode} />
           </Route>
         </main>
       </div>

@@ -9,10 +9,10 @@ const A = styled.a`
   color: black;
 `;
 const Span = styled.span`
-  color: blue;
+  color: ${(props) => (props.dark ? "yellow" : "blue")};
   border-radius: 10px;
   &:hover {
-    background-color: gold;
+    background-color: ${(props) => (props.dark ? "purple" : "gold")};
   }
   &:active {
     background-color: yellowgreen;
@@ -28,16 +28,16 @@ function Attribution({ darkMode }) {
       <P>
         Attribution:
         <A href="https://sunrise-sunset.org/" target="_blank">
-          <Span> Sunrise Sunset,</Span>
+          <Span dark={darkMode ? true : false}> Sunrise Sunset,</Span>
         </A>
         <A href="https://stormglass.io/marine-weather/" target="_blank">
-          <Span> Stormglass,</Span>
+          <Span dark={darkMode ? true : false}> Stormglass,</Span>
         </A>
         <A href="https://www.geoapify.com/" target="_blank">
-          <Span> Geoapify,</Span>
+          <Span dark={darkMode ? true : false}> Geoapify,</Span>
         </A>
         <A href="https://www.mapbox.com/" target="_blank">
-          <Span> Mapbox</Span>
+          <Span dark={darkMode ? true : false}> Mapbox</Span>
         </A>
       </P>
       <P>
@@ -46,7 +46,7 @@ function Attribution({ darkMode }) {
       </P>
       Created Oct 2021 by ZY of GA SEI-32. Github code
       <A href="https://github.com/zyteo/LighTide">
-        <Span> here.</Span>
+        <Span dark={darkMode ? true : false}> here.</Span>
       </A>
     </footer>
   );

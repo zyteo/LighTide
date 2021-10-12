@@ -135,3 +135,4 @@ Formatting date https://date-fns.org/v2.25.0/docs/format
 Idea for converting seconds to hours/mins/sec https://stackoverflow.com/questions/37096367/how-to-convert-seconds-to-minutes-and-hours-in-javascript  
 Adding toggle with styled components https://codesandbox.io/s/6v7n1vr8yn?file=/src/index.js:149-287  
 Editing class https://stackoverflow.com/questions/47706903/add-a-class-to-the-html-body-tag-with-react  
+Dark mode with styled CSS https://dev.to/hyggedev/no-fuss-dark-mode-toggle-with-react-styled-components-3nd4  
