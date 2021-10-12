@@ -103,6 +103,7 @@ function App() {
   const inputTextSearch = useRef();
   const [cleanedText, setCleanedText] = useState("Singapore");
   const [toggle, setToggle] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
   //////////////////////////////// Start of handle functions ////////////////////////////////////////////
@@ -126,6 +127,25 @@ function App() {
   const handleToggle = () => {
     setToggle(!toggle);
     console.log("getting sun/tide data...");
+  };
+
+  // for dark mode on Navbar
+  const handleDarkMode = () => {
+    if (darkMode === true) {
+      document.body.classList.remove("dark");
+      let spanList = document.getElementsByTagName("span");
+      for (let i = 0; i < spanList.length; i++) {
+        spanList[i].classList.remove("dark");
+      }
+      setDarkMode(false);
+    } else {
+      document.body.classList.add("dark");
+      let spanList = document.getElementsByTagName("span");
+      for (let i = 0; i < spanList.length; i++) {
+        spanList[i].classList.add("dark");
+      }
+      setDarkMode(true);
+    }
   };
   //////////////////////////////// End of handle functions ////////////////////////////////////////////
 
@@ -171,7 +191,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Nav />
+        <Nav handleDarkMode={handleDarkMode} />
         <main>
           <Route exact path="/">
             <Home />
@@ -214,7 +234,7 @@ function App() {
             </h3>
             <Results>
               <Sun
-              results = {sun?.results}
+                results={sun?.results}
                 sr={sun?.results?.sunrise}
                 ss={sun?.results?.sunset}
                 sn={sun?.results?.solar_noon}

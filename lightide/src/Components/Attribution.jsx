@@ -22,7 +22,7 @@ const Span = styled.span`
 const P = styled.p`
   margin: 4px;
 `;
-function Attribution() {
+function Attribution({ darkMode }) {
   return (
     <footer className="attribution">
       <P>

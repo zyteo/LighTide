@@ -15,7 +15,12 @@ body.dark {
 span.dark {
   color: yellow;
 }
-
+span.dark:hover {
+  background-color: blue;
+}
+span.dark:active {
+  background-color: yellowgreen;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

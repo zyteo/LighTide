@@ -1,7 +1,7 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 5 Oct 2021
 
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -78,25 +78,7 @@ const CheckBox = styled.input`
     }
   }
 `;
-function Nav() {
-  const [darkMode, setDarkMode] = useState(false);
-  const handleDarkMode = () => {
-    if (darkMode === true) {
-      document.body.classList.remove("dark");
-      let spanList = document.getElementsByTagName("span");
-      for (let i = 0; i < spanList.length; i++) {
-        spanList[i].classList.remove("dark");
-      }
-      setDarkMode(false);
-    } else {
-      document.body.classList.add("dark");
-      let spanList = document.getElementsByTagName("span");
-      for (let i = 0; i < spanList.length; i++) {
-        spanList[i].classList.add("dark");
-      }
-      setDarkMode(true);
-    }
-  };
+function Nav({ handleDarkMode }) {
   return (
     <>
       <Navbar>
