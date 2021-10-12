@@ -133,17 +133,9 @@ function App() {
   const handleDarkMode = () => {
     if (darkMode === true) {
       document.body.classList.remove("dark");
-      let spanList = document.getElementsByTagName("span");
-      for (let i = 0; i < spanList.length; i++) {
-        spanList[i].classList.remove("dark");
-      }
       setDarkMode(false);
     } else {
       document.body.classList.add("dark");
-      let spanList = document.getElementsByTagName("span");
-      for (let i = 0; i < spanList.length; i++) {
-        spanList[i].classList.add("dark");
-      }
       setDarkMode(true);
     }
   };

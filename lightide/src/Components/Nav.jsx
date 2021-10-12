@@ -9,7 +9,7 @@ const Navbar = styled.nav`
   display: flex;
   align-items: center;
   width: 100vw;
-  height: 8vh;
+  height: 6vh;
   padding: 0 20px;
   background-color: lightskyblue;
   &:hover {
@@ -40,10 +40,10 @@ const CheckBoxWrapper = styled.div`
 `;
 const CheckBoxLabel = styled.label`
   position: absolute;
-  top: 3px;
+  top: 5px;
   left: 2px;
-  width: 42px;
-  height: 26px;
+  width: 39px;
+  height: 20px;
   border-radius: 14px;
   background: rgb(133, 143, 143);
   cursor: pointer;
@@ -51,8 +51,8 @@ const CheckBoxLabel = styled.label`
     content: "";
     display: block;
     border-radius: 50%;
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     margin: 3px;
     background: #ffffff;
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
@@ -71,8 +71,8 @@ const CheckBox = styled.input`
       content: "";
       display: block;
       border-radius: 50%;
-      width: 18px;
-      height: 18px;
+      width: 15px;
+      height: 15px;
       margin-left: 21px;
       transition: 0.5s;
     }
