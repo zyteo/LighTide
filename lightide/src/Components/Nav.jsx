@@ -8,7 +8,7 @@ import styled from "styled-components";
 const Navbar = styled.nav`
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 6vh;
   padding: 0 20px;
   background-color: lightskyblue;

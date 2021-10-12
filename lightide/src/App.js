@@ -153,7 +153,7 @@ function App() {
         setSun(response.data);
       });
 
-    //////////////for tide data
+    ////////////for tide data
     axios
       .get(
         `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
