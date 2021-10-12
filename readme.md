@@ -85,8 +85,9 @@ Modified home page contents.
 11 Oct - Converted date/time from ISO format to local format for easier reading.
 Added custom cursor.
 12 Oct - Added dark mode to App.
-Work on comments from soft launch (Sun code + URL useparams + chart + marker on station)
+Work on comments from soft launch (Sun code + URL useparams + chart)
 Added marker on map to point out station.
+Added redirect to homepage.
 ```
 
 ### Problem-Solving Strategy

@@ -3,7 +3,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Route } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import "./App.css";
 import Attribution from "./Components/Attribution";
@@ -153,7 +153,7 @@ function App() {
         setSun(response.data);
       });
 
-    ////////////for tide data
+    //////////////for tide data
     axios
       .get(
         `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
@@ -243,6 +243,7 @@ function App() {
             </Results>
             <Attribution darkMode={darkMode} />
           </Route>
+          <Redirect to="/" />
         </main>
       </div>
     </>
