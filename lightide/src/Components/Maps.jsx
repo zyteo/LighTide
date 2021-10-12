@@ -9,8 +9,9 @@ import {
   TileLayer,
   useMapEvents,
 } from "react-leaflet";
+import { Icon } from "leaflet";
 
-function Map({ coordinates, setCoordinates, cleanedText }) {
+function Map({ coordinates, setCoordinates, cleanedText, tide }) {
   // Get the coordinates of the map when clicking map
   function ClickMap() {
     const map = useMapEvents({
@@ -31,6 +32,10 @@ function Map({ coordinates, setCoordinates, cleanedText }) {
 
     return null;
   }
+  const stationIcon = new Icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/3142/3142415.png",
+    iconSize: [45, 45],
+  });
 
   return (
     <>
@@ -49,6 +54,20 @@ function Map({ coordinates, setCoordinates, cleanedText }) {
             <br /> Latitude: {coordinates.lat}
             <br />
             Longitude: {coordinates.long}
+          </Popup>
+        </Marker>
+        <Marker
+          position={[
+            `${tide?.meta?.station?.lat}`,
+            `${tide?.meta?.station?.lng}`,
+          ]}
+          icon={stationIcon}
+        >
+          <Popup>
+            {tide?.meta?.station?.name} station
+            <br /> Latitude: {tide?.meta?.station?.lat}
+            <br />
+            Longitude: {tide?.meta?.station?.lng}
           </Popup>
         </Marker>
         <ClickMap />

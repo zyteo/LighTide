@@ -154,13 +154,13 @@ function App() {
       });
 
     //////////////for tide data
-    // axios
-    //   .get(
-    //     `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
-    //   )
-    //   .then((response) => {
-    //     setTide(response.data);
-    //   });
+    axios
+      .get(
+        `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
+      )
+      .then((response) => {
+        setTide(response.data);
+      });
   }, [toggle]);
 
   // Geocoding - to get lat/long based on the text searched, renders on every cleanedText change
@@ -212,6 +212,7 @@ function App() {
               coordinates={coordinates}
               setCoordinates={setCoordinates}
               cleanedText={cleanedText}
+              tide={tide}
             />
             <Button type="submit" onClick={handleToggle}>
               <LinkStyled to="/results">Get details!</LinkStyled>

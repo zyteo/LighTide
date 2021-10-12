@@ -86,6 +86,7 @@ Modified home page contents.
 Added custom cursor.
 12 Oct - Added dark mode to App.
 Work on comments from soft launch (Sun code + URL useparams + chart + marker on station)
+Added marker on map to point out station.
 ```
 
 ### Problem-Solving Strategy
