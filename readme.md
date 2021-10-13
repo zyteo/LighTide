@@ -90,7 +90,7 @@ Work on comments from soft launch (Sun code + URL useparams + chart + station ma
 Added marker on map to point out station.
 Added redirect to homepage.
 13 Oct - Tried to update map link on search, scraped efforts since results were not ideal.
-Adding chart.
+Added chart to results, added button on home page, repositioned elements in results page.
 ```
 
 ### Problem-Solving Strategy

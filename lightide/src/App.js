@@ -7,6 +7,7 @@ import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import "./App.css";
 import Attribution from "./Components/Attribution";
+import Chart from "./Components/Chart";
 import Home from "./Components/Home";
 import Map from "./Components/Maps";
 import Nav from "./Components/Nav";
@@ -154,13 +155,13 @@ function App() {
       });
 
     //////////////for tide data
-    axios
-      .get(
-        `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
-      )
-      .then((response) => {
-        setTide(response.data);
-      });
+    // axios
+    //   .get(
+    //     `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
+    //   )
+    //   .then((response) => {
+    //     setTide(response.data);
+    //   });
   }, [toggle]);
 
   // Geocoding - to get lat/long based on the text searched, renders on every cleanedText change
@@ -216,7 +217,7 @@ function App() {
               tide={tide}
             />
             <Button type="submit" onClick={handleToggle}>
-              <LinkStyled to="/results">Get details!</LinkStyled>
+              <LinkStyled to="/results">Get Details!</LinkStyled>
             </Button>
             <Attribution darkMode={darkMode} />
           </Route>
@@ -241,6 +242,7 @@ function App() {
                 atb={sun?.results?.astronomical_twilight_begin}
                 ate={sun?.results?.astronomical_twilight_end}
               />
+              <Chart tide={tide}/>
               <Tides tide={tide} />
             </Results>
             <Attribution darkMode={darkMode} />
