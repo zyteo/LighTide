@@ -28,6 +28,7 @@ Technologies used to build this project.
 - Axios
 - Styled components CSS
 - Date-fns
+- Victory chart
 ```
 
 ### Wireframes
@@ -88,7 +89,8 @@ Added custom cursor.
 Work on comments from soft launch (Sun code + URL useparams + chart + station marker)
 Added marker on map to point out station.
 Added redirect to homepage.
-13 Oct - Attempting to update map link on search.
+13 Oct - Tried to update map link on search, scraped efforts since results were not ideal.
+Adding chart.
 ```
 
 ### Problem-Solving Strategy
@@ -97,8 +99,10 @@ Tides date/time format was given in ISO format, had to use date-fns to convert t
 then format into string.
 
 useParams/useRouteMatch were not helpful with the link updating, params was empty, while useRouteMatch 
-gave delayed response (2 clicks needed) which is same as current solution.
+gave delayed response (2 clicks needed) which is same as current solution.  
+Decided to ditch the map url update, doesn't work as intended.
 
+react time series chart last update was in 2020, did not support current react version. Had to switch to Victory chart library, and create custom time series chart.
 ### Unsolved problems
 
 Search currently only accepts English, might add support for other languages.  
@@ -141,5 +145,8 @@ Formatting date https://date-fns.org/v2.25.0/docs/format
 Idea for converting seconds to hours/mins/sec https://stackoverflow.com/questions/37096367/how-to-convert-seconds-to-minutes-and-hours-in-javascript  
 Adding toggle with styled components https://codesandbox.io/s/6v7n1vr8yn?file=/src/index.js:149-287  
 Editing class https://stackoverflow.com/questions/47706903/add-a-class-to-the-html-body-tag-with-react  
-Dark mode with styled CSS https://dev.to/hyggedev/no-fuss-dark-mode-toggle-with-react-styled-components-3nd4
-useRouteMatch to replace useparams https://reactrouter.com/web/api/Hooks/useroutematch    
+Dark mode with styled CSS https://dev.to/hyggedev/no-fuss-dark-mode-toggle-with-react-styled-components-3nd4  
+useRouteMatch to replace useparams https://reactrouter.com/web/api/Hooks/useroutematch  
+React Time series chart http://software.es.net/react-timeseries-charts/#/example/barchart  
+Victory charts https://formidable.com/open-source/victory/  
+Combining scatter & line plot https://omarshishani.medium.com/add-points-to-victoryline-chart-by-combining-with-scatter-plot-c56d663fbd35  

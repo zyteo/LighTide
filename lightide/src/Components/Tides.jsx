@@ -4,6 +4,12 @@
 import React from "react";
 import styled from "styled-components";
 import { parseISO, format } from "date-fns";
+import {
+  VictoryChart,
+  VictoryLine,
+  VictoryTheme,
+  VictoryScatter,
+} from "victory";
 
 const P = styled.p`
   margin: 3px;
@@ -13,10 +19,15 @@ const Div = styled.div`
 `;
 
 function Tides({ tide }) {
+  const tideseries = [];
+
   // take the tide Prop (JSON data) and map the array, save as tidedetails
   const tidedetails = tide?.data.map((ele) => {
     // convert the time from ISO format to a more readable format
     let localtime = format(parseISO(ele.time), "dd MMM yyyy (eee) pppp");
+    // push in data for the time series chart
+    tideseries.push({ x: ele.time, y: ele.height });
+    console.log(tideseries);
     return (
       <>
         <Div className="tidedetails">
@@ -69,6 +80,24 @@ function Tides({ tide }) {
             (Longitude)
           </div>
           {tidedetails}
+          <VictoryChart
+            scale={{ x: "time" }}
+            height={450}
+            theme={VictoryTheme.material}
+          >
+            <VictoryLine
+              data={tideseries}
+              interpolation="cardinal"
+              style={{
+                data: { stroke: "black" },
+              }}
+            />
+            <VictoryScatter
+              data={tideseries}
+              style={{ data: { fill: "#c43a31" } }}
+              size={3}
+            />
+          </VictoryChart>
         </>
       ) : (
         <>
