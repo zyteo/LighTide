@@ -150,3 +150,4 @@ useRouteMatch to replace useparams https://reactrouter.com/web/api/Hooks/userout
 React Time series chart http://software.es.net/react-timeseries-charts/#/example/barchart  
 Victory charts https://formidable.com/open-source/victory/  
 Combining scatter & line plot https://omarshishani.medium.com/add-points-to-victoryline-chart-by-combining-with-scatter-plot-c56d663fbd35  
+Time series with Victory chart https://medium.com/@michaelbush/using-formidables-victory-chart-library-to-display-data-changing-over-time-a6393a5cd87f  

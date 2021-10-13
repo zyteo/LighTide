@@ -9,6 +9,10 @@ import {
   VictoryLine,
   VictoryTheme,
   VictoryScatter,
+  VictoryLabel,
+  VictoryZoomContainer,
+  VictoryTooltip,
+  VictoryVoronoiContainer,createContainer
 } from "victory";
 
 const P = styled.p`
@@ -21,12 +25,14 @@ const Div = styled.div`
 function Chart({ tide }) {
   const tideseries = [];
 
+  const VictoryZoomCursorContainer = createContainer("zoom", "voronoi");
   // take the tide Prop (JSON data) and map the array, save as tidedetails
   const tidedetails = tide?.data.map((ele) => {
     // convert the time from ISO format to a more readable format
-    let localtime = format(parseISO(ele.time), "dd MMM yyyy (eee) pppp");
+
+    let localtime = new Date(ele.time);
     // push in data for the time series chart
-    tideseries.push({ x: ele.time, y: ele.height });
+    tideseries.push({ x: localtime, y: ele.height });
     console.log(tideseries);
     return (
       <>
@@ -52,7 +58,16 @@ function Chart({ tide }) {
               height={450}
               width={400}
               theme={VictoryTheme.material}
+              containerComponent={
+                <VictoryZoomCursorContainer labels={({ datum }) => `${datum.x}, ${datum.y}`}/>
+              }
             >
+              <VictoryLabel
+                text={"Time Series for " + `${tide?.meta?.station?.name}`}
+                x={225}
+                y={30}
+                textAnchor="middle"
+              />
               <VictoryLine
                 data={tideseries}
                 interpolation="cardinal"
