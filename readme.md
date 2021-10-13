@@ -85,21 +85,25 @@ Modified home page contents.
 11 Oct - Converted date/time from ISO format to local format for easier reading.
 Added custom cursor.
 12 Oct - Added dark mode to App.
-Work on comments from soft launch (Sun code + URL useparams + chart)
+Work on comments from soft launch (Sun code + URL useparams + chart + station marker)
 Added marker on map to point out station.
 Added redirect to homepage.
+13 Oct - Attempting to update map link on search.
 ```
 
 ### Problem-Solving Strategy
 
 Tides date/time format was given in ISO format, had to use date-fns to convert to local time (object),
-then format into string
+then format into string.
 
+useParams/useRouteMatch were not helpful with the link updating, params was empty, while useRouteMatch 
+gave delayed response (2 clicks needed) which is same as current solution.
 
 ### Unsolved problems
 
-Search currently only accepts English, might add support for other languages.
-Tide API limit is 50 requests/day, too little...
+Search currently only accepts English, might add support for other languages.  
+Tide API limit is 50 requests/day, too little...  
+Map link update requires 2 clicks  
 
 ## APIs Used
 
@@ -137,4 +141,5 @@ Formatting date https://date-fns.org/v2.25.0/docs/format
 Idea for converting seconds to hours/mins/sec https://stackoverflow.com/questions/37096367/how-to-convert-seconds-to-minutes-and-hours-in-javascript  
 Adding toggle with styled components https://codesandbox.io/s/6v7n1vr8yn?file=/src/index.js:149-287  
 Editing class https://stackoverflow.com/questions/47706903/add-a-class-to-the-html-body-tag-with-react  
-Dark mode with styled CSS https://dev.to/hyggedev/no-fuss-dark-mode-toggle-with-react-styled-components-3nd4  
+Dark mode with styled CSS https://dev.to/hyggedev/no-fuss-dark-mode-toggle-with-react-styled-components-3nd4
+useRouteMatch to replace useparams https://reactrouter.com/web/api/Hooks/useroutematch    
