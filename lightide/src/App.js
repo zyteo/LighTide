@@ -120,10 +120,7 @@ function App() {
       .replace(/,/, "%2C")
       .replace(".", "%2E")
       .replace(/#/, "%23");
-    console.log(cleanedSearchText);
     setCleanedText(cleanedSearchText);
-    // setSearchLink("/maps/" + cleanedSearchText);
-    // console.log("S", searchLink);
   };
 
   // for the "get details" button
@@ -175,8 +172,8 @@ function App() {
       )
       .then((response) => {
         setCoordinates({
-          long: response?.data?.features?.[0]?.properties?.lon,
-          lat: response?.data?.features?.[0]?.properties?.lat,
+          long: response.data.features[0].properties.lon,
+          lat: response.data.features[0].properties.lat,
         });
       });
     console.log("updated", coordinates.lat, coordinates.long);
@@ -209,13 +206,8 @@ function App() {
               ref={inputTextSearch}
               placeholder="Address / Place name"
             />
-            <LinkStyled to={"/maps/" + cleanedText}>
-              <SearchInput
-                type="submit"
-                value="Search"
-                onClick={handleSearch}
-              />
-            </LinkStyled>
+
+            <SearchInput type="submit" value="Search" onClick={handleSearch} />
 
             <Map
               coordinates={coordinates}
@@ -262,6 +254,7 @@ function App() {
 
 export default App;
 
+// this is a sample tide data
 const tidedata = {
   data: [
     {
