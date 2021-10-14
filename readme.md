@@ -90,7 +90,7 @@ Added chart to results, added button on home page, repositioned elements in resu
 14 Oct - Edited CSS for buttons to account for dark mode.
 Edited chart aesthetics.
 Modified some components to account for reaching daily tide limit.
-Refactor and tidy up code.
+Refactored and tidied up code.
 ```
 
 ### Problem-Solving Strategy

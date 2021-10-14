@@ -12,21 +12,15 @@ import {
 } from "victory";
 
 function Chart({ tide }) {
-  // create array to store the data for the time series chart
-  const tideSeries = [];
-
   // merge both zoom and voronoi containers
   const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
-  // take the tide Prop (JSON data) and map the array, save as tideDetails
+  // create array to store the data for the time series chart
+  const tideSeries = [];
   const tidedetails = tide?.data?.map((ele) => {
     let timeTideDetails = new Date(ele.time);
     // add data for the time series chart
     tideSeries.push({ x: timeTideDetails, y: ele.height });
-    return (
-      <>
-        <div>hi</div>
-      </>
-    );
+    return null;
   });
 
   return (
