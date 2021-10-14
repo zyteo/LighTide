@@ -146,13 +146,13 @@ function App() {
       });
 
     //for tide data
-    // axios
-    //   .get(
-    //     `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
-    //   )
-    //   .then((response) => {
-    //     setTide(response.data);
-    //   });
+    axios
+      .get(
+        `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
+      )
+      .then((response) => {
+        setTide(response.data);
+      });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggle]);
 
