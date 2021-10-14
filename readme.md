@@ -51,10 +51,6 @@ To use the app, user should:
 ---
 
 ## Planning and Development Process
-Plan:
-App should have 3 useState, for sun/tide/map  
-every click on map will update the coordinates for map (controlled input) [Forward geocoding]
-1 useEffect, with 2 fetch API for sun/tide. changes the sun/tide state. On every [toggle], which is button click  
 
 
 ```
@@ -91,6 +87,7 @@ Added marker on map to point out station.
 Added redirect to homepage.
 13 Oct - Tried to update map link on search, scraped efforts since results were not ideal.
 Added chart to results, added button on home page, repositioned elements in results page.
+14 Oct - Work on making website + chart look nicer
 ```
 
 ### Problem-Solving Strategy
@@ -107,19 +104,21 @@ react time series chart last update was in 2020, did not support current react v
 
 Search currently only accepts English, might add support for other languages.  
 Tide API limit is 50 requests/day, too little...  
-Map link update requires 2 clicks  
 
-## APIs Used
+## APIs / Acknowledgments
+APIs
+Geocoding https://apidocs.geoapify.com/playground/geocoding  
+Map static tiles https://www.mapbox.com/  
+Sunrise/sunset https://sunrise-sunset.org/api  
+Tides https://docs.stormglass.io/#/  
 
-Geocoding API https://apidocs.geoapify.com/playground/geocoding  
-Map static tiles API https://www.mapbox.com/  
-Sunrise/sunset API https://sunrise-sunset.org/api  
-Tides API https://docs.stormglass.io/#/  
-
----
-
-## Acknowledgments
-
+npm Libraries
+- React Router + React Router Dom
+- Leaflet + React-leaflet
+- Axios
+- Styled components CSS
+- Date-fns
+- Victory chart
 
 ---
 
