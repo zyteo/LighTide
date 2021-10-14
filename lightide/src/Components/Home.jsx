@@ -29,7 +29,7 @@ const Button = styled.button`
     background-color: rgb(228, 228, 228);
   }
   &:active {
-    background-color: grey;
+    background-color: ${(props) => (props.dark ? "yellow" : "aqua")};
   }
 `;
 const LinkStyled = styled(Link)`
@@ -37,7 +37,7 @@ const LinkStyled = styled(Link)`
   color: black;
 `;
 
-function Home() {
+function Home({darkMode}) {
   return (
     <>
       <h1>Welcome to LighTide Maps!</h1>
@@ -50,7 +50,7 @@ function Home() {
       <P>2. Choose a date. By default, the date is set to today.</P>
       <P>3. Select "Get details!" to retrieve the information.</P>
       <P>Note that tide requests are capped at 50 per day.</P>
-      <Button>
+      <Button dark={darkMode ? true : false}>
         <LinkStyled to="/maps">Let's Go!</LinkStyled>
       </Button>
       <hr></hr>

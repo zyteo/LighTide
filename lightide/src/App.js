@@ -41,7 +41,7 @@ const SearchInput = styled(Input)`
     background-color: rgb(228, 228, 228);
   }
   &:active {
-    background-color: grey;
+    background-color: ${(props) => (props.dark ? "yellow" : "aqua")};
   }
 `;
 const Button = styled.button`
@@ -66,7 +66,7 @@ const Button = styled.button`
     background-color: rgb(228, 228, 228);
   }
   &:active {
-    background-color: grey;
+    background-color: ${(props) => (props.dark ? "yellow" : "aqua")};
   }
 `;
 const Label = styled.label`
@@ -187,7 +187,7 @@ function App() {
         <Nav handleDarkMode={handleDarkMode} />
         <main>
           <Route exact path="/">
-            <Home />
+            <Home darkMode={darkMode} />
             <Attribution darkMode={darkMode} />
           </Route>
 
@@ -208,7 +208,12 @@ function App() {
               placeholder="Address / Place name"
             />
 
-            <SearchInput type="submit" value="Search" onClick={handleSearch} />
+            <SearchInput
+              dark={darkMode ? true : false}
+              type="submit"
+              value="Search"
+              onClick={handleSearch}
+            />
 
             <Map
               coordinates={coordinates}
@@ -216,7 +221,11 @@ function App() {
               cleanedText={cleanedText}
               tide={tide}
             />
-            <Button type="submit" onClick={handleToggle}>
+            <Button
+              dark={darkMode ? true : false}
+              type="submit"
+              onClick={handleToggle}
+            >
               <LinkStyled to="/results">Get Details!</LinkStyled>
             </Button>
             <Attribution darkMode={darkMode} />
@@ -242,7 +251,7 @@ function App() {
                 atb={sun?.results?.astronomical_twilight_begin}
                 ate={sun?.results?.astronomical_twilight_end}
               />
-              <Chart tide={tide}/>
+              <Chart tide={tide} />
               <Tides tide={tide} />
             </Results>
             <Attribution darkMode={darkMode} />

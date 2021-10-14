@@ -2,25 +2,17 @@
 // ZY, 1 Oct 2021
 
 import React from "react";
-import styled from "styled-components";
-import { parseISO, format } from "date-fns";
+
 import {
   VictoryChart,
   VictoryLine,
   VictoryTheme,
   VictoryScatter,
   VictoryLabel,
-  VictoryZoomContainer,
-  VictoryTooltip,
-  VictoryVoronoiContainer,createContainer
+  createContainer
 } from "victory";
 
-const P = styled.p`
-  margin: 3px;
-`;
-const Div = styled.div`
-  margin: 20px 20px 5px 5px;
-`;
+
 
 function Chart({ tide }) {
   const tideseries = [];

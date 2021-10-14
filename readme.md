@@ -87,7 +87,8 @@ Added marker on map to point out station.
 Added redirect to homepage.
 13 Oct - Tried to update map link on search, scraped efforts since results were not ideal.
 Added chart to results, added button on home page, repositioned elements in results page.
-14 Oct - Work on making website + chart look nicer
+14 Oct - Edited CSS for buttons to account for dark mode.
+Now working on making chart look nicer.
 ```
 
 ### Problem-Solving Strategy
