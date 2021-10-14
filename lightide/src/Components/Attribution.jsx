@@ -18,10 +18,10 @@ const Span = styled.span`
     background-color: yellowgreen;
   }
 `;
-
 const P = styled.p`
   margin: 4px;
 `;
+
 function Attribution({ darkMode }) {
   return (
     <footer className="attribution">
@@ -45,7 +45,7 @@ function Attribution({ darkMode }) {
         <em> Use the information presented at your own risk.</em>
       </P>
       Created Oct 2021 by ZY of GA SEI-32. Github code
-      <A href="https://github.com/zyteo/LighTide">
+      <A href="https://github.com/zyteo/LighTide" target="_blank">
         <Span dark={darkMode ? true : false}> here.</Span>
       </A>
     </footer>

@@ -1,6 +1,7 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 6 Oct 2021
 
+import { Icon } from "leaflet";
 import React, { useEffect } from "react";
 import {
   MapContainer,
@@ -9,7 +10,6 @@ import {
   TileLayer,
   useMapEvents,
 } from "react-leaflet";
-import { Icon } from "leaflet";
 
 function Map({ coordinates, setCoordinates, cleanedText, tide }) {
   // Get the coordinates of the map when clicking map
@@ -28,10 +28,10 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
     useEffect(() => {
       console.log("flyto searched position");
       map.flyTo([`${coordinates.lat}`, `${coordinates.long}`]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cleanedText]);
-
-    return null;
   }
+  // create station icon for the tide station marker on map
   const stationIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3142/3142415.png",
     iconSize: [45, 45],
@@ -57,20 +57,24 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
           </Popup>
         </Marker>
         {/* add conditional ternary operator here so that icon only shows if station exists */}
-        {tide.data ? (<Marker
-          position={[
-            `${tide?.meta?.station?.lat}`,
-            `${tide?.meta?.station?.lng}`,
-          ]}
-          icon={stationIcon}
-        >
-          <Popup>
-            {tide?.meta?.station?.name} station
-            <br /> Latitude: {tide?.meta?.station?.lat}
-            <br />
-            Longitude: {tide?.meta?.station?.lng}
-          </Popup>
-        </Marker>) : ""}
+        {tide.data ? (
+          <Marker
+            position={[
+              `${tide?.meta?.station?.lat}`,
+              `${tide?.meta?.station?.lng}`,
+            ]}
+            icon={stationIcon}
+          >
+            <Popup>
+              {tide?.meta?.station?.name} station
+              <br /> Latitude: {tide?.meta?.station?.lat}
+              <br />
+              Longitude: {tide?.meta?.station?.lng}
+            </Popup>
+          </Marker>
+        ) : (
+          ""
+        )}
         <ClickMap />
       </MapContainer>
     </>

@@ -4,6 +4,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 const P = styled.p`
   margin: 8px;
 `;
@@ -24,7 +25,6 @@ const Button = styled.button`
     font-size: 14px;
     position: relative;
   }
-
   &:hover {
     background-color: rgb(228, 228, 228);
   }
@@ -37,7 +37,7 @@ const LinkStyled = styled(Link)`
   color: black;
 `;
 
-function Home({darkMode}) {
+function Home({ darkMode }) {
   return (
     <>
       <h1>Welcome to LighTide Maps!</h1>

@@ -100,7 +100,7 @@ function App() {
   });
   const [date, setDate] = useState(todayDate);
   const [sun, setSun] = useState();
-  const [tide, setTide] = useState("");
+  const [tide, setTide] = useState(tidedata);
   const inputTextSearch = useRef();
   const [cleanedText, setCleanedText] = useState("Singapore");
   const [toggle, setToggle] = useState(false);
@@ -155,13 +155,13 @@ function App() {
       });
 
     ////////////for tide data
-    axios
-      .get(
-        `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
-      )
-      .then((response) => {
-        setTide(response.data);
-      });
+    // axios
+    //   .get(
+    //     `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
+    //   )
+    //   .then((response) => {
+    //     setTide(response.data);
+    //   });
   }, [toggle]);
 
   // Geocoding - to get lat/long based on the text searched, renders on every cleanedText change

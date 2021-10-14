@@ -1,5 +1,5 @@
 // GA SEI 32 Project 2: FrontEnd with API
-// ZY, 1 Oct 2021
+// ZY, 13 Oct 2021
 
 import React from "react";
 import {
@@ -12,18 +12,16 @@ import {
 } from "victory";
 
 function Chart({ tide }) {
-  const tideseries = [];
+  // create array to store the data for the time series chart
+  const tideSeries = [];
 
   // merge both zoom and voronoi containers
   const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
-  // take the tide Prop (JSON data) and map the array, save as tidedetails
+  // take the tide Prop (JSON data) and map the array, save as tideDetails
   const tidedetails = tide?.data?.map((ele) => {
-    // convert the time from ISO format to a more readable format
-
-    let localtime = new Date(ele.time);
-    // push in data for the time series chart
-    tideseries.push({ x: localtime, y: ele.height });
-    console.log(tideseries);
+    let timeTideDetails = new Date(ele.time);
+    // add data for the time series chart
+    tideSeries.push({ x: timeTideDetails, y: ele.height });
     return (
       <>
         <div>hi</div>
@@ -50,18 +48,22 @@ function Chart({ tide }) {
               theme={VictoryTheme.material}
               containerComponent={
                 <VictoryZoomVoronoiContainer
-                  labels={({ datum }) => `${datum.x} \n ${datum.y}`}
+                  labels={({ datum }) => `${datum.x} \n ${datum.y} meters`}
                 />
               }
             >
               <VictoryLabel
-                text={"Time Series based on " + `${tide?.meta?.station?.name}` + " station"}
+                text={
+                  "Time Series based on " +
+                  `${tide?.meta?.station?.name}` +
+                  " station"
+                }
                 x={225}
                 y={30}
                 textAnchor="middle"
               />
               <VictoryLine
-                data={tideseries}
+                data={tideSeries}
                 interpolation="cardinal"
                 style={{
                   data: { stroke: "grey" },
@@ -69,7 +71,7 @@ function Chart({ tide }) {
                 }}
               />
               <VictoryScatter
-                data={tideseries}
+                data={tideSeries}
                 style={{ data: { fill: "#c43a31" } }}
                 size={3}
               />
