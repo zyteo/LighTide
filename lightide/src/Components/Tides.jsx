@@ -11,8 +11,11 @@ const P = styled.p`
 const Div = styled.div`
   margin: 20px 20px 5px 5px;
 `;
+const DivTide = styled(Div)`
+  border: ${(props) => (props.dark ? "2px solid white" : "2px solid black")};
+`;
 
-function Tides({ tide }) {
+function Tides({ tide, darkMode }) {
   // take the tide Prop (JSON data) and map the array, save as tidedetails
   const tidedetails = tide?.data?.map((ele) => {
     // convert the time from ISO format to a more readable format
@@ -20,7 +23,7 @@ function Tides({ tide }) {
 
     return (
       <>
-        <Div className="tidedetails">
+        <DivTide className="tidedetails" dark={darkMode ? true : false}>
           <P>
             <strong>ISO Date/Time: </strong>
             {ele.time}
@@ -29,17 +32,15 @@ function Tides({ tide }) {
             <strong>Local Date/Time: </strong>
             {localtime}
           </P>
-
           <P>
             <strong>Tide: </strong>
             {ele.type}
           </P>
-
           <P>
             <strong>Height: </strong>
             {ele.height} meters
           </P>
-        </Div>
+        </DivTide>
       </>
     );
   });

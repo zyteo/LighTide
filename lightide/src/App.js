@@ -243,7 +243,7 @@ function App() {
                 ate={sun?.results?.astronomical_twilight_end}
               />
               <Chart tide={tide} />
-              <Tides tide={tide} />
+              <Tides tide={tide} darkMode={darkMode}/>
             </Results>
             <Attribution darkMode={darkMode} />
           </Route>

@@ -91,6 +91,7 @@ Added chart to results, added button on home page, repositioned elements in resu
 Edited chart aesthetics.
 Modified some components to account for reaching daily tide limit.
 Refactored and tidied up code.
+15 Oct - Added border around tide data for better readability.
 ```
 
 ### Problem-Solving Strategy
