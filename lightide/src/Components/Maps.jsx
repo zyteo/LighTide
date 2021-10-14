@@ -28,8 +28,9 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
     useEffect(() => {
       console.log("flyto searched position");
       map.flyTo([`${coordinates.lat}`, `${coordinates.long}`]);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cleanedText]);
+    return null;
   }
   // create station icon for the tide station marker on map
   const stationIcon = new Icon({
