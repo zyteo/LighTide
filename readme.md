@@ -103,6 +103,9 @@ gave delayed response (2 clicks needed) which is same as current solution.
 Decided to ditch the map url update, doesn't work as intended.
 
 react time series chart last update was in 2020, did not support current react version. Had to switch to Victory chart library, and create custom time series chart.
+
+Chart title label color could not be changed directly, the dark grey font was hard to see in dark mode.
+Managed to find a solution by adding a background style to the label.
 ### Unsolved problems
 
 Search currently only accepts English, might add support for other languages.  
@@ -153,3 +156,4 @@ React Time series chart http://software.es.net/react-timeseries-charts/#/example
 Victory charts https://formidable.com/open-source/victory/  
 Combining scatter & line plot https://omarshishani.medium.com/add-points-to-victoryline-chart-by-combining-with-scatter-plot-c56d663fbd35  
 Time series with Victory chart https://medium.com/@michaelbush/using-formidables-victory-chart-library-to-display-data-changing-over-time-a6393a5cd87f  
+Adding background to label https://formidable.com/open-source/victory/docs/new  

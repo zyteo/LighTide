@@ -54,13 +54,15 @@ function Chart({ tide }) {
             >
               <VictoryLabel
                 text={
-                  "Time Series based on " +
+                  "Time Series (" +
                   `${tide?.meta?.station?.name}` +
-                  " station"
+                  " station)"
                 }
                 x={225}
                 y={30}
                 textAnchor="middle"
+                backgroundStyle={{ fill: "white", opacity: 1 }}
+                backgroundPadding={{ left: 25, right: 25,bottom: 5, top: 5 }}
               />
               <VictoryLine
                 data={tideSeries}
