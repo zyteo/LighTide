@@ -78,6 +78,7 @@ const CheckBox = styled.input`
     }
   }
 `;
+
 function Nav({ handleDarkMode }) {
   return (
     <>

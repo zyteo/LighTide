@@ -14,7 +14,7 @@ const Div = styled.div`
 
 function Tides({ tide }) {
   // take the tide Prop (JSON data) and map the array, save as tidedetails
- const tidedetails = tide?.data?.map((ele) => {
+  const tidedetails = tide?.data?.map((ele) => {
     // convert the time from ISO format to a more readable format
     let localtime = format(parseISO(ele.time), "dd MMM yyyy (eee) pppp");
 

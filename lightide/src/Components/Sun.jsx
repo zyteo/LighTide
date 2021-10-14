@@ -1,9 +1,10 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 1 Oct 2021
 
+import { format, parseISO } from "date-fns";
 import React from "react";
 import styled from "styled-components";
-import { parseISO, format } from "date-fns";
+
 const Ul = styled.ul`
   list-style-type: none;
 `;
@@ -20,14 +21,14 @@ function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate }) {
   for (let i = 0; i < sunprops.length; i++) {
     sundetails[i] = format(parseISO(sunprops[i]), "dd MMM yyyy (eee) pppp");
   }
-  ////////////////////////////convert the time in ISO to local time//////////////////////
+  ////////////////////////////end of convert the time in ISO to local time//////////////////////
 
   ////////////////////////convert day length in seconds to hours/mins/sec/////////////////
   let hours = Math.floor(dl / 3600);
   let mins = Math.floor((dl - (hours * 3600)) / 60);
   let seconds = (dl - (hours * 3600) - (mins * 60));
   let daylength = `${hours} hours, ${mins} minutes, ${seconds} seconds`
-  ////////////////////////convert day length in seconds to hours/mins/sec/////////////////
+  ////////////////////////end of convert day length in seconds to hours/mins/sec/////////////////
 
   return (
     <div className="sun">
@@ -77,54 +78,6 @@ function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate }) {
         </Li>
       </Ul>
     </div>
-    // Copy of the sun details in ISO format here
-    // <div className="sun">
-    //   <Ul>
-    //     <strong>
-    //       <u>Sunrise & Sunset Times (in UTC)</u>
-    //     </strong>
-    //     <Li>
-    //       <strong> Sunrise: </strong>
-    //       {sr}
-    //     </Li>
-    //     <Li>
-    //       <strong> Sunset: </strong>
-    //       {ss}
-    //     </Li>
-    //     <Li>
-    //       <strong> Solar noon: </strong>
-    //       {sn}
-    //     </Li>
-    //     <Li>
-    //       <strong> Day length: </strong>
-    //       {dl}
-    //     </Li>
-    //     <Li>
-    //       <strong> Civil twilight begin: </strong>
-    //       {ctb}
-    //     </Li>
-    //     <Li>
-    //       <strong> Civil twilight end: </strong>
-    //       {cte}
-    //     </Li>
-    //     <Li>
-    //       <strong> Nautical twilight begin: </strong>
-    //       {ntb}
-    //     </Li>
-    //     <Li>
-    //       <strong> Nautical twilight end: </strong>
-    //       {nte}
-    //     </Li>
-    //     <Li>
-    //       <strong> Astronomical twilight begin: </strong>
-    //       {atb}
-    //     </Li>
-    //     <Li>
-    //       <strong> Astronomical twilight end: </strong>
-    //       {ate}
-    //     </Li>
-    //   </Ul>
-    // </div>
   );
 }
 
