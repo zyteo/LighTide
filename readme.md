@@ -108,10 +108,10 @@ Tide API limit is 50 requests/day, too little...
 
 ## APIs / Acknowledgments
 APIs
-Geocoding https://apidocs.geoapify.com/playground/geocoding  
-Map static tiles https://www.mapbox.com/  
-Sunrise/sunset https://sunrise-sunset.org/api  
-Tides https://docs.stormglass.io/#/  
+- Geocoding https://apidocs.geoapify.com/playground/geocoding  
+- Map static tiles https://www.mapbox.com/  
+- Sunrise/sunset https://sunrise-sunset.org/api  
+- Tides https://docs.stormglass.io/#/  
 
 npm Libraries
 - React Router + React Router Dom

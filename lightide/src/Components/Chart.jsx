@@ -2,22 +2,19 @@
 // ZY, 1 Oct 2021
 
 import React from "react";
-
 import {
+  createContainer,
   VictoryChart,
-  VictoryLine,
-  VictoryTheme,
-  VictoryScatter,
   VictoryLabel,
-  createContainer
+  VictoryLine,
+  VictoryScatter,
+  VictoryTheme,
 } from "victory";
-
-
 
 function Chart({ tide }) {
   const tideseries = [];
 
-  const VictoryZoomCursorContainer = createContainer("zoom", "voronoi");
+  const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
   // take the tide Prop (JSON data) and map the array, save as tidedetails
   const tidedetails = tide?.data.map((ele) => {
     // convert the time from ISO format to a more readable format
@@ -47,11 +44,13 @@ function Chart({ tide }) {
           <div className="timeseries">
             <VictoryChart
               scale={{ x: "time" }}
-              height={450}
-              width={400}
+              height={440}
+              width={650}
               theme={VictoryTheme.material}
               containerComponent={
-                <VictoryZoomCursorContainer labels={({ datum }) => `${datum.x}, ${datum.y}`}/>
+                <VictoryZoomVoronoiContainer
+                  labels={({ datum }) => `${datum.x} \n ${datum.y}`}
+                />
               }
             >
               <VictoryLabel
@@ -65,6 +64,7 @@ function Chart({ tide }) {
                 interpolation="cardinal"
                 style={{
                   data: { stroke: "grey" },
+                  labels: { display: "none" },
                 }}
               />
               <VictoryScatter
