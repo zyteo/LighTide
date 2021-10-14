@@ -1,5 +1,6 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 1 Oct 2021
+
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Route } from "react-router";
@@ -22,18 +23,14 @@ const Input = styled.input`
   box-sizing: border-box;
   cursor: pointer;
   font-size: 16px;
-
   @media only screen and (max-width: 600px) {
-    
     border: 1px solid black;
     border-radius: 6px;
     box-sizing: border-box;
     cursor: pointer;
     font-size: 14px;
     position:relative;
-  
 }
-
   }
 `;
 const SearchInput = styled(Input)`
@@ -52,7 +49,6 @@ const Button = styled.button`
   box-sizing: border-box;
   cursor: pointer;
   font-size: 16px;
-
   @media only screen and (max-width: 600px) {
     border: 1px solid black;
     border-radius: 6px;
@@ -61,7 +57,6 @@ const Button = styled.button`
     font-size: 14px;
     position: relative;
   }
-
   &:hover {
     background-color: rgb(228, 228, 228);
   }
@@ -73,12 +68,10 @@ const Label = styled.label`
   padding: 10px 5px;
   font-size: 16px;
 `;
-
 const LinkStyled = styled(Link)`
   text-decoration: none;
   color: black;
 `;
-
 const Results = styled.div`
   display: flex;
   justify-content: center;
@@ -123,13 +116,11 @@ function App() {
       .replace(/#/, "%23");
     setCleanedText(cleanedSearchText);
   };
-
-  // for the "get details" button
+  // toggle for the "get details" button
   const handleToggle = () => {
     setToggle(!toggle);
     console.log("getting sun/tide data...");
   };
-
   // for dark mode on Navbar
   const handleDarkMode = () => {
     if (darkMode === true) {
@@ -162,6 +153,7 @@ function App() {
     //   .then((response) => {
     //     setTide(response.data);
     //   });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggle]);
 
   // Geocoding - to get lat/long based on the text searched, renders on every cleanedText change
@@ -178,6 +170,7 @@ function App() {
         });
       });
     console.log("updated", coordinates.lat, coordinates.long);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cleanedText]);
   //////////////////////////////// End of useEffect ////////////////////////////////////////////
 
@@ -207,14 +200,12 @@ function App() {
               ref={inputTextSearch}
               placeholder="Address / Place name"
             />
-
             <SearchInput
               dark={darkMode ? true : false}
               type="submit"
               value="Search"
               onClick={handleSearch}
             />
-
             <Map
               coordinates={coordinates}
               setCoordinates={setCoordinates}
