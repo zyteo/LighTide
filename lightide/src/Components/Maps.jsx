@@ -56,7 +56,8 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
             Longitude: {coordinates.long}
           </Popup>
         </Marker>
-        <Marker
+        {/* add conditional ternary operator here so that icon only shows if station exists */}
+        {tide.data ? (<Marker
           position={[
             `${tide?.meta?.station?.lat}`,
             `${tide?.meta?.station?.lng}`,
@@ -69,7 +70,7 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
             <br />
             Longitude: {tide?.meta?.station?.lng}
           </Popup>
-        </Marker>
+        </Marker>) : ""}
         <ClickMap />
       </MapContainer>
     </>

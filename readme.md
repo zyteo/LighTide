@@ -76,7 +76,7 @@ Got the map to focus on position on searching a place. MVP Done!
 Installed styled components for CSS styling.
 8 Oct - Added favicon and tested deployment.
 CSS styling overhaul to make App look better.
-9 Oct - Modified tide component to account for reaching daily limit.
+9 Oct - Modified tide component to account for reaching daily tide limit.
 Modified home page contents.
 10 Oct - Edited home page contents for clarity.
 11 Oct - Converted date/time from ISO format to local format for easier reading.
@@ -89,6 +89,7 @@ Added redirect to homepage.
 Added chart to results, added button on home page, repositioned elements in results page.
 14 Oct - Edited CSS for buttons to account for dark mode.
 Now working on making chart look nicer.
+Modified some components to account for reaching daily tide limit.
 ```
 
 ### Problem-Solving Strategy

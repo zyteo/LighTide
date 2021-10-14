@@ -14,9 +14,10 @@ import {
 function Chart({ tide }) {
   const tideseries = [];
 
+  // merge both zoom and voronoi containers
   const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
   // take the tide Prop (JSON data) and map the array, save as tidedetails
-  const tidedetails = tide?.data.map((ele) => {
+  const tidedetails = tide?.data?.map((ele) => {
     // convert the time from ISO format to a more readable format
 
     let localtime = new Date(ele.time);
@@ -39,7 +40,7 @@ function Chart({ tide }) {
       </p>
 
       {/* ternary conditional operator here in case tide limit reached. */}
-      {tide?.data ? (
+      {tide.data ? (
         <>
           <div className="timeseries">
             <VictoryChart
@@ -54,7 +55,7 @@ function Chart({ tide }) {
               }
             >
               <VictoryLabel
-                text={"Time Series for " + `${tide?.meta?.station?.name}`}
+                text={"Time Series based on " + `${tide?.meta?.station?.name}` + " station"}
                 x={225}
                 y={30}
                 textAnchor="middle"
