@@ -14,6 +14,7 @@ import Map from "./Components/Maps";
 import Nav from "./Components/Nav";
 import Sun from "./Components/Sun";
 import Tides from "./Components/Tides";
+import Datetimeformat from "./Components/Datetimeformat";
 
 const Input = styled.input`
   padding: 3px 3px;
@@ -223,7 +224,7 @@ function App() {
           </Route>
 
           <Route path="/results">
-            <h3>Date: {date}</h3>
+            <h3>Date: <Datetimeformat dateTime={date} dateTimeFormat="dd MMM yyyy "/></h3>
             <h3>
               Results for {coordinates.lat} (latitude), {coordinates.long}
               (longitude)

@@ -1,9 +1,9 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 1 Oct 2021
 
-import { format, parseISO } from "date-fns";
 import React from "react";
 import styled from "styled-components";
+import Datetimeformat from "./Datetimeformat";
 
 const Ul = styled.ul`
   list-style-type: none;
@@ -14,14 +14,7 @@ const Li = styled.li`
 
 // Sun takes in 10 props
 function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate }) {
-  ////////////////////////////convert the time in ISO to local time - 9 props here //////////////////////
-  let sunprops = [sr, ss, sn, ctb, cte, ntb, nte, atb, ate];
-  let sundetails = [];
-
-  for (let i = 0; i < sunprops.length; i++) {
-    sundetails[i] = format(parseISO(sunprops[i]), "dd MMM yyyy (eee) pppp");
-  }
-  ////////////////////////////end of convert the time in ISO to local time//////////////////////
+  const localtime = "dd MMM yyyy (eee) pppp";
 
   ////////////////////////convert day length in seconds to hours/mins/sec/////////////////
   let hours = Math.floor(dl / 3600);
@@ -38,15 +31,15 @@ function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate }) {
         </strong>
         <Li>
           <strong> Sunrise: </strong>
-          {sundetails[0]}
+          <Datetimeformat dateTime={sr} dateTimeFormat={localtime}/>
         </Li>
         <Li>
           <strong> Sunset: </strong>
-          {sundetails[1]}
+          <Datetimeformat dateTime={ss} dateTimeFormat={localtime}/>
         </Li>
         <Li>
           <strong> Solar noon: </strong>
-          {sundetails[2]}
+          <Datetimeformat dateTime={sn} dateTimeFormat={localtime}/>
         </Li>
         <Li>
           <strong> Day length: </strong>
@@ -54,27 +47,27 @@ function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate }) {
         </Li>
         <Li>
           <strong> Civil twilight begin: </strong>
-          {sundetails[3]}
+          <Datetimeformat dateTime={ctb} dateTimeFormat={localtime}/>
         </Li>
         <Li>
           <strong> Civil twilight end: </strong>
-          {sundetails[4]}
+          <Datetimeformat dateTime={cte} dateTimeFormat={localtime}/>
         </Li>
         <Li>
           <strong> Nautical twilight begin: </strong>
-          {sundetails[5]}
+          <Datetimeformat dateTime={ntb} dateTimeFormat={localtime}/>
         </Li>
         <Li>
           <strong> Nautical twilight end: </strong>
-          {sundetails[6]}
+          <Datetimeformat dateTime={nte} dateTimeFormat={localtime}/>
         </Li>
         <Li>
           <strong> Astronomical twilight begin: </strong>
-          {sundetails[7]}
+          <Datetimeformat dateTime={atb} dateTimeFormat={localtime}/>
         </Li>
         <Li>
           <strong> Astronomical twilight end: </strong>
-          {sundetails[8]}
+          <Datetimeformat dateTime={ate} dateTimeFormat={localtime}/>
         </Li>
       </Ul>
     </div>

@@ -1,9 +1,9 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 1 Oct 2021
 
-import { format, parseISO } from "date-fns";
 import React from "react";
 import styled from "styled-components";
+import Datetimeformat from "./Datetimeformat";
 
 const P = styled.p`
   margin: 3px;
@@ -18,8 +18,6 @@ const DivTide = styled(Div)`
 function Tides({ tide, darkMode }) {
   // take the tide Prop (JSON data) and map the array, save as tidedetails
   const tidedetails = tide?.data?.map((ele) => {
-    // convert the time from ISO format to a more readable format
-    let localtime = format(parseISO(ele.time), "dd MMM yyyy (eee) pppp");
 
     return (
       <>
@@ -30,7 +28,7 @@ function Tides({ tide, darkMode }) {
           </P>
           <P>
             <strong>Local Date/Time: </strong>
-            {localtime}
+            <Datetimeformat dateTime={ele.time} dateTimeFormat="dd MMM yyyy (eee) pppp"/>
           </P>
           <P>
             <strong>Tide: </strong>
