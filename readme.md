@@ -92,6 +92,7 @@ Edited chart aesthetics.
 Modified some components to account for reaching daily tide limit.
 Refactored and tidied up code.
 15 Oct - Added border around tide data for better readability.
+Added Datetimeformat component and edited code based on comment from presentation.
 ```
 
 ### Problem-Solving Strategy
