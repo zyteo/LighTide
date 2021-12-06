@@ -8,7 +8,7 @@
 
 1. What in my process and approach to this project would I do differently next time?
 Might probably try out different libraries like MUI and see how it works.
-Started project early so when I learnt of MUI my project was alraedy underway and it wasn't convenient to change.
+Started project early so when I learnt of MUI my project was already underway and it wasn't convenient to change.
 
 2. What in my process and approach to this project went well that I would repeat next time?
 Starting early and breaking things up into different components for easier coding and reference.

@@ -3,8 +3,8 @@
 
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { Route } from "react-router";
-import { Link, Redirect } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "./App.css";
 import Attribution from "./Components/Attribution";
@@ -154,7 +154,7 @@ function App() {
       .then((response) => {
         setTide(response.data);
       });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggle]);
 
   // Geocoding - to get lat/long based on the text searched, renders on every cleanedText change
@@ -171,7 +171,7 @@ function App() {
         });
       });
     console.log("updated", coordinates.lat, coordinates.long);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cleanedText]);
   //////////////////////////////// End of useEffect ////////////////////////////////////////////
 
@@ -179,77 +179,96 @@ function App() {
     <>
       <div className="App">
         <Nav handleDarkMode={handleDarkMode} />
-        <main>
-          <Route exact path="/">
-            <Home darkMode={darkMode} />
-            <Attribution darkMode={darkMode} />
-          </Route>
-
-          <Route path="/maps">
-            <Label for="start">Date:</Label>
-            <Input
-              type="date"
-              id="date"
-              name="selectdate"
-              min="2000-01-01"
-              max="2100-12-31"
-              onChange={handleDateChange}
-            />
-            <Label>Locate a place:</Label>
-            <Input
-              type="text"
-              ref={inputTextSearch}
-              placeholder="Address / Place name"
-            />
-            <SearchInput
-              dark={darkMode ? true : false}
-              type="submit"
-              value="Search"
-              onClick={handleSearch}
-            />
-            <Map
-              coordinates={coordinates}
-              setCoordinates={setCoordinates}
-              cleanedText={cleanedText}
-              tide={tide}
-            />
-            <Button
-              dark={darkMode ? true : false}
-              type="submit"
-              onClick={handleToggle}
-            >
-              <LinkStyled to="/results">Get Details!</LinkStyled>
-            </Button>
-            <Attribution darkMode={darkMode} />
-          </Route>
-
-          <Route path="/results">
-            <h3>Date: <Datetimeformat dateTime={date} dateTimeFormat="dd MMM yyyy "/></h3>
-            <h3>
-              Results for {coordinates.lat} (latitude), {coordinates.long}
-              (longitude)
-            </h3>
-            <Results>
-              <Sun
-                results={sun?.results}
-                sr={sun?.results?.sunrise}
-                ss={sun?.results?.sunset}
-                sn={sun?.results?.solar_noon}
-                dl={sun?.results?.day_length}
-                ctb={sun?.results?.civil_twilight_begin}
-                cte={sun?.results?.civil_twilight_end}
-                ntb={sun?.results?.nautical_twilight_begin}
-                nte={sun?.results?.nautical_twilight_end}
-                atb={sun?.results?.astronomical_twilight_begin}
-                ate={sun?.results?.astronomical_twilight_end}
-              />
-              <Chart tide={tide} />
-              <Tides tide={tide} darkMode={darkMode}/>
-            </Results>
-            <Attribution darkMode={darkMode} />
-          </Route>
-          <Redirect to="/" />
-        </main>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Home darkMode={darkMode} />
+                <Attribution darkMode={darkMode} />
+              </>
+            }
+          />
+          <Route
+            path="/maps"
+            element={
+              <>
+                <Label for="start">Date:</Label>
+                <Input
+                  type="date"
+                  id="date"
+                  name="selectdate"
+                  min="2000-01-01"
+                  max="2100-12-31"
+                  onChange={handleDateChange}
+                />
+                <Label>Locate a place:</Label>
+                <Input
+                  type="text"
+                  ref={inputTextSearch}
+                  placeholder="Address / Place name"
+                />
+                <SearchInput
+                  dark={darkMode ? true : false}
+                  type="submit"
+                  value="Search"
+                  onClick={handleSearch}
+                />
+                <Map
+                  coordinates={coordinates}
+                  setCoordinates={setCoordinates}
+                  cleanedText={cleanedText}
+                  tide={tide}
+                />
+                <Button
+                  dark={darkMode ? true : false}
+                  type="submit"
+                  onClick={handleToggle}
+                >
+                  <LinkStyled to="/results">Get Details!</LinkStyled>
+                </Button>
+                <Attribution darkMode={darkMode} />
+              </>
+            }
+          />
+          <Route
+            path="/results"
+            element={
+              <>
+                <h3>
+                  Date:{" "}
+                  <Datetimeformat
+                    dateTime={date}
+                    dateTimeFormat="dd MMM yyyy "
+                  />
+                </h3>
+                <h3>
+                  Results for {coordinates.lat} (latitude), {coordinates.long}
+                  (longitude)
+                </h3>
+                <Results>
+                  <Sun
+                    results={sun?.results}
+                    sr={sun?.results?.sunrise}
+                    ss={sun?.results?.sunset}
+                    sn={sun?.results?.solar_noon}
+                    dl={sun?.results?.day_length}
+                    ctb={sun?.results?.civil_twilight_begin}
+                    cte={sun?.results?.civil_twilight_end}
+                    ntb={sun?.results?.nautical_twilight_begin}
+                    nte={sun?.results?.nautical_twilight_end}
+                    atb={sun?.results?.astronomical_twilight_begin}
+                    ate={sun?.results?.astronomical_twilight_end}
+                  />
+                  <Chart tide={tide} />
+                  <Tides tide={tide} darkMode={darkMode} />
+                </Results>
+                <Attribution darkMode={darkMode} />
+              </>
+            }
+          />
+        </Routes>
       </div>
     </>
   );

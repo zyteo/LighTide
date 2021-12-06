@@ -12,6 +12,7 @@ import {
 } from "react-leaflet";
 
 function Map({ coordinates, setCoordinates, cleanedText, tide }) {
+  
   // Get the coordinates of the map when clicking map
   function ClickMap() {
     const map = useMapEvents({

@@ -93,6 +93,7 @@ Modified some components to account for reaching daily tide limit.
 Refactored and tidied up code.
 15 Oct - Added border around tide data for better readability.
 Added Datetimeformat component and edited code based on comment from presentation.
+6 Dec - Upgraded react router dom to v6.
 ```
 
 ### Problem-Solving Strategy
