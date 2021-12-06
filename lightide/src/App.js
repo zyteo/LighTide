@@ -236,11 +236,17 @@ function App() {
             path="/results"
             element={
               <>
-                <h3>
-                  Date:{" "}
+              {{date} ? (<><p>Sorry, there is no data.</p><Button
+                  dark={darkMode ? true : false}
+                  type="submit"
+                  onClick={handleToggle}
+                >
+                  <LinkStyled to="/maps">Try again?</LinkStyled>
+                </Button></>) : (<><h3>
+                  Date:
                   <Datetimeformat
                     dateTime={date}
-                    dateTimeFormat="dd MMM yyyy "
+                    dateTimeFormat="dd MMM yyyy"
                   />
                 </h3>
                 <h3>
@@ -265,7 +271,8 @@ function App() {
                   <Tides tide={tide} darkMode={darkMode} />
                 </Results>
                 <Attribution darkMode={darkMode} />
-              </>
+              </>) }
+                </>
             }
           />
         </Routes>
