@@ -1,7 +1,6 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 15 Oct 2021
 
-import React from "react";
 import { format, parseISO } from "date-fns";
 
 function Datetimeformat({ dateTime, dateTimeFormat }) {

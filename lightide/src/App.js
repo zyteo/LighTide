@@ -237,14 +237,10 @@ function App() {
             element={
               <>
                 <h3>
-                  Date:{" "}
-                  <Datetimeformat
-                    dateTime={date}
-                    dateTimeFormat="dd MMM yyyy "
-                  />
+                  Date: {date}
                 </h3>
                 <h3>
-                  Results for {coordinates.lat} (latitude), {coordinates.long}
+                  Results for {coordinates?.lat} (latitude), {coordinates?.long}
                   (longitude)
                 </h3>
                 <Results>
