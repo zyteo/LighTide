@@ -97,6 +97,7 @@ Added Datetimeformat component and edited code based on comment from presentatio
 Fixed results route. Originally when a user keys in /results in their browser, website would just show a blank screen,
 since there is no data set (i.e. no date/coordinates information).
 Used conditional operator to fix this.
+^ Didn't work as intended, undid the changes
 
 ```
 
