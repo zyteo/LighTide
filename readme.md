@@ -118,6 +118,8 @@ Also removed the datetimecomponent for the date in App.js since this causes the 
 
 2 Jul 2023 - Prepare to upgrade react and react router dom to latest version.
 
+3 Jul 2023 - Start react app from scratch again as libraries were too out of date and many were not compatible with each other.
+
 ```
 
 ### Problem-Solving Strategy
