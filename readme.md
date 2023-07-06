@@ -120,6 +120,11 @@ Also removed the datetimecomponent for the date in App.js since this causes the 
 
 3 Jul 2023 - Start react app from scratch again as libraries were too out of date and many were not compatible with each other.
 
+4 Jul 2023 - Installed all required libraries, set up components folder and tested Attribute component. 
+
+5 Jul 2023 - Tried to port over components from old project, but not everything works as intended.
+
+6 Jul 2023 - Instead of reading react router dom documentations, will practice a sample project first before returning to this project. Many changes made to latest version of react router dom, and I would want to explore the new features first.
 ```
 
 ### Problem-Solving Strategy
