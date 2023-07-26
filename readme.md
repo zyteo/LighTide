@@ -125,6 +125,11 @@ Also removed the datetimecomponent for the date in App.js since this causes the 
 5 Jul 2023 - Tried to port over components from old project, but not everything works as intended.
 
 6 Jul 2023 - Instead of reading react router dom documentations, will practice a sample project first before returning to this project. Many changes made to latest version of react router dom, and I would want to explore the new features first.
+
+26 Jul 2023 - After going through tutorial, decide to restart whole project from scratch. 
+Instead of only upgrading react router dom, might as well overhaul the app while I am working on it.
+Added home component to App.js
+
 ```
 
 ### Problem-Solving Strategy
