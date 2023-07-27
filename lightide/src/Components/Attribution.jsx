@@ -9,10 +9,10 @@ const A = styled.a`
   color: black;
 `;
 const Span = styled.span`
-  color: ${(props) => (props.dark ? "yellow" : "blue")};
+  color: ${(props) => (props.dark ? "gold" : "blue")};
   border-radius: 10px;
   &:hover {
-    background-color: ${(props) => (props.dark ? "purple" : "gold")};
+    background-color: ${(props) => (props.dark ? "blue" : "gold")};
   }
   &:active {
     background-color: yellowgreen;
