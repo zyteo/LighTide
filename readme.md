@@ -130,6 +130,19 @@ Also removed the datetimecomponent for the date in App.js since this causes the 
 Instead of only upgrading react router dom, might as well overhaul the app while I am working on it.
 Added home component to App.js
 
+27 Jul 2023 - Adjusted css for the dark mode to work.
+Planning on looking at each components first before working to piece them together. 
+Aiming to go in this order, from least dependencies to most dependencies and by logic:
+-[x] Nav
+-[x] Attribution
+-[x] Home
+-[ ] Maps
+-[ ] Sun
+-[ ] Tides
+-[ ] Chart
+-[ ] Datetimeformat
+
+
 ```
 
 ### Problem-Solving Strategy
