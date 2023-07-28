@@ -144,6 +144,8 @@ Aiming to go in this order, from least dependencies to most dependencies and by 
 
 Adjusted attribution link colours.
 
+28 Jul 2023 - Decided to challenge myself and add localisation during this overhaul.
+
 ```
 
 ### Problem-Solving Strategy
