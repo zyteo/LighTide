@@ -120,18 +120,18 @@ Also removed the datetimecomponent for the date in App.js since this causes the 
 
 3 Jul 2023 - Start react app from scratch again as libraries were too out of date and many were not compatible with each other.
 
-4 Jul 2023 - Installed all required libraries, set up components folder and tested Attribute component. 
+4 Jul 2023 - Installed all required libraries, set up components folder and tested Attribute component.
 
 5 Jul 2023 - Tried to port over components from old project, but not everything works as intended.
 
 6 Jul 2023 - Instead of reading react router dom documentations, will practice a sample project first before returning to this project. Many changes made to latest version of react router dom, and I would want to explore the new features first.
 
-26 Jul 2023 - After going through tutorial, decide to restart whole project from scratch. 
+26 Jul 2023 - After going through tutorial, decide to restart whole project from scratch.
 Instead of only upgrading react router dom, might as well overhaul the app while I am working on it.
 Added home component to App.js
 
 27 Jul 2023 - Adjusted css for the dark mode to work.
-Planning on looking at each components first before working to piece them together. 
+Planning on looking at each components first before working to piece them together.
 Aiming to go in this order, from least dependencies to most dependencies and by logic:
 -[x] Nav
 -[x] Attribution
@@ -146,7 +146,7 @@ Adjusted attribution link colours.
 
 28 Jul 2023 - Decided to challenge myself and add localisation during this overhaul.
 Localisation:
--[ ] Nav
+-[x] Nav
 -[ ] Attribution
 -[ ] Home
 -[ ] Maps
@@ -154,6 +154,10 @@ Localisation:
 -[ ] Tides
 -[ ] Chart
 -[ ] Datetimeformat
+
+Added setState for language.
+
+29 Jul 2023 - Integrated selection for language into navbar.
 
 ```
 

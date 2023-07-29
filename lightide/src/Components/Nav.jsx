@@ -10,7 +10,6 @@ const Navbar = styled.nav`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 6vh;
   padding: 0 20px;
   background-color: lightskyblue;
   &:hover {
@@ -80,9 +79,14 @@ const CheckBox = styled.input`
   }
 `;
 
-const Select = styled.select``;
+const Select = styled.select`
+  margin-left: 20px;
+  font-size: 16px;
+`;
 
-const Option = styled.option``;
+const Option = styled.option`
+  font-size: 16px;
+`;
 function Nav({ handleDarkMode, language, setLanguage }) {
   const handleLanguage = (event) => {
     setLanguage(event.target.value);
@@ -91,25 +95,25 @@ function Nav({ handleDarkMode, language, setLanguage }) {
     <>
       <Navbar>
         <LinkStyled to="/">
-          <Li>Home</Li>
+          <Li>{text[language].navHome}</Li>
         </LinkStyled>
         <LinkStyled to="/maps">
-          <Li>LighTide</Li>
+          <Li>{text[language].navLT}</Li>
         </LinkStyled>
         <LinkStyled to="/results">
-          <Li>Results</Li>
+          <Li>{text[language].navResults}</Li>
         </LinkStyled>
         <CheckBoxWrapper>
           <CheckBox id="checkbox" type="checkbox" onClick={handleDarkMode} />
           <CheckBoxLabel htmlFor="checkbox" />
         </CheckBoxWrapper>
         &#127769;
+        <Select onClick={(event) => handleLanguage(event)}>
+          <Option value="English">English</Option>
+          <Option value="简体中文">简体中文</Option>
+          <Option value="繁体中文">繁体中文</Option>
+        </Select>
       </Navbar>
-      <Select onClick={(event) => handleLanguage(event)}>
-        <Option value="English">English</Option>
-        <Option value="简体中文">简体中文</Option>
-        <Option value="繁体中文">繁体中文</Option>
-      </Select>
     </>
   );
 }
