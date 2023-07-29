@@ -29,8 +29,8 @@ function App() {
         language={language}
         setLanguage={setLanguage}
       />
-      <Home darkMode={darkMode} />
-      <Attribution darkMode={darkMode} />
+      <Home darkMode={darkMode} language={language} />
+      <Attribution darkMode={darkMode} language={language} />
     </div>
   );
 }

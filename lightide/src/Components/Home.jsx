@@ -37,7 +37,7 @@ const LinkStyled = styled(Link)`
   color: black;
 `;
 
-function Home({ darkMode }) {
+function Home({ darkMode, language }) {
   return (
     <>
       <h1>Welcome to LighTide Maps!</h1>

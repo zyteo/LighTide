@@ -3,6 +3,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import { text } from "../Localisation/text";
 
 const A = styled.a`
   text-decoration: none;
@@ -22,11 +23,11 @@ const P = styled.p`
   margin: 4px;
 `;
 
-function Attribution({ darkMode }) {
+function Attribution({ darkMode, language }) {
   return (
     <footer className="attribution">
       <P>
-        Attribution:
+        {text[language].attributionText}
         <A href="https://sunrise-sunset.org/" target="_blank">
           <Span dark={darkMode ? true : false}> Sunrise Sunset,</Span>
         </A>
@@ -41,12 +42,14 @@ function Attribution({ darkMode }) {
         </A>
       </P>
       <P>
-        <strong>Nature is unpredictable.</strong>
-        <em> Use the information presented at your own risk.</em>
+        <strong>{text[language].attributionWarning}</strong>
+        <em> {text[language].attributionReminder}</em>
       </P>
-      Created Oct 2021 by ZY of GA SEI-32. Github code
+      {text[language].attributionLink}
       <A href="https://github.com/zyteo/LighTide" target="_blank">
-        <Span dark={darkMode ? true : false}> here.</Span>
+        <Span dark={darkMode ? true : false}>
+          {text[language].attributionLinkSpan}
+        </Span>
       </A>
     </footer>
   );
