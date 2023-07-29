@@ -136,6 +136,7 @@ Aiming to go in this order, from least dependencies to most dependencies and by 
 -[x] Nav
 -[x] Attribution
 -[x] Home
+-[ ] SearchDetails
 -[ ] Maps
 -[ ] Sun
 -[ ] Tides
@@ -149,6 +150,7 @@ Localisation:
 -[x] Nav
 -[x] Attribution
 -[x] Home
+-[ ] SearchDetails
 -[ ] Maps
 -[ ] Sun
 -[ ] Tides
@@ -159,6 +161,8 @@ Added setState for language.
 
 29 Jul 2023 - Integrated selection for language into navbar.
 Localised navbar, attribution, home.
+Added new search details component.
+Also now with localisation, map search might need adjustment to account for different languages.
 
 ```
 
