@@ -4,6 +4,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { text } from "../Localisation/text";
 
 const P = styled.p`
   margin: 8px;
@@ -40,18 +41,14 @@ const LinkStyled = styled(Link)`
 function Home({ darkMode, language }) {
   return (
     <>
-      <h1>Welcome to LighTide Maps!</h1>
-      <h2>
-        Get sunrise / sunset & tide details based on the location and date.
-      </h2>
-      <P>
-        1. Search a place / Select a point on the map to pinpoint a location.
-      </P>
-      <P>2. Choose a date. By default, the date is set to today.</P>
-      <P>3. Select "Get details!" to retrieve the information.</P>
-      <P>Note that tide requests are capped at 50 per day.</P>
+      <h1>{text[language].homeWelcome}</h1>
+      <h2>{text[language].homeIntro}</h2>
+      <P>{text[language].home1}</P>
+      <P>{text[language].home2}</P>
+      <P>{text[language].home3}</P>
+      <P>{text[language].homeNote}</P>
       <Button dark={darkMode ? true : false}>
-        <LinkStyled to="/maps">Let's Go!</LinkStyled>
+        <LinkStyled to="/maps">{text[language].homeButton}</LinkStyled>
       </Button>
       <hr></hr>
     </>

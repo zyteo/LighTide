@@ -148,7 +148,7 @@ Adjusted attribution link colours.
 Localisation:
 -[x] Nav
 -[x] Attribution
--[ ] Home
+-[x] Home
 -[ ] Maps
 -[ ] Sun
 -[ ] Tides
@@ -158,7 +158,7 @@ Localisation:
 Added setState for language.
 
 29 Jul 2023 - Integrated selection for language into navbar.
-Localised navbar, attribution.
+Localised navbar, attribution, home.
 
 ```
 
