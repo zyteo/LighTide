@@ -164,6 +164,8 @@ Localised navbar, attribution, home.
 Added new search details component.
 Also now with localisation, map search might need adjustment to account for different languages.
 
+30 Jul 2023 - Build up search details component.
+
 ```
 
 ### Problem-Solving Strategy
