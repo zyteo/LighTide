@@ -17,6 +17,9 @@ export const text = {
     home3: `3. Select "Get details!" to retrieve the information.`,
     homeNote: "Note that tide requests are capped at 50 per day.",
     homeButton: "Let's Go!",
+    searchDetailsDate: "Date:",
+    searchDetailsLocation: "Locate a place:",
+    searchDetailsButton: "Search",
   },
   简体中文: {
     navHome: "主页",
@@ -34,6 +37,9 @@ export const text = {
     home3: `3. 选择“获取详情！”以检索信息。`,
     homeNote: "请注意，潮汐请求每天限制为50个。",
     homeButton: "走吧！",
+    searchDetailsDate: "日期:",
+    searchDetailsLocation: "搜索地点:",
+    searchDetailsButton: "搜索",
   },
   繁体中文: {
     navHome: "主頁",
@@ -51,5 +57,8 @@ export const text = {
     home3: `3. 選擇“獲取詳情！”以檢索信息。`,
     homeNote: "請注意，潮汐請求每天限制為50個。",
     homeButton: "走吧！",
+    searchDetailsDate: "日期:",
+    searchDetailsLocation: "搜索地點:",
+    searchDetailsButton: "搜索",
   },
 };

@@ -1,6 +1,7 @@
 // GA SEI 32 Project 2: FrontEnd with API
 // ZY, 29 Jul 2023
 import styled from "styled-components";
+import { text } from "../Localisation/text";
 
 const Input = styled.input`
   padding: 3px 3px;
@@ -42,7 +43,7 @@ function SearchDetails({
 }) {
   return (
     <>
-      <Label for="start">Date:</Label>
+      <Label for="start">{text[language].searchDetailsDate}</Label>
       <Input
         type="date"
         id="date"
@@ -51,7 +52,7 @@ function SearchDetails({
         max="2100-12-31"
         onChange={handleDateChange}
       />
-      <Label>Locate a place:</Label>
+      <Label>{text[language].searchDetailsLocation}</Label>
       <Input
         type="text"
         ref={inputTextSearch}
@@ -60,7 +61,7 @@ function SearchDetails({
       <SearchInput
         dark={darkMode ? true : false}
         type="submit"
-        value="Search"
+        value={text[language].searchDetailsButton}
         onClick={handleSearch}
       />
     </>

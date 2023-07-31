@@ -136,7 +136,7 @@ Aiming to go in this order, from least dependencies to most dependencies and by 
 -[x] Nav
 -[x] Attribution
 -[x] Home
--[ ] SearchDetails
+-[x] SearchDetails
 -[ ] Maps
 -[ ] Sun
 -[ ] Tides
@@ -150,7 +150,7 @@ Localisation:
 -[x] Nav
 -[x] Attribution
 -[x] Home
--[ ] SearchDetails
+-[x] SearchDetails
 -[ ] Maps
 -[ ] Sun
 -[ ] Tides
