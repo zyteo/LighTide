@@ -166,6 +166,9 @@ Also now with localisation, map search might need adjustment to account for diff
 
 30 Jul 2023 - Build up search details component.
 
+31 Jul 2023 - Continue with search details component.
+renamed cleanedText to processedText to better reflect its purpose.
+
 ```
 
 ### Problem-Solving Strategy

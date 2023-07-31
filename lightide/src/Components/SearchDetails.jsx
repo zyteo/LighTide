@@ -33,7 +33,13 @@ const Label = styled.label`
   font-size: 16px;
 `;
 
-function SearchDetails({ handleDateChange, inputTextSearch, darkMode, language, handleSearch }) {
+function SearchDetails({
+  handleDateChange,
+  inputTextSearch,
+  darkMode,
+  language,
+  handleSearch,
+}) {
   return (
     <>
       <Label for="start">Date:</Label>
