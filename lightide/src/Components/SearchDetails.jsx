@@ -56,7 +56,7 @@ function SearchDetails({
       <Input
         type="text"
         ref={inputTextSearch}
-        placeholder="Address / Place name"
+        placeholder={text[language].searchPlaceholder}
       />
       <SearchInput
         dark={darkMode ? true : false}

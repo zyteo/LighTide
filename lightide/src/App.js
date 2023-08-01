@@ -4,7 +4,7 @@ import Attribution from "./Components/Attribution";
 import Home from "./Components/Home";
 import Nav from "./Components/Nav";
 import SearchDetails from "./Components/SearchDetails";
-
+import Map from "./Components/Maps";
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -66,6 +66,7 @@ function App() {
         language={language}
         handleSearch={handleSearch}
       />
+
       <Attribution darkMode={darkMode} language={language} />
     </div>
   );

@@ -170,6 +170,8 @@ Also now with localisation, map search might need adjustment to account for diff
 renamed cleanedText to processedText to better reflect its purpose.
 Localised searchdetails.
 
+1 Aug 2023 - Localised maps and sun components.
+
 ```
 
 ### Problem-Solving Strategy

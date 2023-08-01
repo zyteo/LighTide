@@ -10,8 +10,9 @@ import {
   TileLayer,
   useMapEvents,
 } from "react-leaflet";
+import { text } from "../Localisation/text";
 
-function Map({ coordinates, setCoordinates, cleanedText, tide }) {
+function Map({ coordinates, setCoordinates, cleanedText, tide, language }) {
   // Get the coordinates of the map when clicking map
   function ClickMap() {
     const map = useMapEvents({
@@ -51,10 +52,10 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
         />
         <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
           <Popup>
-            Selected point
-            <br /> Latitude: {coordinates.lat}
+            {text[language].mapsPopup}
+            <br /> {text[language].mapsLatitude}: {coordinates.lat}
             <br />
-            Longitude: {coordinates.long}
+            {text[language].mapsLongitude}: {coordinates.long}
           </Popup>
         </Marker>
         {/* add conditional ternary operator here so that icon only shows if station exists */}
@@ -67,10 +68,10 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
             icon={stationIcon}
           >
             <Popup>
-              {tide?.meta?.station?.name} station
-              <br /> Latitude: {tide?.meta?.station?.lat}
+              {tide?.meta?.station?.name} {text[language].mapsStation}
+              <br /> {text[language].mapsLatitude}: {tide?.meta?.station?.lat}
               <br />
-              Longitude: {tide?.meta?.station?.lng}
+              {text[language].mapsLongitude}: {tide?.meta?.station?.lng}
             </Popup>
           </Marker>
         ) : (
