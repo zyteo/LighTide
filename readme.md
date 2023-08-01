@@ -151,7 +151,7 @@ Localisation:
 -[x] Attribution
 -[x] Home
 -[x] SearchDetails
--[ ] Maps
+-[x] Maps
 -[ ] Sun
 -[ ] Tides
 -[ ] Chart
