@@ -152,7 +152,7 @@ Localisation:
 -[x] Home
 -[x] SearchDetails
 -[x] Maps
--[ ] Sun
+-[x] Sun
 -[ ] Tides
 -[ ] Chart
 -[ ] Datetimeformat
@@ -171,6 +171,9 @@ renamed cleanedText to processedText to better reflect its purpose.
 Localised searchdetails.
 
 1 Aug 2023 - Localised maps and sun components.
+
+2 Aug 2023 - Working on maps component. Latest react leaflet v0.4 is quite different from previous v0.3
+Will need to read up docs.
 
 ```
 

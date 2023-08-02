@@ -19,6 +19,11 @@ function App() {
   const [date, setDate] = useState(todayDate);
   const inputTextSearch = useRef();
   const [processedText, setProcessedText] = useState("Singapore");
+  const [coordinates, setCoordinates] = useState({
+    lat: 1.357107,
+    long: 103.8194992,
+  });
+  const tide = {};
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
   //////////////////////////////// Start of handle functions ////////////////////////////////////////////
@@ -58,16 +63,23 @@ function App() {
         language={language}
         setLanguage={setLanguage}
       />
-      <Home darkMode={darkMode} language={language} />
+      {/* <Home darkMode={darkMode} language={language} />
       <SearchDetails
         handleDateChange={handleDateChange}
         inputTextSearch={inputTextSearch}
         darkMode={darkMode}
         language={language}
         handleSearch={handleSearch}
+      /> */}
+      <Map
+        coordinates={coordinates}
+        setCoordinates={setCoordinates}
+        processedText={processedText}
+        tide={tide}
+        language={language}
       />
 
-      <Attribution darkMode={darkMode} language={language} />
+      {/* <Attribution darkMode={darkMode} language={language} /> */}
     </div>
   );
 }

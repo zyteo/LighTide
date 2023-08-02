@@ -12,7 +12,7 @@ import {
 } from "react-leaflet";
 import { text } from "../Localisation/text";
 
-function Map({ coordinates, setCoordinates, cleanedText, tide, language }) {
+function Map({ coordinates, setCoordinates, processedText, tide, language }) {
   // Get the coordinates of the map when clicking map
   function ClickMap() {
     const map = useMapEvents({
@@ -30,7 +30,7 @@ function Map({ coordinates, setCoordinates, cleanedText, tide, language }) {
       console.log("flyto searched position");
       map.flyTo([`${coordinates.lat}`, `${coordinates.long}`]);
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cleanedText]);
+    }, [processedText]);
     return null;
   }
   // create station icon for the tide station marker on map
