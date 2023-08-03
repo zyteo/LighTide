@@ -175,6 +175,8 @@ Localised searchdetails.
 2 Aug 2023 - Working on maps component. Latest react leaflet v0.4 is quite different from previous v0.3
 Will need to read up docs.
 
+3 Aug 2023 - Read up react leaflet docs, and leaflet docs. Older leaflet version was 1.7.1, latest one is 1.9.4.
+
 ```
 
 ### Problem-Solving Strategy

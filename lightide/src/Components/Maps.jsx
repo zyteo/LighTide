@@ -43,7 +43,7 @@ function Map({ coordinates, setCoordinates, processedText, tide, language }) {
     <>
       <MapContainer
         center={[`${coordinates.lat}`, `${coordinates.long}`]}
-        zoom={14}
+        zoom={13}
         scrollWheelZoom={true}
       >
         <TileLayer
