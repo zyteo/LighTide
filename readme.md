@@ -177,6 +177,9 @@ Will need to read up docs.
 
 3 Aug 2023 - Read up react leaflet docs, and leaflet docs. Older leaflet version was 1.7.1, latest one is 1.9.4.
 
+4 Aug 2023 - Trying to pinpoint issue. Might be the tilelayer that is causing maps to look disconnected.
+Investigated tilelayer and don't think it is the cause.
+Might have to rework map component.
 ```
 
 ### Problem-Solving Strategy
