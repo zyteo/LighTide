@@ -71,13 +71,14 @@ function App() {
         language={language}
         handleSearch={handleSearch}
       /> */}
-      <Map
+      {/* <Map
         coordinates={coordinates}
         setCoordinates={setCoordinates}
         processedText={processedText}
         tide={tide}
         language={language}
-      />
+      /> */}
+      <Map />
 
       {/* <Attribution darkMode={darkMode} language={language} /> */}
     </div>

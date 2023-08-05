@@ -180,6 +180,10 @@ Will need to read up docs.
 4 Aug 2023 - Trying to pinpoint issue. Might be the tilelayer that is causing maps to look disconnected.
 Investigated tilelayer and don't think it is the cause.
 Might have to rework map component.
+
+5 Aug 2023 - Tried using map example from leaflet website, but map tile still not displaying right.
+https://react-leaflet.js.org/docs/start-setup/
+Will look at set up again.
 ```
 
 ### Problem-Solving Strategy
