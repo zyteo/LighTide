@@ -184,6 +184,8 @@ Might have to rework map component.
 5 Aug 2023 - Tried using map example from leaflet website, but map tile still not displaying right.
 https://react-leaflet.js.org/docs/start-setup/
 Will look at set up again.
+
+7 Aug 2023 - Followed leaflet's install guide but maps still not loading properly.
 ```
 
 ### Problem-Solving Strategy
