@@ -63,24 +63,24 @@ function App() {
         language={language}
         setLanguage={setLanguage}
       />
-      {/* <Home darkMode={darkMode} language={language} />
+      <Home darkMode={darkMode} language={language} />
       <SearchDetails
         handleDateChange={handleDateChange}
         inputTextSearch={inputTextSearch}
         darkMode={darkMode}
         language={language}
         handleSearch={handleSearch}
-      /> */}
-      {/* <Map
+      />
+      <Map
         coordinates={coordinates}
         setCoordinates={setCoordinates}
         processedText={processedText}
         tide={tide}
         language={language}
-      /> */}
-      <Map />
+      />
+      {/* <Map /> */}
 
-      {/* <Attribution darkMode={darkMode} language={language} /> */}
+      <Attribution darkMode={darkMode} language={language} />
     </div>
   );
 }
