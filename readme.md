@@ -186,6 +186,8 @@ https://react-leaflet.js.org/docs/start-setup/
 Will look at set up again.
 
 7 Aug 2023 - Followed leaflet's install guide but maps still not loading properly.
+
+8 Aug 2023 - Commented out the marker and map seems to display fine. Might be the marker issue.
 ```
 
 ### Problem-Solving Strategy
