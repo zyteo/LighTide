@@ -1,10 +1,11 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./App.css";
 import Attribution from "./Components/Attribution";
 import Home from "./Components/Home";
 import Nav from "./Components/Nav";
 import SearchDetails from "./Components/SearchDetails";
 import Map from "./Components/Maps";
+import axios from "axios";
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -56,6 +57,24 @@ function App() {
 
   //////////////////////////////// End of handle functions ////////////////////////////////////////////
 
+  //////////////////////////////// Start of useEffect ////////////////////////////////////////////
+  // Geocoding - to get lat/long based on the text searched, renders on every processedText change
+  useEffect(() => {
+    //geocode API
+    axios
+      .get(
+        `https://api.geoapify.com/v1/geocode/search?text=${processedText}&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
+      )
+      .then((response) => {
+        setCoordinates({
+          long: response.data.features[0].properties.lon,
+          lat: response.data.features[0].properties.lat,
+        });
+      });
+    console.log("updated", coordinates.lat, coordinates.long);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [processedText]);
+  //////////////////////////////// End of useEffect ////////////////////////////////////////////
   return (
     <div className="App">
       <Nav
