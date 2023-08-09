@@ -78,7 +78,6 @@ function App() {
         tide={tide}
         language={language}
       />
-      {/* <Map /> */}
 
       <Attribution darkMode={darkMode} language={language} />
     </div>

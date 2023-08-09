@@ -191,6 +191,7 @@ Will look at set up again.
 Added marker back and everything is ok. Might be set up on 7 Aug that fixed it.
 Nice! Maps work now.
 
+9 Aug 2023 - Removed testing map components.
 ```
 
 ### Problem-Solving Strategy
