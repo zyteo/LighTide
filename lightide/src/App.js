@@ -6,6 +6,8 @@ import Nav from "./Components/Nav";
 import SearchDetails from "./Components/SearchDetails";
 import Map from "./Components/Maps";
 import axios from "axios";
+import Sun from "./Components/Sun";
+
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -24,6 +26,7 @@ function App() {
     lat: 1.357107,
     long: 103.8194992,
   });
+  const [sunDetails, setSunDetails] = useState();
   const tide = {};
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
@@ -54,6 +57,11 @@ function App() {
       .replace(/#/, "%23");
     setProcessedText(processedSearchText);
   };
+  // toggle for the "get details" button
+  const handleToggle = () => {
+    setToggle(!toggle);
+    console.log("getting sun/tide data...");
+  };
 
   //////////////////////////////// End of handle functions ////////////////////////////////////////////
 
@@ -74,6 +82,20 @@ function App() {
     console.log("updated", coordinates.lat, coordinates.long);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [processedText]);
+
+  // To get sun + tides data for particular lat/long/date
+  useEffect(() => {
+    // for sunrise/sunset data
+    axios
+      .get(
+        `https://api.sunrise-sunset.org/json?lat=${coordinates.lat}&lng=${coordinates.long}&date=${date}&formatted=0`
+      )
+      .then((response) => {
+        setSunDetails(response.data);
+      });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toggle]);
   //////////////////////////////// End of useEffect ////////////////////////////////////////////
   return (
     <div className="App">
@@ -96,6 +118,19 @@ function App() {
         processedText={processedText}
         tide={tide}
         language={language}
+      />
+      <Sun
+        results={sunDetails?.results}
+        sr={sunDetails?.results?.sunrise}
+        ss={sunDetails?.results?.sunset}
+        sn={sunDetails?.results?.solar_noon}
+        dl={sunDetails?.results?.day_length}
+        ctb={sunDetails?.results?.civil_twilight_begin}
+        cte={sunDetails?.results?.civil_twilight_end}
+        ntb={sunDetails?.results?.nautical_twilight_begin}
+        nte={sunDetails?.results?.nautical_twilight_end}
+        atb={sunDetails?.results?.astronomical_twilight_begin}
+        ate={sunDetails?.results?.astronomical_twilight_end}
       />
 
       <Attribution darkMode={darkMode} language={language} />

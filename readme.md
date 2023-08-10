@@ -197,6 +197,7 @@ Added useEffect for the searching of text. Map will flyover to searched location
 10 Aug 2023 - Draw diagram for app.
 Based on API checks, tide limit might have been reduced from 50 to 10.
 Might also relook at mapbox and see if I still want to continue using mapbox styles.
+Adjusted app.js to account for sun component.
 
 ```
 
