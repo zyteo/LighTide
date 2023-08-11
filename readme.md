@@ -200,6 +200,8 @@ Might also relook at mapbox and see if I still want to continue using mapbox sty
 Adjusted app.js to account for sun component.
 
 11 Aug 2023 - Adjusted drawio diagram to better reflect app architecture.
+Added language to sun component.
+Receiving invalid time error. Need to check DateTime component.
 
 ```
 

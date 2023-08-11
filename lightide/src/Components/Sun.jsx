@@ -14,7 +14,7 @@ const Li = styled.li`
 `;
 
 // Sun takes in 10 props
-function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate }) {
+function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate, language }) {
   const localtime = "dd MMM yyyy (eee) pppp";
 
   ////////////////////////convert day length in seconds to hours/mins/sec/////////////////

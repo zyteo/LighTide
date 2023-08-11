@@ -26,6 +26,7 @@ function App() {
     lat: 1.357107,
     long: 103.8194992,
   });
+  const [toggle, setToggle] = useState(false);
   const [sunDetails, setSunDetails] = useState();
   const tide = {};
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
@@ -131,6 +132,7 @@ function App() {
         nte={sunDetails?.results?.nautical_twilight_end}
         atb={sunDetails?.results?.astronomical_twilight_begin}
         ate={sunDetails?.results?.astronomical_twilight_end}
+        language={language}
       />
 
       <Attribution darkMode={darkMode} language={language} />
