@@ -138,10 +138,10 @@ Aiming to go in this order, from least dependencies to most dependencies and by 
 -[x] Home
 -[x] SearchDetails
 -[ ] Maps
--[ ] Sun
+-[x] Sun
 -[ ] Tides
 -[ ] Chart
--[ ] Datetimeformat
+-[x] Datetimeformat
 
 Adjusted attribution link colours.
 
@@ -205,6 +205,7 @@ Receiving invalid time error. Need to check DateTime component.
 
 12 Aug 2023 - Error was due to lack of sun data retrival.
 Added get details button so that sun details can be retrieved.
+Need to start looking at integrating react routes.
 
 ```
 

@@ -123,7 +123,7 @@ function App() {
       <button type="button" onClick={handleToggle}>
         Get details
       </button>
-      <Sun
+      {/* <Sun
         results={sunDetails?.results}
         sr={sunDetails?.results?.sunrise}
         ss={sunDetails?.results?.sunset}
@@ -136,7 +136,7 @@ function App() {
         atb={sunDetails?.results?.astronomical_twilight_begin}
         ate={sunDetails?.results?.astronomical_twilight_end}
         language={language}
-      />
+      /> */}
 
       <Attribution darkMode={darkMode} language={language} />
     </div>
