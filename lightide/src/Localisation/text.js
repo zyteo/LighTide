@@ -36,6 +36,9 @@ export const text = {
     sunNauticalTwilightEnd: "Nautical twilight end",
     sunAstronomicalTwilightBegin: "Astronomical twilight begin",
     sunAstronomicalTwilightEnd: "Astronomical twilight end",
+    sunHours: "hours",
+    sunMinutes: "minutes",
+    sunSeconds: "seconds",
   },
   简体中文: {
     navHome: "主页",
@@ -72,6 +75,9 @@ export const text = {
     sunNauticalTwilightEnd: "航海黄昏结束",
     sunAstronomicalTwilightBegin: "天文黄昏开始",
     sunAstronomicalTwilightEnd: "天文黄昏结束",
+    sunHours: "小时",
+    sunMinutes: "分钟",
+    sunSeconds: "秒",
   },
   繁体中文: {
     navHome: "主頁",
@@ -108,5 +114,8 @@ export const text = {
     sunNauticalTwilightEnd: "航海黃昏結束",
     sunAstronomicalTwilightBegin: "天文黃昏開始",
     sunAstronomicalTwilightEnd: "天文黃昏結束",
+    sunHours: "小時",
+    sunMinutes: "分鐘",
+    sunSeconds: "秒",
   },
 };

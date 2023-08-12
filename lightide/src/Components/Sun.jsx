@@ -21,7 +21,7 @@ function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate, language }) {
   let hours = Math.floor(dl / 3600);
   let mins = Math.floor((dl - hours * 3600) / 60);
   let seconds = dl - hours * 3600 - mins * 60;
-  let daylength = `${hours} hours, ${mins} minutes, ${seconds} seconds`;
+  let daylength = `${hours} ${text[language].sunHours}, ${mins} ${text[language].sunMinutes}, ${seconds} ${text[language].sunSeconds}`;
   ////////////////////////end of convert day length in seconds to hours/mins/sec/////////////////
 
   return (

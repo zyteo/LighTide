@@ -203,6 +203,9 @@ Adjusted app.js to account for sun component.
 Added language to sun component.
 Receiving invalid time error. Need to check DateTime component.
 
+12 Aug 2023 - Error was due to lack of sun data retrival.
+Added get details button so that sun details can be retrieved.
+
 ```
 
 ### Problem-Solving Strategy

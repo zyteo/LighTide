@@ -120,6 +120,9 @@ function App() {
         tide={tide}
         language={language}
       />
+      <button type="button" onClick={handleToggle}>
+        Get details
+      </button>
       <Sun
         results={sunDetails?.results}
         sr={sunDetails?.results?.sunrise}
