@@ -207,6 +207,7 @@ Receiving invalid time error. Need to check DateTime component.
 Added get details button so that sun details can be retrieved.
 Need to start looking at integrating react routes.
 
+13 Aug 2023 - Read up online about client-server architecture.
 ```
 
 ### Problem-Solving Strategy
