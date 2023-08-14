@@ -208,6 +208,13 @@ Added get details button so that sun details can be retrieved.
 Need to start looking at integrating react routes.
 
 13 Aug 2023 - Read up online about client-server architecture.
+
+14 Aug 2023 - Sketch diagram on paper first. Will work on completing app before working on making BE service.
+Will try to set routing.
+Based on react router practice, main.jsx maps to index.js, while root.jsx maps to App.js.
+Wanted to use what I learnt off the practice but realised that App.js is the parent component,
+I cannot extract other components like Maps, Sun from it.
+Used back react router v6 routing.
 ```
 
 ### Problem-Solving Strategy
