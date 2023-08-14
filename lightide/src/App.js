@@ -7,6 +7,7 @@ import SearchDetails from "./Components/SearchDetails";
 import Map from "./Components/Maps";
 import axios from "axios";
 import Sun from "./Components/Sun";
+import { Link, Route, Routes } from "react-router-dom";
 
 // get today's date
 const todayDateTime = new Date();
@@ -105,40 +106,64 @@ function App() {
         language={language}
         setLanguage={setLanguage}
       />
-      <Home darkMode={darkMode} language={language} />
-      <SearchDetails
-        handleDateChange={handleDateChange}
-        inputTextSearch={inputTextSearch}
-        darkMode={darkMode}
-        language={language}
-        handleSearch={handleSearch}
-      />
-      <Map
-        coordinates={coordinates}
-        setCoordinates={setCoordinates}
-        processedText={processedText}
-        tide={tide}
-        language={language}
-      />
-      <button type="button" onClick={handleToggle}>
-        Get details
-      </button>
-      {/* <Sun
-        results={sunDetails?.results}
-        sr={sunDetails?.results?.sunrise}
-        ss={sunDetails?.results?.sunset}
-        sn={sunDetails?.results?.solar_noon}
-        dl={sunDetails?.results?.day_length}
-        ctb={sunDetails?.results?.civil_twilight_begin}
-        cte={sunDetails?.results?.civil_twilight_end}
-        ntb={sunDetails?.results?.nautical_twilight_begin}
-        nte={sunDetails?.results?.nautical_twilight_end}
-        atb={sunDetails?.results?.astronomical_twilight_begin}
-        ate={sunDetails?.results?.astronomical_twilight_end}
-        language={language}
-      /> */}
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <Home darkMode={darkMode} language={language} />
+              <Attribution darkMode={darkMode} language={language} />
+            </>
+          }
+        />
+        <Route
+          path="/maps"
+          element={
+            <>
+              <SearchDetails
+                handleDateChange={handleDateChange}
+                inputTextSearch={inputTextSearch}
+                darkMode={darkMode}
+                language={language}
+                handleSearch={handleSearch}
+              />
+              <Map
+                coordinates={coordinates}
+                setCoordinates={setCoordinates}
+                processedText={processedText}
+                tide={tide}
+                language={language}
+              />
+              <button type="button" onClick={handleToggle}>
+                <Link to="/details">Get Details</Link>
+              </button>
+            </>
+          }
+        />
 
-      <Attribution darkMode={darkMode} language={language} />
+        <Route
+          path="/details"
+          element={
+            <>
+              <Sun
+                results={sunDetails?.results}
+                sr={sunDetails?.results?.sunrise}
+                ss={sunDetails?.results?.sunset}
+                sn={sunDetails?.results?.solar_noon}
+                dl={sunDetails?.results?.day_length}
+                ctb={sunDetails?.results?.civil_twilight_begin}
+                cte={sunDetails?.results?.civil_twilight_end}
+                ntb={sunDetails?.results?.nautical_twilight_begin}
+                nte={sunDetails?.results?.nautical_twilight_end}
+                atb={sunDetails?.results?.astronomical_twilight_begin}
+                ate={sunDetails?.results?.astronomical_twilight_end}
+                language={language}
+              />
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 }
