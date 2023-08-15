@@ -139,7 +139,7 @@ Aiming to go in this order, from least dependencies to most dependencies and by 
 -[x] SearchDetails
 -[ ] Maps
 -[x] Sun
--[ ] Tides
+-[x] Tides
 -[ ] Chart
 -[x] Datetimeformat
 
@@ -153,7 +153,7 @@ Localisation:
 -[x] SearchDetails
 -[x] Maps
 -[x] Sun
--[ ] Tides
+-[x] Tides
 -[ ] Chart
 -[ ] Datetimeformat
 
@@ -215,6 +215,10 @@ Based on react router practice, main.jsx maps to index.js, while root.jsx maps t
 Wanted to use what I learnt off the practice but realised that App.js is the parent component,
 I cannot extract other components like Maps, Sun from it.
 Used back react router v6 routing.
+
+15 Aug 2023 - Adjusted route path.
+Localised tides.
+Integrated tides into App.
 ```
 
 ### Problem-Solving Strategy

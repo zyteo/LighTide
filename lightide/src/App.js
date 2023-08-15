@@ -8,6 +8,7 @@ import Map from "./Components/Maps";
 import axios from "axios";
 import Sun from "./Components/Sun";
 import { Link, Route, Routes } from "react-router-dom";
+import Tides from "./Components/Tides";
 
 // get today's date
 const todayDateTime = new Date();
@@ -29,7 +30,8 @@ function App() {
   });
   const [toggle, setToggle] = useState(false);
   const [sunDetails, setSunDetails] = useState();
-  const tide = {};
+  const [tide, setTide] = useState("");
+  // const tide = {};
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
   //////////////////////////////// Start of handle functions ////////////////////////////////////////////
@@ -96,6 +98,15 @@ function App() {
         setSunDetails(response.data);
       });
 
+    //for tide data
+    axios
+      .get(
+        `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
+      )
+      .then((response) => {
+        setTide(response.data);
+      });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggle]);
   //////////////////////////////// End of useEffect ////////////////////////////////////////////
@@ -136,14 +147,14 @@ function App() {
                 language={language}
               />
               <button type="button" onClick={handleToggle}>
-                <Link to="/details">Get Details</Link>
+                <Link to="/results">Get Details</Link>
               </button>
             </>
           }
         />
 
         <Route
-          path="/details"
+          path="/results"
           element={
             <>
               <Sun
@@ -160,6 +171,7 @@ function App() {
                 ate={sunDetails?.results?.astronomical_twilight_end}
                 language={language}
               />
+              <Tides tide={tide} darkMode={darkMode} language={language} />
             </>
           }
         />

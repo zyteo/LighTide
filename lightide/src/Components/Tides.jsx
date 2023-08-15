@@ -4,6 +4,7 @@
 import React from "react";
 import styled from "styled-components";
 import Datetimeformat from "./Datetimeformat";
+import { text } from "../Localisation/text";
 
 const P = styled.p`
   margin: 3px;
@@ -15,28 +16,30 @@ const DivTide = styled(Div)`
   border: ${(props) => (props.dark ? "2px solid white" : "2px solid black")};
 `;
 
-function Tides({ tide, darkMode }) {
+function Tides({ tide, darkMode, language }) {
   // take the tide Prop (JSON data) and map the array, save as tidedetails
   const tidedetails = tide?.data?.map((ele) => {
-
     return (
       <>
         <DivTide className="tidedetails" dark={darkMode ? true : false}>
           <P>
-            <strong>ISO Date/Time: </strong>
+            <strong>{text[language].tideISO}: </strong>
             {ele.time}
           </P>
           <P>
-            <strong>Local Date/Time: </strong>
-            <Datetimeformat dateTime={ele.time} dateTimeFormat="dd MMM yyyy (eee) pppp"/>
+            <strong>{text[language].tideLocal}: </strong>
+            <Datetimeformat
+              dateTime={ele.time}
+              dateTimeFormat="dd MMM yyyy (eee) pppp"
+            />
           </P>
           <P>
-            <strong>Tide: </strong>
+            <strong>{text[language].tideType}: </strong>
             {ele.type}
           </P>
           <P>
-            <strong>Height: </strong>
-            {ele.height} meters
+            <strong>{text[language].tideHeight}: </strong>
+            {ele.height} {text[language].tideMetres}
           </P>
         </DivTide>
       </>
@@ -47,7 +50,7 @@ function Tides({ tide, darkMode }) {
     <div className="tides">
       <p>
         <strong>
-          <u>Tides</u>
+          <u>{text[language].tideTitle}</u>
         </strong>
       </p>
 
@@ -55,25 +58,25 @@ function Tides({ tide, darkMode }) {
       {tide?.data ? (
         <>
           <div className="stationdetails">
-            <strong>Request count: </strong>
-            {tide?.meta?.requestCount} (Daily limit: 50)
+            <strong>{text[language].tideRequestCount}: </strong>
+            {tide?.meta?.requestCount} ({text[language].tideDailyLimit}: 50)
             <br />
-            <strong>Station name: </strong>
+            <strong>{text[language].tideStationName}: </strong>
             {tide?.meta?.station?.name}
             <br />
-            <strong>Distance between station and requested coordinate: </strong>
-            {tide?.meta?.station?.distance} km
+            <strong>{text[language].tideDistanceStation}: </strong>
+            {tide?.meta?.station?.distance} {text[language].tideKilometres}
             <br />
-            <strong>Station coordinates: </strong>
-            {tide?.meta?.station?.lat} (Latitude), {tide?.meta?.station?.lng}{" "}
-            (Longitude)
+            <strong>{text[language].tideStationCoordinates}: </strong>
+            {tide?.meta?.station?.lat} ({text[language].mapsLatitude}),{" "}
+            {tide?.meta?.station?.lng} ({text[language].mapsLongitude})
           </div>
           {tidedetails}
         </>
       ) : (
         <>
-          Sorry, tide request limit reached for today! <br />
-          Please try again tomorrow.
+          {text[language].tideLimitReached1} <br />
+          {text[language].tideLimitReached2}
         </>
       )}
     </div>
