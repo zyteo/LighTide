@@ -53,6 +53,8 @@ export const text = {
     tideStationCoordinates: "Station coordinates",
     tideLimitReached1: "Sorry, tide request limit reached for today!",
     tideLimitReached2: "Please try again tomorrow",
+    tideHigh: "High",
+    tideLow: "Low",
   },
   简体中文: {
     navHome: "主页",
@@ -106,6 +108,8 @@ export const text = {
     tideStationCoordinates: "站点坐标",
     tideLimitReached1: "抱歉，今天潮汐请求限制已达到！",
     tideLimitReached2: "请明天再试",
+    tideHigh: "高",
+    tideLow: "低",
   },
   繁体中文: {
     navHome: "主頁",
@@ -159,5 +163,7 @@ export const text = {
     tideStationCoordinates: "站點坐標",
     tideLimitReached1: "抱歉，今天潮汐請求限制已達到！",
     tideLimitReached2: "請明天再試",
+    tideHigh: "高",
+    tideLow: "低",
   },
 };

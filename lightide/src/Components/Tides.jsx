@@ -35,7 +35,10 @@ function Tides({ tide, darkMode, language }) {
           </P>
           <P>
             <strong>{text[language].tideType}: </strong>
-            {ele.type}
+            {/* if ele.type is high, text is tideHigh */}
+            {ele.type === "high"
+              ? text[language].tideHigh
+              : text[language].tideLow}
           </P>
           <P>
             <strong>{text[language].tideHeight}: </strong>

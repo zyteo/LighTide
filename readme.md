@@ -137,7 +137,7 @@ Aiming to go in this order, from least dependencies to most dependencies and by 
 -[x] Attribution
 -[x] Home
 -[x] SearchDetails
--[ ] Maps
+-[x] Maps
 -[x] Sun
 -[x] Tides
 -[ ] Chart
@@ -218,7 +218,7 @@ Used back react router v6 routing.
 
 15 Aug 2023 - Adjusted route path.
 Localised tides.
-Integrated tides into App.
+Integrated tides into App, and confirmed that Map displays tide station.
 ```
 
 ### Problem-Solving Strategy
