@@ -10,8 +10,9 @@ import {
   VictoryScatter,
   VictoryTheme,
 } from "victory";
+import { text } from "../Localisation/text";
 
-function Chart({ tide }) {
+function Chart({ tide, language }) {
   // merge both zoom and voronoi containers
   const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
   // create array to store the data for the time series chart
@@ -27,7 +28,7 @@ function Chart({ tide }) {
     <div className="chart">
       <p>
         <strong>
-          <u>Tide Chart</u>
+          <u>{text[language].chartTitle}</u>
         </strong>
       </p>
 
@@ -42,15 +43,17 @@ function Chart({ tide }) {
               theme={VictoryTheme.material}
               containerComponent={
                 <VictoryZoomVoronoiContainer
-                  labels={({ datum }) => `${datum.x} \n ${datum.y} meters`}
+                  labels={({ datum }) =>
+                    `${datum.x} \n ${datum.y} ${text[language].tideMetres}`
+                  }
                 />
               }
             >
               <VictoryLabel
                 text={
-                  "Time Series (" +
+                  `${text[language].chartTimeSeries} (` +
                   `${tide?.meta?.station?.name}` +
-                  " station)"
+                  ` ${text[language].mapsStation})`
                 }
                 x={225}
                 y={30}
@@ -75,7 +78,7 @@ function Chart({ tide }) {
           </div>
         </>
       ) : (
-        <p>Tide request limit reached for today, so no chart generated!</p>
+        <p>{text[language].chartLimitReached1}</p>
       )}
     </div>
   );

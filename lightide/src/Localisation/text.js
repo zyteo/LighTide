@@ -55,6 +55,10 @@ export const text = {
     tideLimitReached2: "Please try again tomorrow",
     tideHigh: "High",
     tideLow: "Low",
+    chartTitle: "Tide Chart",
+    chartTimeSeries: "Time Series",
+    chartLimitReached1:
+      "Tide request limit reached for today, so no chart generated!",
   },
   简体中文: {
     navHome: "主页",
@@ -110,6 +114,9 @@ export const text = {
     tideLimitReached2: "请明天再试",
     tideHigh: "高",
     tideLow: "低",
+    chartTitle: "潮汐图",
+    chartTimeSeries: "时间序列",
+    chartLimitReached1: "潮汐请求限制已达到，因此未生成图表！",
   },
   繁体中文: {
     navHome: "主頁",
@@ -165,5 +172,8 @@ export const text = {
     tideLimitReached2: "請明天再試",
     tideHigh: "高",
     tideLow: "低",
+    chartTitle: "潮汐圖",
+    chartTimeSeries: "時間序列",
+    chartLimitReached1: "潮汐請求限制已達到，因此未生成圖表！",
   },
 };

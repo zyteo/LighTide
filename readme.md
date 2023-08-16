@@ -140,7 +140,7 @@ Aiming to go in this order, from least dependencies to most dependencies and by 
 -[x] Maps
 -[x] Sun
 -[x] Tides
--[ ] Chart
+-[x] Chart
 -[x] Datetimeformat
 
 Adjusted attribution link colours.
@@ -154,7 +154,7 @@ Localisation:
 -[x] Maps
 -[x] Sun
 -[x] Tides
--[ ] Chart
+-[x] Chart
 -[ ] Datetimeformat
 
 Added setState for language.
@@ -219,6 +219,8 @@ Used back react router v6 routing.
 15 Aug 2023 - Adjusted route path.
 Localised tides.
 Integrated tides into App, and confirmed that Map displays tide station.
+
+16 Aug 2023 - Localised chart. Integrated chart into App.
 ```
 
 ### Problem-Solving Strategy

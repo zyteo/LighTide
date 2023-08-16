@@ -9,6 +9,7 @@ import axios from "axios";
 import Sun from "./Components/Sun";
 import { Link, Route, Routes } from "react-router-dom";
 import Tides from "./Components/Tides";
+import Chart from "./Components/Chart";
 
 // get today's date
 const todayDateTime = new Date();
@@ -171,6 +172,7 @@ function App() {
                 ate={sunDetails?.results?.astronomical_twilight_end}
                 language={language}
               />
+              <Chart tide={tide} language={language} />
               <Tides tide={tide} darkMode={darkMode} language={language} />
             </>
           }
