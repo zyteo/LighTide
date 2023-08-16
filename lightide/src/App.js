@@ -10,6 +10,13 @@ import Sun from "./Components/Sun";
 import { Link, Route, Routes } from "react-router-dom";
 import Tides from "./Components/Tides";
 import Chart from "./Components/Chart";
+import { styled } from "styled-components";
+
+const Results = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
 
 // get today's date
 const todayDateTime = new Date();
@@ -158,22 +165,26 @@ function App() {
           path="/results"
           element={
             <>
-              <Sun
-                results={sunDetails?.results}
-                sr={sunDetails?.results?.sunrise}
-                ss={sunDetails?.results?.sunset}
-                sn={sunDetails?.results?.solar_noon}
-                dl={sunDetails?.results?.day_length}
-                ctb={sunDetails?.results?.civil_twilight_begin}
-                cte={sunDetails?.results?.civil_twilight_end}
-                ntb={sunDetails?.results?.nautical_twilight_begin}
-                nte={sunDetails?.results?.nautical_twilight_end}
-                atb={sunDetails?.results?.astronomical_twilight_begin}
-                ate={sunDetails?.results?.astronomical_twilight_end}
-                language={language}
-              />
-              <Chart tide={tide} language={language} />
-              <Tides tide={tide} darkMode={darkMode} language={language} />
+              <Results>
+                <Sun
+                  results={sunDetails?.results}
+                  sr={sunDetails?.results?.sunrise}
+                  ss={sunDetails?.results?.sunset}
+                  sn={sunDetails?.results?.solar_noon}
+                  dl={sunDetails?.results?.day_length}
+                  ctb={sunDetails?.results?.civil_twilight_begin}
+                  cte={sunDetails?.results?.civil_twilight_end}
+                  ntb={sunDetails?.results?.nautical_twilight_begin}
+                  nte={sunDetails?.results?.nautical_twilight_end}
+                  atb={sunDetails?.results?.astronomical_twilight_begin}
+                  ate={sunDetails?.results?.astronomical_twilight_end}
+                  language={language}
+                  date={date}
+                  coordinates={coordinates}
+                />
+                <Chart tide={tide} language={language} />
+                <Tides tide={tide} darkMode={darkMode} language={language} />
+              </Results>
             </>
           }
         />

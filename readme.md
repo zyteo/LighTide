@@ -221,6 +221,8 @@ Localised tides.
 Integrated tides into App, and confirmed that Map displays tide station.
 
 16 Aug 2023 - Localised chart. Integrated chart into App.
+Fixed datetimeformat issue as sometimes datetime is not available.
+Realised that the coordinates of results would change if map is changed. Need to fix this.
 ```
 
 ### Problem-Solving Strategy

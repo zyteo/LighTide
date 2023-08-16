@@ -24,25 +24,25 @@ function Tides({ tide, darkMode, language }) {
         <DivTide className="tidedetails" dark={darkMode ? true : false}>
           <P>
             <strong>{text[language].tideISO}: </strong>
-            {ele.time}
+            {ele?.time}
           </P>
           <P>
             <strong>{text[language].tideLocal}: </strong>
             <Datetimeformat
-              dateTime={ele.time}
+              dateTime={ele?.time}
               dateTimeFormat="dd MMM yyyy (eee) pppp"
             />
           </P>
           <P>
             <strong>{text[language].tideType}: </strong>
-            {/* if ele.type is high, text is tideHigh */}
-            {ele.type === "high"
+            {/* if ele?.type is high, text is tideHigh */}
+            {ele?.type === "high"
               ? text[language].tideHigh
               : text[language].tideLow}
           </P>
           <P>
             <strong>{text[language].tideHeight}: </strong>
-            {ele.height} {text[language].tideMetres}
+            {ele?.height} {text[language].tideMetres}
           </P>
         </DivTide>
       </>

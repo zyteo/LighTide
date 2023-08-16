@@ -14,7 +14,21 @@ const Li = styled.li`
 `;
 
 // Sun takes in 10 props
-function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate, language }) {
+function Sun({
+  sr,
+  ss,
+  sn,
+  dl,
+  ctb,
+  cte,
+  ntb,
+  nte,
+  atb,
+  ate,
+  language,
+  date,
+  coordinates,
+}) {
   const localtime = "dd MMM yyyy (eee) pppp";
 
   ////////////////////////convert day length in seconds to hours/mins/sec/////////////////
@@ -26,6 +40,11 @@ function Sun({ sr, ss, sn, dl, ctb, cte, ntb, nte, atb, ate, language }) {
 
   return (
     <div className="sun">
+      <h3>Date: {date}</h3>
+      <h3>
+        Selected coordinates: {coordinates?.lat} (latitude), {coordinates?.long}
+        (longitude)
+      </h3>
       <Ul>
         <strong>
           <u>{text[language].sunInfo}</u>

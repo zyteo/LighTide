@@ -3,9 +3,14 @@
 
 import { format, parseISO } from "date-fns";
 
+// convert the time from ISO format to a more readable format
 function Datetimeformat({ dateTime, dateTimeFormat }) {
-  // convert the time from ISO format to a more readable format
-  let localtime = format(parseISO(dateTime), dateTimeFormat);
-  return localtime;
+  // sometimes, there is no dateTime, so it will throw an error. in that case, return an empty string
+  if (!dateTime) {
+    return "";
+  } else {
+    let localtime = format(parseISO(dateTime), dateTimeFormat);
+    return localtime;
+  }
 }
 export default Datetimeformat;

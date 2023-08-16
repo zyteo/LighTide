@@ -18,9 +18,9 @@ function Chart({ tide, language }) {
   // create array to store the data for the time series chart
   const tideSeries = [];
   const tidedetails = tide?.data?.map((ele) => {
-    let timeTideDetails = new Date(ele.time);
+    let timeTideDetails = new Date(ele?.time);
     // add data for the time series chart
-    tideSeries.push({ x: timeTideDetails, y: ele.height });
+    tideSeries.push({ x: timeTideDetails, y: ele?.height });
     return null;
   });
 
@@ -33,7 +33,7 @@ function Chart({ tide, language }) {
       </p>
 
       {/* ternary conditional operator here in case tide limit reached. */}
-      {tide.data ? (
+      {tide?.data ? (
         <>
           <div className="timeseries">
             <VictoryChart
