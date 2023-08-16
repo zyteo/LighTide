@@ -39,6 +39,7 @@ function App() {
   const [toggle, setToggle] = useState(false);
   const [sunDetails, setSunDetails] = useState();
   const [tide, setTide] = useState("");
+  const [selectedCoordinates, setSelectedCoordinates] = useState({});
   // const tide = {};
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
@@ -116,6 +117,10 @@ function App() {
       });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    setSelectedCoordinates({
+      lat: coordinates.lat,
+      long: coordinates.long,
+    });
   }, [toggle]);
   //////////////////////////////// End of useEffect ////////////////////////////////////////////
   return (
@@ -180,7 +185,7 @@ function App() {
                   ate={sunDetails?.results?.astronomical_twilight_end}
                   language={language}
                   date={date}
-                  coordinates={coordinates}
+                  coordinates={selectedCoordinates}
                 />
                 <Chart tide={tide} language={language} />
                 <Tides tide={tide} darkMode={darkMode} language={language} />

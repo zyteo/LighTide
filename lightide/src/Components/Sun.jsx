@@ -40,10 +40,13 @@ function Sun({
 
   return (
     <div className="sun">
-      <h3>Date: {date}</h3>
       <h3>
-        Selected coordinates: {coordinates?.lat} (latitude), {coordinates?.long}
-        (longitude)
+        {text[language].searchDetailsDate} {date}
+      </h3>
+      <h3>
+        {text[language].mapsPopup}: {coordinates?.lat} (
+        {text[language].mapsLatitude}), {coordinates?.long} (
+        {text[language].mapsLongitude})
       </h3>
       <Ul>
         <strong>
