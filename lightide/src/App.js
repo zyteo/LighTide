@@ -162,6 +162,7 @@ function App() {
               <button type="button" onClick={handleToggle}>
                 <Link to="/results">Get Details</Link>
               </button>
+              <Attribution darkMode={darkMode} language={language} />
             </>
           }
         />
@@ -190,6 +191,7 @@ function App() {
                 <Chart tide={tide} language={language} />
                 <Tides tide={tide} darkMode={darkMode} language={language} />
               </Results>
+              <Attribution darkMode={darkMode} language={language} />
             </>
           }
         />

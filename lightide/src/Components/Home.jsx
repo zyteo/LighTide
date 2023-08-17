@@ -10,12 +10,12 @@ const P = styled.p`
   margin: 8px;
 `;
 const Button = styled.button`
-  padding: 3px 3px;
-  margin: 6px 2px;
+  padding: 8px;
+  margin: 8px 2px;
   border-radius: 6px;
   box-sizing: border-box;
   font-size: 16px;
-  background-color: ${(props) => (props.dark ? "darkgray" : "white")};
+  background-color: ${(props) => (props.dark ? "black" : "white")};
   color: ${(props) => (props.dark ? "white" : "black")};
 
   @media only screen and (max-width: 600px) {
@@ -23,11 +23,12 @@ const Button = styled.button`
     box-sizing: border-box;
     font-size: 14px;
     position: relative;
-    background-color: ${(props) => (props.dark ? "darkgray" : "white")};
+    background-color: ${(props) => (props.dark ? "black" : "white")};
     color: ${(props) => (props.dark ? "white" : "black")};
   }
   &:hover {
     background-color: rgb(228, 228, 228);
+    cursor: pointer;
   }
   &:active {
     background-color: ${(props) => (props.dark ? "yellow" : "aqua")};
@@ -35,7 +36,6 @@ const Button = styled.button`
 `;
 const LinkStyled = styled(Link)`
   text-decoration: none;
-  color: black;
 `;
 
 function Home({ darkMode, language }) {
@@ -47,9 +47,13 @@ function Home({ darkMode, language }) {
       <P>{text[language].home2}</P>
       <P>{text[language].home3}</P>
       <P>{text[language].homeNote}</P>
-      <Button dark={darkMode ? true : false}>
-        <LinkStyled to="/maps">{text[language].homeButton}</LinkStyled>
-      </Button>
+
+      <LinkStyled to="/maps">
+        <Button dark={darkMode ? true : false}>
+          {text[language].homeButton}{" "}
+        </Button>
+      </LinkStyled>
+
       <hr></hr>
     </>
   );

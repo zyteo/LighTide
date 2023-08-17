@@ -227,9 +227,10 @@ Fixed above issue by adding a useEffect to update the selected coordinates.
 
 17 Aug 2023 - Localised datetimeformat.
 Integrated latest datetimeformat into App.
-Almost done with overhaul of app. 
+Almost done with overhaul of app.
 Completed localisation of all components, and integrated them into App.
 Will work on styling and testing.
+
 ```
 
 ### Problem-Solving Strategy

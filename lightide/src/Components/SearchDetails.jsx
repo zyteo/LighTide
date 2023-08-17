@@ -22,8 +22,21 @@ const Input = styled.input`
   }
 `;
 const SearchInput = styled(Input)`
+  padding: 3px;
+  margin: 8px 2px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+
+  @media only screen and (max-width: 600px) {
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    position: relative;
+  }
   &:hover {
     background-color: rgb(228, 228, 228);
+    cursor: pointer;
   }
   &:active {
     background-color: ${(props) => (props.dark ? "yellow" : "aqua")};
