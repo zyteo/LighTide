@@ -155,7 +155,7 @@ Localisation:
 -[x] Sun
 -[x] Tides
 -[x] Chart
--[ ] Datetimeformat
+-[x] Datetimeformat
 
 Added setState for language.
 
@@ -225,6 +225,11 @@ Fixed datetimeformat issue as sometimes datetime is not available.
 Realised that the coordinates of results would change if map is changed.
 Fixed above issue by adding a useEffect to update the selected coordinates.
 
+17 Aug 2023 - Localised datetimeformat.
+Integrated latest datetimeformat into App.
+Almost done with overhaul of app. 
+Completed localisation of all components, and integrated them into App.
+Will work on styling and testing.
 ```
 
 ### Problem-Solving Strategy

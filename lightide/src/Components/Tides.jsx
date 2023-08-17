@@ -31,6 +31,7 @@ function Tides({ tide, darkMode, language }) {
             <Datetimeformat
               dateTime={ele?.time}
               dateTimeFormat="dd MMM yyyy (eee) pppp"
+              language={language}
             />
           </P>
           <P>

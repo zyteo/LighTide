@@ -54,15 +54,27 @@ function Sun({
         </strong>
         <Li>
           <strong> {text[language].sunSunrise}: </strong>
-          <Datetimeformat dateTime={sr} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={sr}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
         <Li>
           <strong> {text[language].sunSunset}: </strong>
-          <Datetimeformat dateTime={ss} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={ss}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
         <Li>
           <strong> {text[language].sunSolarNoon}: </strong>
-          <Datetimeformat dateTime={sn} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={sn}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
         <Li>
           <strong> {text[language].sunDayLength}: </strong>
@@ -70,27 +82,51 @@ function Sun({
         </Li>
         <Li>
           <strong> {text[language].sunCivilTwilightBegin}: </strong>
-          <Datetimeformat dateTime={ctb} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={ctb}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
         <Li>
           <strong> {text[language].sunCivilTwilightEnd}: </strong>
-          <Datetimeformat dateTime={cte} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={cte}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
         <Li>
           <strong> {text[language].sunNauticalTwilightBegin}: </strong>
-          <Datetimeformat dateTime={ntb} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={ntb}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
         <Li>
           <strong> {text[language].sunNauticalTwilightEnd}: </strong>
-          <Datetimeformat dateTime={nte} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={nte}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
         <Li>
           <strong> {text[language].sunAstronomicalTwilightBegin}: </strong>
-          <Datetimeformat dateTime={atb} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={atb}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
         <Li>
           <strong> {text[language].sunAstronomicalTwilightEnd}: </strong>
-          <Datetimeformat dateTime={ate} dateTimeFormat={localtime} />
+          <Datetimeformat
+            dateTime={ate}
+            dateTimeFormat={localtime}
+            language={language}
+          />
         </Li>
       </Ul>
     </div>
