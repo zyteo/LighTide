@@ -11,13 +11,41 @@ import { Link, Route, Routes } from "react-router-dom";
 import Tides from "./Components/Tides";
 import Chart from "./Components/Chart";
 import { styled } from "styled-components";
+import { text } from "./Localisation/text";
 
 const Results = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 `;
+const Button = styled.button`
+  padding: 8px;
+  margin: 8px 2px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: ${(props) => (props.dark ? "black" : "white")};
+  color: ${(props) => (props.dark ? "white" : "black")};
 
+  @media only screen and (max-width: 600px) {
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    position: relative;
+    background-color: ${(props) => (props.dark ? "black" : "white")};
+    color: ${(props) => (props.dark ? "white" : "black")};
+  }
+  &:hover {
+    background-color: rgb(228, 228, 228);
+    cursor: pointer;
+  }
+  &:active {
+    background-color: ${(props) => (props.dark ? "yellow" : "aqua")};
+  }
+`;
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+`;
 // get today's date
 const todayDateTime = new Date();
 const yyyy = todayDateTime.getFullYear();
@@ -40,6 +68,7 @@ function App() {
   const [sunDetails, setSunDetails] = useState();
   const [tide, setTide] = useState("");
   const [selectedCoordinates, setSelectedCoordinates] = useState({});
+  const [selectedDate, setSelectedDate] = useState();
   // const tide = {};
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
@@ -121,6 +150,7 @@ function App() {
       lat: coordinates.lat,
       long: coordinates.long,
     });
+    setSelectedDate(date);
   }, [toggle]);
   //////////////////////////////// End of useEffect ////////////////////////////////////////////
   return (
@@ -159,9 +189,13 @@ function App() {
                 tide={tide}
                 language={language}
               />
-              <button type="button" onClick={handleToggle}>
-                <Link to="/results">Get Details</Link>
-              </button>
+
+              <LinkStyled to="/results">
+                <Button type="button" onClick={handleToggle}>
+                  {text[language].appGetDetails}
+                </Button>
+              </LinkStyled>
+
               <Attribution darkMode={darkMode} language={language} />
             </>
           }
@@ -185,7 +219,7 @@ function App() {
                   atb={sunDetails?.results?.astronomical_twilight_begin}
                   ate={sunDetails?.results?.astronomical_twilight_end}
                   language={language}
-                  date={date}
+                  date={selectedDate}
                   coordinates={selectedCoordinates}
                 />
                 <Chart tide={tide} language={language} />

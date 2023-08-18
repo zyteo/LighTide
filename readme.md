@@ -230,7 +230,12 @@ Integrated latest datetimeformat into App.
 Almost done with overhaul of app.
 Completed localisation of all components, and integrated them into App.
 Will work on styling and testing.
+Adjusted button styling, and adjust button on Home component such that user can click on the button to go to next page.
+Previously, user need to click exactly on the link to go to next page.
 
+18 Aug 2023 - Localised and adjusted button style for get details.
+Realised that the dates of results would change if user adjust date. Applied fix.
+Read about the latest mapbox GL as well, looking at the pricing, might take out mapbox completely after this overhaul.
 ```
 
 ### Problem-Solving Strategy
