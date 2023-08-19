@@ -9,7 +9,7 @@ import { text } from "../Localisation/text";
 const Navbar = styled.nav`
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   padding: 0 20px;
   background-color: lightskyblue;
   &:hover {

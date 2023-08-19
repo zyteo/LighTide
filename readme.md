@@ -236,6 +236,16 @@ Previously, user need to click exactly on the link to go to next page.
 18 Aug 2023 - Localised and adjusted button style for get details.
 Realised that the dates of results would change if user adjust date. Applied fix.
 Read about the latest mapbox GL as well, looking at the pricing, might take out mapbox completely after this overhaul.
+
+19 Aug 2023 - After some reading up and comparison, I have decided to use openstreetmaps over mapbox.
+Removed mapbox attribution.
+Main reason is I noticed mapbox's tiles are outdated, plus they are not localised to the country language.
+On mapbox, almost everything is in English.
+In comparison, openstreetmaps tiles reflect more recent developments.
+Also, in other countries, the map language tend to reflects the country language.
+I believe this would be important as I localise this app in this overhaul as well.
+Added favicon to website.
+Adjusted map styling to use vw and vh units.
 ```
 
 ### Problem-Solving Strategy
@@ -262,9 +272,9 @@ Tide API limit is 50 requests/day, too little...
 APIs
 
 - Geocoding https://apidocs.geoapify.com/playground/geocoding
-- Map static tiles https://www.mapbox.com/
 - Sunrise/sunset https://sunrise-sunset.org/api
 - Tides https://docs.stormglass.io/#/
+- Map static tiles https://www.mapbox.com/ (Previous version. Removed in latest version)
 
 npm Libraries
 

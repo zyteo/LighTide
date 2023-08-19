@@ -35,10 +35,7 @@ function Attribution({ darkMode, language }) {
           <Span dark={darkMode ? true : false}> Stormglass,</Span>
         </A>
         <A href="https://www.geoapify.com/" target="_blank">
-          <Span dark={darkMode ? true : false}> Geoapify,</Span>
-        </A>
-        <A href="https://www.mapbox.com/" target="_blank">
-          <Span dark={darkMode ? true : false}> Mapbox</Span>
+          <Span dark={darkMode ? true : false}> Geoapify</Span>
         </A>
       </P>
       <P>

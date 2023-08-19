@@ -47,14 +47,8 @@ function Map({ coordinates, setCoordinates, processedText, tide, language }) {
         scrollWheelZoom={true}
       >
         <TileLayer
-          // attribution='© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          // url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${process.env.REACT_APP_MAPBOX_KEY}`}
-        // stop using mapbox, just use openstreetmap
-
-        attribution='© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-        url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`}
-        
-       
+          attribution='© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+          url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`}
         />
         <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
           <Popup>
