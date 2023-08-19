@@ -10,9 +10,9 @@ import {
   TileLayer,
   useMapEvents,
 } from "react-leaflet";
+import { text } from "../Localisation/text";
 
-function Map({ coordinates, setCoordinates, cleanedText, tide }) {
-  
+function Map({ coordinates, setCoordinates, processedText, tide, language }) {
   // Get the coordinates of the map when clicking map
   function ClickMap() {
     const map = useMapEvents({
@@ -29,8 +29,8 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
     useEffect(() => {
       console.log("flyto searched position");
       map.flyTo([`${coordinates.lat}`, `${coordinates.long}`]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cleanedText]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [processedText]);
     return null;
   }
   // create station icon for the tide station marker on map
@@ -43,19 +43,19 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
     <>
       <MapContainer
         center={[`${coordinates.lat}`, `${coordinates.long}`]}
-        zoom={14}
+        zoom={13}
         scrollWheelZoom={true}
       >
         <TileLayer
-          attribution='© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${process.env.REACT_APP_MAPBOX_KEY}`}
+          attribution='© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+          url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`}
         />
         <Marker position={[`${coordinates.lat}`, `${coordinates.long}`]}>
           <Popup>
-            Selected point
-            <br /> Latitude: {coordinates.lat}
+            {text[language].mapsPopup}
+            <br /> {text[language].mapsLatitude}: {coordinates.lat}
             <br />
-            Longitude: {coordinates.long}
+            {text[language].mapsLongitude}: {coordinates.long}
           </Popup>
         </Marker>
         {/* add conditional ternary operator here so that icon only shows if station exists */}
@@ -68,10 +68,10 @@ function Map({ coordinates, setCoordinates, cleanedText, tide }) {
             icon={stationIcon}
           >
             <Popup>
-              {tide?.meta?.station?.name} station
-              <br /> Latitude: {tide?.meta?.station?.lat}
+              {tide?.meta?.station?.name} {text[language].mapsStation}
+              <br /> {text[language].mapsLatitude}: {tide?.meta?.station?.lat}
               <br />
-              Longitude: {tide?.meta?.station?.lng}
+              {text[language].mapsLongitude}: {tide?.meta?.station?.lng}
             </Popup>
           </Marker>
         ) : (

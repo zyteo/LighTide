@@ -4,29 +4,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { text } from "../Localisation/text";
 
 const P = styled.p`
   margin: 8px;
 `;
 const Button = styled.button`
-  padding: 3px 3px;
-  margin: 6px 2px;
-  border: 1px solid black;
+  padding: 8px;
+  margin: 8px 2px;
   border-radius: 6px;
   box-sizing: border-box;
-  cursor: pointer;
   font-size: 16px;
+  background-color: ${(props) => (props.dark ? "black" : "white")};
+  color: ${(props) => (props.dark ? "white" : "black")};
 
   @media only screen and (max-width: 600px) {
-    border: 1px solid black;
     border-radius: 6px;
     box-sizing: border-box;
-    cursor: pointer;
     font-size: 14px;
     position: relative;
+    background-color: ${(props) => (props.dark ? "black" : "white")};
+    color: ${(props) => (props.dark ? "white" : "black")};
   }
   &:hover {
     background-color: rgb(228, 228, 228);
+    cursor: pointer;
   }
   &:active {
     background-color: ${(props) => (props.dark ? "yellow" : "aqua")};
@@ -34,25 +36,24 @@ const Button = styled.button`
 `;
 const LinkStyled = styled(Link)`
   text-decoration: none;
-  color: black;
 `;
 
-function Home({ darkMode }) {
+function Home({ darkMode, language }) {
   return (
     <>
-      <h1>Welcome to LighTide Maps!</h1>
-      <h2>
-        Get sunrise / sunset & tide details based on the location and date.
-      </h2>
-      <P>
-        1. Search a place / Select a point on the map to pinpoint a location.
-      </P>
-      <P>2. Choose a date. By default, the date is set to today.</P>
-      <P>3. Select "Get details!" to retrieve the information.</P>
-      <P>Note that tide requests are capped at 50 per day.</P>
-      <Button dark={darkMode ? true : false}>
-        <LinkStyled to="/maps">Let's Go!</LinkStyled>
-      </Button>
+      <h1>{text[language].homeWelcome}</h1>
+      <h2>{text[language].homeIntro}</h2>
+      <P>{text[language].home1}</P>
+      <P>{text[language].home2}</P>
+      <P>{text[language].home3}</P>
+      <P>{text[language].homeNote}</P>
+
+      <LinkStyled to="/maps">
+        <Button dark={darkMode ? true : false}>
+          {text[language].homeButton}{" "}
+        </Button>
+      </LinkStyled>
+
       <hr></hr>
     </>
   );
