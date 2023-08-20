@@ -152,6 +152,8 @@ function App() {
     });
     setSelectedDate(date);
   }, [toggle]);
+
+  
   //////////////////////////////// End of useEffect ////////////////////////////////////////////
   return (
     <div className="App">

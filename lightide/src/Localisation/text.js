@@ -63,7 +63,7 @@ export const text = {
   },
   简体中文: {
     navHome: "主页",
-    navLT: "潮汐",
+    navLT: "日落潮汐",
     navResults: "结果",
     attributionText: "归属:",
     attributionWarning: "大自然是不可预测的。",
@@ -122,7 +122,7 @@ export const text = {
   },
   繁体中文: {
     navHome: "主頁",
-    navLT: "潮汐",
+    navLT: "日落潮汐",
     navResults: "結果",
     attributionText: "歸屬:",
     attributionWarning: "大自然是不可預測的。",

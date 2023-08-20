@@ -246,6 +246,10 @@ Also, in other countries, the map language tend to reflects the country language
 I believe this would be important as I localise this app in this overhaul as well.
 Added favicon to website.
 Adjusted map styling to use vw and vh units.
+Adjust nav naming of lightide for the chinese versions.
+On mobile, there is a one-step delay in changing the language. Will need to fix this.
+
+20 Aug 2023 - Changed onclick to onchange which fixes mobile language change delay.
 ```
 
 ### Problem-Solving Strategy
