@@ -250,6 +250,14 @@ Adjust nav naming of lightide for the chinese versions.
 On mobile, there is a one-step delay in changing the language. Will need to fix this.
 
 20 Aug 2023 - Changed onclick to onchange which fixes mobile language change delay.
+
+21 Aug 2023 - To check geocoding api if it allows for searching in chinese.
+Tested many times and finally figured out how to search in chinese.
+lang=zh and 上海, and %20 MUST be between the two words.
+Hence, I need to account that the search text might NOT be the same as the localisation language.
+Sometimes, user viewing website in English might use chinese to search and vice versa. 
+My search filter needs to be smart enough to account for this.
+Got the search filter to work.
 ```
 
 ### Problem-Solving Strategy
