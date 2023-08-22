@@ -258,6 +258,12 @@ Hence, I need to account that the search text might NOT be the same as the local
 Sometimes, user viewing website in English might use chinese to search and vice versa. 
 My search filter needs to be smart enough to account for this.
 Got the search filter to work.
+
+22 Aug 2023 - Realised that search filter was not needed. Even the previous search could use chinese.
+Just that if location not found, map will not flyover.
+Will leave search filter as it is, even though all the locations I checked, 
+both pre and post search filter works, but I have not tried every single location in the world.
+Added alert to account for location not found.
 ```
 
 ### Problem-Solving Strategy

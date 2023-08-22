@@ -133,10 +133,15 @@ function App() {
         `https://api.geoapify.com/v1/geocode/search?text=${processedText}&lang=${searchTextLangugage}&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
       )
       .then((response) => {
-        setCoordinates({
-          long: response.data.features[0].properties.lon,
-          lat: response.data.features[0].properties.lat,
-        });
+        // if the length is 0, means no results found. alert user
+        if (response.data.features.length === 0) {
+          alert(text[language].alertNoResults);
+        } else {
+          setCoordinates({
+            long: response.data.features[0].properties.lon,
+            lat: response.data.features[0].properties.lat,
+          });
+        }
       });
     console.log("updated", coordinates.lat, coordinates.long);
     // eslint-disable-next-line react-hooks/exhaustive-deps

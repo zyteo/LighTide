@@ -60,6 +60,8 @@ export const text = {
     chartTimeSeries: "Time Series",
     chartLimitReached1:
       "Tide request limit reached for today, so no chart generated!",
+    alertNoResults:
+      "No location found for your search query. Please try again.",
   },
   简体中文: {
     navHome: "主页",
@@ -119,6 +121,7 @@ export const text = {
     chartTitle: "潮汐图",
     chartTimeSeries: "时间序列",
     chartLimitReached1: "潮汐请求限制已达到，因此未生成图表！",
+    alertNoResults: "未找到您搜索查询的位置。请再试一次。",
   },
   繁体中文: {
     navHome: "主頁",
@@ -178,5 +181,6 @@ export const text = {
     chartTitle: "潮汐圖",
     chartTimeSeries: "時間序列",
     chartLimitReached1: "潮汐請求限制已達到，因此未生成圖表！",
+    alertNoResults: "未找到您搜索查詢的位置。請再試一次。",
   },
 };
