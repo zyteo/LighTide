@@ -113,7 +113,6 @@ function App() {
         .replace(".", "%2E")
         .replace(/#/, "%23");
       setProcessedText(processedSearchText);
-      console.log(searchText.split(""));
     }
   };
   // toggle for the "get details" button

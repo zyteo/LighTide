@@ -255,15 +255,20 @@ On mobile, there is a one-step delay in changing the language. Will need to fix 
 Tested many times and finally figured out how to search in chinese.
 lang=zh and 上海, and %20 MUST be between the two words.
 Hence, I need to account that the search text might NOT be the same as the localisation language.
-Sometimes, user viewing website in English might use chinese to search and vice versa. 
+Sometimes, user viewing website in English might use chinese to search and vice versa.
 My search filter needs to be smart enough to account for this.
 Got the search filter to work.
 
 22 Aug 2023 - Realised that search filter was not needed. Even the previous search could use chinese.
 Just that if location not found, map will not flyover.
-Will leave search filter as it is, even though all the locations I checked, 
+Will leave search filter as it is, even though all the locations I checked,
 both pre and post search filter works, but I have not tried every single location in the world.
 Added alert to account for location not found.
+Remaining points:
+-[ ] Test colour scheme and adjust accordingly for accessibility.
+-[ ] Double check website routing and note edge cases.
+-[ ] Test website on mobile.
+Now to shift focus to working on decoupling app.
 ```
 
 ### Problem-Solving Strategy
