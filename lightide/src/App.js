@@ -69,6 +69,7 @@ function App() {
   const [tide, setTide] = useState("");
   const [selectedCoordinates, setSelectedCoordinates] = useState({});
   const [selectedDate, setSelectedDate] = useState();
+  const [searchTextLangugage, setSearchTextLanguage] = useState("en");
   // const tide = {};
   //////////////////////////////// End of useState/useRef ///////////////////////////////////////////
 
@@ -91,13 +92,28 @@ function App() {
   // on submitting search text for map, clean the text and update text state
   const handleSearch = () => {
     const searchText = inputTextSearch.current.value;
-    // use regex + replace to url encode symbols
-    const processedSearchText = searchText
-      .replace(/ /g, "%20")
-      .replace(/,/, "%2C")
-      .replace(".", "%2E")
-      .replace(/#/, "%23");
-    setProcessedText(processedSearchText);
+    // first browse through search text, if all english, set language to english.
+    // should check it contains a to z, A to Z, 0 to 9, and space
+    if (/^[a-zA-Z0-9 ]*$/.test(searchText) === true) {
+      setSearchTextLanguage("en");
+      // use regex + replace to url encode symbols
+      const processedSearchText = searchText
+        .replace(/ /g, "%20")
+        .replace(/,/, "%2C")
+        .replace(".", "%2E")
+        .replace(/#/, "%23");
+      setProcessedText(processedSearchText);
+    } else {
+      setSearchTextLanguage("zh");
+      // need to split the text into individual characters, then add %20 in between
+      const processedSearchText = searchText
+        .split("")
+        .join("%20")
+        .replace(/,/, "%2C")
+        .replace(".", "%2E")
+        .replace(/#/, "%23");
+      setProcessedText(processedSearchText);
+    }
   };
   // toggle for the "get details" button
   const handleToggle = () => {
@@ -113,13 +129,18 @@ function App() {
     //geocode API
     axios
       .get(
-        `https://api.geoapify.com/v1/geocode/search?text=${processedText}&lang=en&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
+        `https://api.geoapify.com/v1/geocode/search?text=${processedText}&lang=${searchTextLangugage}&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
       )
       .then((response) => {
-        setCoordinates({
-          long: response.data.features[0].properties.lon,
-          lat: response.data.features[0].properties.lat,
-        });
+        // if the length is 0, means no results found. alert user
+        if (response.data.features.length === 0) {
+          alert(text[language].alertNoResults);
+        } else {
+          setCoordinates({
+            long: response.data.features[0].properties.lon,
+            lat: response.data.features[0].properties.lat,
+          });
+        }
       });
     console.log("updated", coordinates.lat, coordinates.long);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -152,6 +173,7 @@ function App() {
     });
     setSelectedDate(date);
   }, [toggle]);
+
   //////////////////////////////// End of useEffect ////////////////////////////////////////////
   return (
     <div className="App">
