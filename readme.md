@@ -269,6 +269,8 @@ Remaining points:
 -[ ] Double check website routing and note edge cases.
 -[ ] Test website on mobile.
 Now to shift focus to working on decoupling app.
+
+23 Aug 2023 - Set up express.js
 ```
 
 ### Problem-Solving Strategy
