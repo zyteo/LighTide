@@ -126,6 +126,26 @@ function App() {
   //////////////////////////////// Start of useEffect ////////////////////////////////////////////
   // Geocoding - to get lat/long based on the text searched, renders on every processedText change
   useEffect(() => {
+
+
+    // use the BE to get the geocode data
+    // axios.get(`https://lightide-be.vercel.app/api/geoapify?text=${processedText}&lang=${searchTextLangugage}`).then((response) => {
+    //   // if 400, means no results found. alert user
+    //   if (response.status === 400) {
+    //     alert(text[language].alertNoResults);
+    //   } else {
+    //     setCoordinates({
+    //       long: response.data.features[0].properties.lon,
+    //       lat: response.data.features[0].properties.lat,
+    //     });
+    //   }
+    // }
+    // );
+
+
+
+
+
     //geocode API
     axios
       .get(

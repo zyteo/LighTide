@@ -270,7 +270,8 @@ Remaining points:
 -[ ] Test website on mobile.
 Now to shift focus to working on decoupling app.
 
-23 Aug 2023 - Set up express.js
+23 Aug 2023 - Set up lightide backend of express.js.
+Set vercel json and API for geoapify
 ```
 
 ### Problem-Solving Strategy
