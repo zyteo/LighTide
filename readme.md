@@ -276,6 +276,7 @@ Set vercel json and API for geoapify
 
 25 Aug 2023 - Set up API for tide.
 Tested API on localhost, and it works.
+Adjusted vercel settings.
 ```
 
 ### Problem-Solving Strategy
