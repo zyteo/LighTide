@@ -1,10 +1,18 @@
 const axios = require("axios");
+const cors = require("cors");
 // import "dotenv/config";
 require("dotenv").config();
 const express = require("express");
 // import express from "express";
 const app = express();
 const PORT = process.env.PORT ?? 3000;
+
+// allow cors for localhost and lightide.vercel.app
+app.use(
+  cors({
+    origin: ["https://lightide.vercel.app"],
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Express on Vercel");
@@ -18,8 +26,9 @@ app.get("/api/geoapify", (req, res) => {
       `https://api.geoapify.com/v1/geocode/search?text=${text}&lang=${lang}&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
     )
     .then((response) => {
+      // console.log(response);
       if (response.data.features.length === 0) {
-        res.status(400).json({ message: "No results found" });
+        res.json({ error: "No results found" });
       } else {
         // res.status(200).send(response.data);
         // send as 200, json data
@@ -34,6 +43,18 @@ app.get("/api/tide", (req, res) => {
   axios
     .get(
       `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
+    )
+    .then((response) => {
+      res.status(200).json(response.data);
+    });
+});
+
+// set up api for sun details
+app.get("/api/sun", (req, res) => {
+  const { lat, long, date } = req.query;
+  axios
+    .get(
+      `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&date=${date}&formatted=0`
     )
     .then((response) => {
       res.status(200).json(response.data);
