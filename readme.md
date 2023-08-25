@@ -267,10 +267,15 @@ Added alert to account for location not found.
 Remaining points:
 -[ ] Test colour scheme and adjust accordingly for accessibility.
 -[ ] Double check website routing and note edge cases.
+-[ ] Exhaust tide API limit and observe / adjust accordingly.
 -[ ] Test website on mobile.
 Now to shift focus to working on decoupling app.
 
-23 Aug 2023 - Set up express.js
+23 Aug 2023 - Set up lightide backend of express.js.
+Set vercel json and API for geoapify
+
+25 Aug 2023 - Set up API for tide.
+Tested API on localhost, and it works.
 ```
 
 ### Problem-Solving Strategy
