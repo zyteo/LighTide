@@ -280,6 +280,8 @@ Adjusted vercel settings.
 Set up API for sun as well.
 Added cors to express.js.
 Adjust links in App.js to use express BE.
+
+26 Aug 2023 - Added error handling in server.js for BE.
 ```
 
 ### Problem-Solving Strategy

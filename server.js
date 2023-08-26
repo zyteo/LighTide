@@ -1,13 +1,10 @@
+require("dotenv").config();
 const axios = require("axios");
 const cors = require("cors");
-// import "dotenv/config";
-require("dotenv").config();
 const express = require("express");
-// import express from "express";
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 
-// allow cors for localhost and lightide.vercel.app
 app.use(
   cors({
     origin: ["https://lightide.vercel.app"],
@@ -30,10 +27,11 @@ app.get("/api/geoapify", (req, res) => {
       if (response.data.features.length === 0) {
         res.json({ error: "No results found" });
       } else {
-        // res.status(200).send(response.data);
-        // send as 200, json data
         res.status(200).json(response.data);
       }
+    })
+    .catch((error) => {
+      res.status(500).json({ error: error });
     });
 });
 
@@ -46,6 +44,9 @@ app.get("/api/tide", (req, res) => {
     )
     .then((response) => {
       res.status(200).json(response.data);
+    })
+    .catch((error) => {
+      res.status(500).json({ error: error });
     });
 });
 
@@ -58,6 +59,9 @@ app.get("/api/sun", (req, res) => {
     )
     .then((response) => {
       res.status(200).json(response.data);
+    })
+    .catch((error) => {
+      res.status(500).json({ error: error });
     });
 });
 
