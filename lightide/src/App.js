@@ -7,7 +7,7 @@ import SearchDetails from "./Components/SearchDetails";
 import Map from "./Components/Maps";
 import axios from "axios";
 import Sun from "./Components/Sun";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, Navigate } from "react-router-dom";
 import Tides from "./Components/Tides";
 import Chart from "./Components/Chart";
 import { styled } from "styled-components";
@@ -251,6 +251,7 @@ function App() {
             </>
           }
         />
+        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
