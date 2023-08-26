@@ -282,6 +282,7 @@ Added cors to express.js.
 Adjust links in App.js to use express BE.
 
 26 Aug 2023 - Added error handling in server.js for BE.
+Refactor App.js to use only express BE, removed old API links
 ```
 
 ### Problem-Solving Strategy

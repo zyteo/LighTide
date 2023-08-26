@@ -142,23 +142,6 @@ function App() {
           });
         }
       });
-
-    //geocode API
-    // axios
-    //   .get(
-    //     `https://api.geoapify.com/v1/geocode/search?text=${processedText}&lang=${searchTextLangugage}&limit=1&apiKey=${process.env.REACT_APP_GEOAPIFY_API_KEY}`
-    //   )
-    //   .then((response) => {
-    //     // if the length is 0, means no results found. alert user
-    //     if (response.data.features.length === 0) {
-    //       alert(text[language].alertNoResults);
-    //     } else {
-    //       setCoordinates({
-    //         long: response.data.features[0].properties.lon,
-    //         lat: response.data.features[0].properties.lat,
-    //       });
-    //     }
-    //   });
     console.log("updated", coordinates.lat, coordinates.long);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [processedText]);
@@ -183,14 +166,6 @@ function App() {
       .then((response) => {
         setTide(response.data);
       });
-    // axios
-    //   .get(
-    //     `https://api.stormglass.io/v2/tide/extremes/point?lat=${coordinates.lat}&lng=${coordinates.long}&start=${date}&key=${process.env.REACT_APP_TIDE_API_KEY}`
-    //   )
-    //   .then((response) => {
-    //     setTide(response.data);
-    //   });
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
     setSelectedCoordinates({
       lat: coordinates.lat,

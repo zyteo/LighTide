@@ -2,7 +2,7 @@
   "name": "lightide",
   "description": "<!-- GA SEI 32 Project 2: FrontEnd with API --> <!-- ZY, 1 Oct 2021 -->",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
