@@ -9,7 +9,6 @@
   "headers": [
     {
       "source": "/(.*)",
-      "dest": "server.js",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -22,6 +21,10 @@
         {
           "key": "Access-Control-Allow-Headers",
           "value": "X-Requested-With, Content-Type, Accept, Origin, Authorization"
+        },
+        {
+          "key": "Location",
+          "value": "/server.js"
         }
       ]
     }
