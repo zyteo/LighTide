@@ -288,6 +288,8 @@ Added routing to account for invalid routes.
 27 Aug 2023 - Check and adjusted on cors in vercel.json
 
 28 Aug 2023 - Read up on cors for vercel and attempting to fix cors issue.
+Seems like all along it was fine, I was running in circles.
+cURL is able to bypass CORS. Tested on localhost and couldn't access backend.
 ```
 
 ### Problem-Solving Strategy
