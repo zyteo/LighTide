@@ -290,6 +290,9 @@ Added routing to account for invalid routes.
 28 Aug 2023 - Read up on cors for vercel and attempting to fix cors issue.
 Seems like all along it was fine, I was running in circles.
 cURL is able to bypass CORS. Tested on localhost and couldn't access backend.
+
+29 Aug 2023 - Now to work on the remaining points.
+Adjusted labels based on accessibility checker.
 ```
 
 ### Problem-Solving Strategy

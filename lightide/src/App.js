@@ -130,6 +130,7 @@ function App() {
     axios
       .get(
         `https://lightide-be.vercel.app/api/geoapify?text=${processedText}&lang=${searchTextLangugage}`
+        // `http://localhost:${process.env.PORT}/api/geoapify?text=${processedText}&lang=${searchTextLangugage}`
       )
       .then((response) => {
         // if 400, means no results found. alert user
@@ -152,6 +153,7 @@ function App() {
     axios
       .get(
         `https://lightide-be.vercel.app/api/sun?lat=${coordinates.lat}&long=${coordinates.long}&date=${date}&formatted=0`
+        // `http://localhost:${process.env.PORT}/api/sun?lat=${coordinates.lat}&long=${coordinates.long}&date=${date}&formatted=0`
       )
       .then((response) => {
         setSunDetails(response.data);
@@ -162,6 +164,7 @@ function App() {
     axios
       .get(
         `https://lightide-be.vercel.app/api/tide?lat=${coordinates.lat}&long=${coordinates.long}&date=${date}`
+        // `http://localhost:${process.env.PORT}/api/tide?lat=${coordinates.lat}&long=${coordinates.long}&date=${date}`
       )
       .then((response) => {
         setTide(response.data);

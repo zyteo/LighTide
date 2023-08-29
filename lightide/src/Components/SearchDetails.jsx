@@ -56,21 +56,25 @@ function SearchDetails({
 }) {
   return (
     <>
-      <Label for="start">{text[language].searchDetailsDate}</Label>
-      <Input
-        type="date"
-        id="date"
-        name="selectdate"
-        min="2000-01-01"
-        max="2100-12-31"
-        onChange={handleDateChange}
-      />
-      <Label>{text[language].searchDetailsLocation}</Label>
-      <Input
-        type="text"
-        ref={inputTextSearch}
-        placeholder={text[language].searchPlaceholder}
-      />
+      <Label for="date selection">
+        {text[language].searchDetailsDate}
+        <Input
+          type="date"
+          id="date"
+          name="selectdate"
+          min="2000-01-01"
+          max="2100-12-31"
+          onChange={handleDateChange}
+        />
+      </Label>
+      <Label>
+        {text[language].searchDetailsLocation}
+        <Input
+          type="text"
+          ref={inputTextSearch}
+          placeholder={text[language].searchPlaceholder}
+        />
+      </Label>
       <SearchInput
         dark={darkMode ? true : false}
         type="submit"

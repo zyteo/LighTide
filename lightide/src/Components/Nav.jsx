@@ -108,7 +108,7 @@ function Nav({ handleDarkMode, language, setLanguage }) {
           <CheckBoxLabel htmlFor="checkbox" />
         </CheckBoxWrapper>
         &#127769;
-        <Select onChange={(event) => handleLanguage(event)}>
+        <Select onChange={(event) => handleLanguage(event)} label="Language">
           <Option value="English">English</Option>
           <Option value="简体中文">简体中文</Option>
           <Option value="繁体中文">繁体中文</Option>
