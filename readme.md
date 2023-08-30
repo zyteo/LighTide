@@ -293,6 +293,16 @@ cURL is able to bypass CORS. Tested on localhost and couldn't access backend.
 
 29 Aug 2023 - Now to work on the remaining points.
 Adjusted labels based on accessibility checker.
+
+30 Aug 2023 - Double check on labels.
+Check colour scheme for colour-blindness:
+To check light/dark mode, every single pages
+*To look at let's go button in dark mode
+-[x]Protanopia
+-[x]Deuteranopia
+-[ ]Tritanopia
+-[ ]Achromatopsia
+-[ ]Contrast loss
 ```
 
 ### Problem-Solving Strategy
