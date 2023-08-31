@@ -266,9 +266,9 @@ both pre and post search filter works, but I have not tried every single locatio
 Added alert to account for location not found.
 Remaining points:
 -[ ] Test colour scheme and adjust accordingly for accessibility.
--[ ] Double check website routing and note edge cases.
+-[x] Double check website routing and note edge cases.
 -[ ] Exhaust tide API limit and observe / adjust accordingly.
--[ ] Test website on mobile.
+-[x] Test website on mobile.
 Now to shift focus to working on decoupling app.
 
 23 Aug 2023 - Set up lightide backend of express.js.
@@ -298,11 +298,18 @@ Adjusted labels based on accessibility checker.
 Check colour scheme for colour-blindness:
 To check light/dark mode, every single pages
 *To look at let's go button in dark mode
+*Look at chart in dark mode
+*Look at attribution links, use pointer cursor
 -[x]Protanopia
 -[x]Deuteranopia
--[ ]Tritanopia
--[ ]Achromatopsia
--[ ]Contrast loss
+-[x]Tritanopia
+-[x]Achromatopsia
+-[x]Contrast loss
+Checked routing.
+Checked website on mobile.
+Adjusted pointer cursor for attribution links.
+
+31 Aug 2023 - Adjusted let's go button in dark mode, tested against all types of colour-blindness.
 ```
 
 ### Problem-Solving Strategy

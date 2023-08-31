@@ -27,11 +27,11 @@ const Button = styled.button`
     color: ${(props) => (props.dark ? "white" : "black")};
   }
   &:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: ${(props) => (props.dark ? "black" : "rgb(228, 228, 228)")};
     cursor: pointer;
   }
   &:active {
-    background-color: ${(props) => (props.dark ? "yellow" : "aqua")};
+    background-color: ${(props) => (props.dark ? "darkblue" : "aqua")};
   }
 `;
 const LinkStyled = styled(Link)`
