@@ -10,19 +10,12 @@ function Chart({ tide, language, darkMode }) {
 
   useEffect(() => {
     if (chartRef.current && tide?.data) {
-      const myChart = echarts.init(chartRef.current, darkMode ? "dark" : null, { renderer: "svg" });
+      const myChart = echarts.init(chartRef.current, darkMode ? "dark" : null, {
+        renderer: "svg",
+      });
 
-      // const timeData = [];
       const tideData = [];
-      console.log(tide.data);
-
       tide.data.forEach((ele) => {
-        // console.log(ele);
-        // let timeTideDetails = new Date(ele?.time);
-        // console.log(timeTideDetails);
-        // timeData.push(ele?.time);
-
-        // timeData.push(timeTideDetails);
         tideData.push([ele?.time, ele?.height]);
       });
 
@@ -35,14 +28,13 @@ function Chart({ tide, language, darkMode }) {
           formatter: function (params) {
             console.log(params);
             const time = new Date(params[0].axisValue).toLocaleString();
-            console.log(params[0])
-            const tideHeight = params[0].data;
+            console.log(params[0]);
             return `${time} <br/> ${params[0].data[1]} ${text[language].tideMetres}`;
           },
         },
         xAxis: {
           type: "time",
-          // data: timeData,
+          name: text[language].chartTime,
         },
         yAxis: {
           type: "value",
@@ -79,7 +71,7 @@ function Chart({ tide, language, darkMode }) {
         </strong>
       </p>
       {tide?.data ? (
-        <div className="timeseries" style={{ width: "650px", height: "440px" }}>
+        <div className="timeseries">
           <div ref={chartRef} style={{ width: "100%", height: "100%" }}></div>
         </div>
       ) : (

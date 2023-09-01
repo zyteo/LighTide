@@ -317,6 +317,7 @@ Decided to try out echarts.
 Current victory-charts is decent but echarts seems rather solid.
 Many charts features, open source, and many more stars/installs.
 Finally converted victory chart to echarts.
+Adjusted chart settings.
 ```
 
 ### Problem-Solving Strategy

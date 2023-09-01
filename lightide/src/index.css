@@ -21,3 +21,8 @@ code {
   height: 90vh;
   width: 99vw;
 }
+
+.timeseries {
+  height: 440px;
+  width: 650px;
+}
