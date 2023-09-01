@@ -26,9 +26,8 @@ function Chart({ tide, language, darkMode }) {
         tooltip: {
           trigger: "axis",
           formatter: function (params) {
-            console.log(params);
+            // console.log(params);
             const time = new Date(params[0].axisValue).toLocaleString();
-            console.log(params[0]);
             return `${time} <br/> ${params[0].data[1]} ${text[language].tideMetres}`;
           },
         },
