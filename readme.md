@@ -310,6 +310,8 @@ Checked website on mobile.
 Adjusted pointer cursor for attribution links.
 
 31 Aug 2023 - Adjusted let's go button in dark mode, tested against all types of colour-blindness.
+
+1 Sep 2023 - Looking at chart alternatives.
 ```
 
 ### Problem-Solving Strategy
