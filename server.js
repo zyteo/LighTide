@@ -7,7 +7,7 @@ const PORT = process.env.PORT ?? 3000;
 
 app.use(
   cors({
-    origin: ["https://lightide.vercel.app", `${process.env.LOCALHOST}`],
+    origin: ["https://lightide.vercel.app"],
   })
 );
 
