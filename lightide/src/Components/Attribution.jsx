@@ -14,6 +14,7 @@ const Span = styled.span`
   border-radius: 10px;
   &:hover {
     background-color: ${(props) => (props.dark ? "blue" : "gold")};
+    cursor: pointer;
   }
   &:active {
     background-color: yellowgreen;

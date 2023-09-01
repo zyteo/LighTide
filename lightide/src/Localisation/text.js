@@ -58,6 +58,7 @@ export const text = {
     tideLow: "Low",
     chartTitle: "Tide Chart",
     chartTimeSeries: "Time Series",
+    chartTime : "Time",
     chartLimitReached1:
       "Tide request limit reached for today, so no chart generated!",
     alertNoResults:
@@ -120,6 +121,7 @@ export const text = {
     tideLow: "低",
     chartTitle: "潮汐图",
     chartTimeSeries: "时间序列",
+    chartTime : "时间",
     chartLimitReached1: "潮汐请求限制已达到，因此未生成图表！",
     alertNoResults: "未找到您搜索查询的位置。请再试一次。",
   },
@@ -179,6 +181,7 @@ export const text = {
     tideHigh: "高",
     tideLow: "低",
     chartTitle: "潮汐圖",
+    chartTime : "時間",
     chartTimeSeries: "時間序列",
     chartLimitReached1: "潮汐請求限制已達到，因此未生成圖表！",
     alertNoResults: "未找到您搜索查詢的位置。請再試一次。",

@@ -265,10 +265,10 @@ Will leave search filter as it is, even though all the locations I checked,
 both pre and post search filter works, but I have not tried every single location in the world.
 Added alert to account for location not found.
 Remaining points:
--[ ] Test colour scheme and adjust accordingly for accessibility.
--[ ] Double check website routing and note edge cases.
+-[x] Test colour scheme and adjust accordingly for accessibility.
+-[x] Double check website routing and note edge cases.
 -[ ] Exhaust tide API limit and observe / adjust accordingly.
--[ ] Test website on mobile.
+-[x] Test website on mobile.
 Now to shift focus to working on decoupling app.
 
 23 Aug 2023 - Set up lightide backend of express.js.
@@ -298,11 +298,28 @@ Adjusted labels based on accessibility checker.
 Check colour scheme for colour-blindness:
 To check light/dark mode, every single pages
 *To look at let's go button in dark mode
+*Look at chart in dark mode
+*Look at attribution links, use pointer cursor
 -[x]Protanopia
 -[x]Deuteranopia
--[ ]Tritanopia
--[ ]Achromatopsia
--[ ]Contrast loss
+-[x]Tritanopia
+-[x]Achromatopsia
+-[x]Contrast loss
+Checked routing.
+Checked website on mobile.
+Adjusted pointer cursor for attribution links.
+
+31 Aug 2023 - Adjusted let's go button in dark mode, tested against all types of colour-blindness.
+Look at chart alternatives.
+
+1 Sep 2023 - Reading up chart alternatives.
+Decided to try out echarts.
+Current victory-charts is decent but echarts seems rather solid.
+Many charts features, open source, and many more stars/installs.
+Finally converted victory chart to echarts.
+Adjusted chart settings.
+Tested chart against all types of colour-blindness.
+Chart in dark mode is better in terms of accessibility than victory chart.
 ```
 
 ### Problem-Solving Strategy
