@@ -310,8 +310,13 @@ Checked website on mobile.
 Adjusted pointer cursor for attribution links.
 
 31 Aug 2023 - Adjusted let's go button in dark mode, tested against all types of colour-blindness.
+Look at chart alternatives.
 
-1 Sep 2023 - Looking at chart alternatives.
+1 Sep 2023 - Reading up chart alternatives.
+Decided to try out echarts.
+Current victory-charts is decent but echarts seems rather solid.
+Many charts features, open source, and many more stars/installs.
+Finally converted victory chart to echarts.
 ```
 
 ### Problem-Solving Strategy
