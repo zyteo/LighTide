@@ -5,9 +5,7 @@
 
 Get sunset/sunrise details + tide details based on the selected position on the map.
 
-##### Explore LighTide [here](https://lightide.vercel.app/)
-
-#### ✔️🎨 LighTide App's colour scheme has been tested for Protanopia, Deuteranopia, Tritanopia, Achromatopsia, Contrast loss
+#### ✔️🎨 [LighTide](https://lightide.vercel.app/) App's colour scheme has been tested for Protanopia, Deuteranopia, Tritanopia, Achromatopsia, Contrast loss
 
 ## Description
 
@@ -32,6 +30,7 @@ Technologies used to build this project.
 - Styled components CSS
 - Date-fns
 - Apache echarts
+- Express.js
 ```
 
 ### Wireframes
@@ -365,6 +364,8 @@ npm Libraries
 - Styled components CSS
 - Date-fns
 - Apache echarts
+- Express.js
+- dotenv
 
 ---
 
