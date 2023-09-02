@@ -9,11 +9,13 @@ import { text } from "../Localisation/text";
 const Navbar = styled.nav`
   display: flex;
   align-items: center;
-  width: 100vw;
   padding: 0 20px;
   background-color: lightskyblue;
-  &:hover {
-    background-color: lightblue;
+  @media screen and (max-width: 550px) {
+    padding: 0 10px;
+  }
+  @media screen and (max-width: 370px) {
+    padding: 0 2px;
   }
 `;
 const Li = styled.li`
@@ -28,6 +30,14 @@ const Li = styled.li`
   }
   &:active {
     background-color: yellowgreen;
+  }
+  @media screen and (max-width: 550px) {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  @media screen and (max-width: 370px) {
+    padding: 2px 4px;
+    font-size: 10px;
   }
 `;
 const LinkStyled = styled(Link)`
@@ -82,10 +92,24 @@ const CheckBox = styled.input`
 const Select = styled.select`
   margin-left: 20px;
   font-size: 16px;
+  @media screen and (max-width: 550px) {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  @media screen and (max-width: 370px) {
+    margin-left: 2px;
+    font-size: 10px;
+  }
 `;
 
 const Option = styled.option`
   font-size: 16px;
+  @media screen and (max-width: 550px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 370px) {
+    font-size: 10px;
+  }
 `;
 function Nav({ handleDarkMode, language, setLanguage }) {
   const handleLanguage = (event) => {

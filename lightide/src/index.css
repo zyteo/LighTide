@@ -18,8 +18,7 @@ code {
 }
 
 .leaflet-container {
-  height: 90vh;
-  width: 99vw;
+  height: 80vh;
 }
 
 .timeseries {
