@@ -157,6 +157,10 @@ function App() {
       )
       .then((response) => {
         setSunDetails(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(text[language].alertSunError);
       });
 
     //for tide data
@@ -168,6 +172,10 @@ function App() {
       )
       .then((response) => {
         setTide(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(text[language].alertTideError);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     setSelectedCoordinates({

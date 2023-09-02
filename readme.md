@@ -322,6 +322,7 @@ Tested chart against all types of colour-blindness.
 Chart in dark mode is better in terms of accessibility than victory chart.
 
 2 Sep 2023 - Minor styling adjustments.
+Added error handling for tide and sun API.
 ```
 
 ### Problem-Solving Strategy
