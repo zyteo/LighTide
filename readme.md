@@ -5,7 +5,9 @@
 
 Get sunset/sunrise details + tide details based on the selected position on the map.
 
-##### Explore the app [here](https://lightide.vercel.app/)
+##### Explore LighTide [here](https://lightide.vercel.app/)
+
+#### ✔️🎨 LighTide App's colour scheme has been tested for Protanopia, Deuteranopia, Tritanopia, Achromatopsia, Contrast loss
 
 ## Description
 
@@ -29,7 +31,7 @@ Technologies used to build this project.
 - Axios
 - Styled components CSS
 - Date-fns
-- Victory chart
+- Apache echarts
 ```
 
 ### Wireframes
@@ -345,7 +347,6 @@ Managed to find a solution by adding a background style to the label.
 
 ### Unsolved problems
 
-Search currently only accepts English, might add support for other languages.  
 Tide API limit is 50 requests/day, too little...
 
 ## APIs / Acknowledgments
@@ -355,7 +356,6 @@ APIs
 - Geocoding https://apidocs.geoapify.com/playground/geocoding
 - Sunrise/sunset https://sunrise-sunset.org/api
 - Tides https://docs.stormglass.io/#/
-- Map static tiles https://www.mapbox.com/ (Previous version. Removed in latest version)
 
 npm Libraries
 
@@ -364,7 +364,7 @@ npm Libraries
 - Axios
 - Styled components CSS
 - Date-fns
-- Victory chart
+- Apache echarts
 
 ---
 
