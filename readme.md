@@ -267,7 +267,7 @@ Added alert to account for location not found.
 Remaining points:
 -[x] Test colour scheme and adjust accordingly for accessibility.
 -[x] Double check website routing and note edge cases.
--[ ] Exhaust tide API limit and observe / adjust accordingly.
+-[x] Exhaust tide API limit and observe / adjust accordingly.
 -[x] Test website on mobile.
 Now to shift focus to working on decoupling app.
 
@@ -323,6 +323,10 @@ Chart in dark mode is better in terms of accessibility than victory chart.
 
 2 Sep 2023 - Minor styling adjustments.
 Added error handling for tide and sun API.
+Done API load testing for tide with locust.io.
+Website display satisfactory results as intended.
+Done with all the remaining points!
+Website overhaul is complete!
 ```
 
 ### Problem-Solving Strategy
