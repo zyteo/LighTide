@@ -5,7 +5,7 @@
 
 Get sunset/sunrise details + tide details based on the selected position on the map.
 
-##### Explore the app [here](https://lightide.vercel.app/)
+#### ✔️🎨 [LighTide](https://lightide.vercel.app/) App's colour scheme has been tested for Protanopia, Deuteranopia, Tritanopia, Achromatopsia, Contrast loss
 
 ## Description
 
@@ -29,7 +29,8 @@ Technologies used to build this project.
 - Axios
 - Styled components CSS
 - Date-fns
-- Victory chart
+- Apache echarts
+- Express.js
 ```
 
 ### Wireframes
@@ -267,7 +268,7 @@ Added alert to account for location not found.
 Remaining points:
 -[x] Test colour scheme and adjust accordingly for accessibility.
 -[x] Double check website routing and note edge cases.
--[ ] Exhaust tide API limit and observe / adjust accordingly.
+-[x] Exhaust tide API limit and observe / adjust accordingly.
 -[x] Test website on mobile.
 Now to shift focus to working on decoupling app.
 
@@ -320,6 +321,13 @@ Finally converted victory chart to echarts.
 Adjusted chart settings.
 Tested chart against all types of colour-blindness.
 Chart in dark mode is better in terms of accessibility than victory chart.
+
+2 Sep 2023 - Minor styling adjustments.
+Added error handling for tide and sun API.
+Done API load testing for tide with locust.io.
+Website display satisfactory results as intended.
+Done with all the remaining points!
+Website overhaul is complete!
 ```
 
 ### Problem-Solving Strategy
@@ -338,7 +346,6 @@ Managed to find a solution by adding a background style to the label.
 
 ### Unsolved problems
 
-Search currently only accepts English, might add support for other languages.  
 Tide API limit is 50 requests/day, too little...
 
 ## APIs / Acknowledgments
@@ -348,7 +355,6 @@ APIs
 - Geocoding https://apidocs.geoapify.com/playground/geocoding
 - Sunrise/sunset https://sunrise-sunset.org/api
 - Tides https://docs.stormglass.io/#/
-- Map static tiles https://www.mapbox.com/ (Previous version. Removed in latest version)
 
 npm Libraries
 
@@ -357,7 +363,9 @@ npm Libraries
 - Axios
 - Styled components CSS
 - Date-fns
-- Victory chart
+- Apache echarts
+- Express.js
+- dotenv
 
 ---
 

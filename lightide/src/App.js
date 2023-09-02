@@ -130,7 +130,6 @@ function App() {
     axios
       .get(
         `https://lightide-be.vercel.app/api/geoapify?text=${processedText}&lang=${searchTextLangugage}`
-        // `http://localhost:9000/api/geoapify?text=${processedText}&lang=${searchTextLangugage}`
       )
       .then((response) => {
         // if 400, means no results found. alert user
@@ -153,10 +152,13 @@ function App() {
     axios
       .get(
         `https://lightide-be.vercel.app/api/sun?lat=${coordinates.lat}&long=${coordinates.long}&date=${date}&formatted=0`
-        // `http://localhost:9000/api/sun?lat=${coordinates.lat}&long=${coordinates.long}&date=${date}&formatted=0`
       )
       .then((response) => {
         setSunDetails(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(text[language].alertSunError);
       });
 
     //for tide data
@@ -164,10 +166,13 @@ function App() {
     axios
       .get(
         `https://lightide-be.vercel.app/api/tide?lat=${coordinates.lat}&long=${coordinates.long}&date=${date}`
-        // `http://localhost:9000/api/tide?lat=${coordinates.lat}&long=${coordinates.long}&date=${date}`
       )
       .then((response) => {
         setTide(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(text[language].alertTideError);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     setSelectedCoordinates({
