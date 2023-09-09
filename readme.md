@@ -50,6 +50,8 @@ To use the app, user should:
 
 ```
 
+<img src="lightide/diagram.png"/>
+
 ---
 
 ## Planning and Development Process
@@ -328,6 +330,9 @@ Done API load testing for tide with locust.io.
 Website display satisfactory results as intended.
 Done with all the remaining points!
 Website overhaul is complete!
+
+9 Sep 2023 - Adjusted diagram to reflect current app.
+Think a sequence diagram would be better but due to time constraints, will leave it for now first.
 ```
 
 ### Problem-Solving Strategy

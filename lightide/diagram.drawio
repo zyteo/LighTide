@@ -1,85 +1,83 @@
 <mxfile host="65bd71144e">
     <diagram id="UHCdIfHzkxQhyQaVAZVX" name="Page-1">
-        <mxGraphModel dx="1002" dy="1662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1094" dy="1894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="27" style="edgeStyle=none;html=1;exitX=0.14;exitY=1.049;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="2" target="7">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="31" value="4. Map flyover&lt;br&gt;to position" style="edgeStyle=none;html=1;entryX=0.75;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="2" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="400" as="sourcePoint"/>
+                        <mxPoint x="440" y="-60" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="28" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="27">
-                    <mxGeometry x="-0.2096" y="-4" relative="1" as="geometry">
+                <mxCell id="2" value="React FE App - hosted on vercel" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="-740" width="110" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="3. latitude &amp;amp; longitude" style="edgeStyle=none;html=1;exitX=-0.029;exitY=0.117;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="39" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="60" y="-347" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="-550" width="30" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="edgeStyle=none;html=1;entryX=0.026;entryY=0.026;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="39" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="50" y="-370" as="sourcePoint"/>
+                        <mxPoint x="290" y="-370" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="2. &lt;span style=&quot;font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;text for forward geocoding&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="26">
+                    <mxGeometry x="-0.1757" y="3" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="31" value="Map flyover&lt;br&gt;to position" style="edgeStyle=none;html=1;exitX=0.376;exitY=-0.036;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="17">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="34" value="&lt;br&gt;&lt;span style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 11px; background-color: rgb(255, 255, 255);&quot;&gt;latitude &amp;amp; longitude&lt;/span&gt;&lt;br&gt;" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="5">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="37" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="17">
+                <mxCell id="41" style="edgeStyle=none;html=1;entryX=0.013;entryY=0.058;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="17" target="2">
                     <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="650" y="-180"/>
-                        </Array>
+                        <mxPoint x="260" y="-590" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="38" value="sun/tide details" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="37">
-                    <mxGeometry x="-0.1348" y="4" relative="1" as="geometry">
+                <mxCell id="42" value="&lt;span style=&quot;font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;1. search text&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="41">
+                    <mxGeometry x="-0.2112" y="3" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="2" value="React FE App" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="205" y="80" width="390" height="90" as="geometry"/>
+                <mxCell id="39" value="Express BE App - hosted on vercel" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="295" y="-380" width="130" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="35" style="edgeStyle=none;html=1;" edge="1" parent="1" source="5">
+                <mxCell id="44" style="edgeStyle=none;html=1;entryX=0.015;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="2">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="600" y="130" as="targetPoint"/>
+                        <mxPoint x="50" y="-500" as="sourcePoint"/>
+                        <mxPoint x="316.42999999999995" y="-715.5" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="36" value="sun/tide details" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="35">
-                    <mxGeometry x="0.1272" y="-2" relative="1" as="geometry">
+                <mxCell id="45" value="&lt;span style=&quot;font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;5. Lat/long&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="44">
+                    <mxGeometry x="-0.2112" y="3" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="5" value="API - sunrise/sunset&lt;br&gt;&lt;br&gt;&lt;br&gt;API - tides (limit of 50 per day in the past. Might be limited to 10 now)" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="560" y="300" width="120" height="140" as="geometry"/>
-                </mxCell>
-                <mxCell id="29" value="latitude &amp;amp; longitude" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.14;entryY=1.007;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7" target="8">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="7" value="API - geoapify for forward geocoding" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="160" y="380" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="30" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.312;entryY=1.004;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8" target="2">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="8" value="API - mapbox for map tile style" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="290" y="250" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="25" style="edgeStyle=none;html=1;exitX=0;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="17" target="22">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="32" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.591;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="17" target="23">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-                    <mxGeometry x="385" y="-260" width="30" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="26" value="" style="edgeStyle=none;html=1;entryX=0.163;entryY=-0.036;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="22" target="2">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="22" value="&lt;span style=&quot;&quot;&gt;1. Map search (text)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="195" y="-190" width="130" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="33" value="" style="edgeStyle=none;html=1;entryX=0.698;entryY=0.009;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="23" target="2">
+                <mxCell id="46" style="edgeStyle=none;html=1;" edge="1" parent="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="557" y="76" as="targetPoint"/>
+                        <mxPoint x="60" y="-319.1111246744792" as="sourcePoint"/>
+                        <mxPoint x="290" y="-307.3333740234375" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="23" value="&lt;span style=&quot;&quot;&gt;2. Information search &lt;br&gt;(&lt;/span&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(255, 255, 255);&quot;&gt;latitude &amp;amp; longitude)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="420" y="-170" width="140" height="40" as="geometry"/>
+                <mxCell id="47" value="&lt;span style=&quot;font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;6. Lat/long&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="46">
+                    <mxGeometry x="-0.2112" y="3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="7. Sun / tide details" style="edgeStyle=none;html=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="290" y="-270" as="sourcePoint"/>
+                        <mxPoint x="60" y="-290" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="8. Display results + draw chart" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="315" y="-667.5" as="sourcePoint"/>
+                        <mxPoint x="50" y="-420" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
