@@ -333,6 +333,9 @@ Website overhaul is complete!
 
 9 Sep 2023 - Adjusted diagram to reflect current app.
 Think a sequence diagram would be better but due to time constraints, will leave it for now first.
+
+22 Sep 2023 - Ran accessibility test with purple hats.
+Got some issues to adjust.
 ```
 
 ### Problem-Solving Strategy
