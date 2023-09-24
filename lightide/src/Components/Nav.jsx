@@ -18,7 +18,10 @@ const Navbar = styled.nav`
     padding: 0 2px;
   }
 `;
-const Li = styled.li`
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+  color: black;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -39,10 +42,6 @@ const Li = styled.li`
     padding: 2px 4px;
     font-size: 10px;
   }
-`;
-const LinkStyled = styled(Link)`
-  text-decoration: none;
-  color: black;
 `;
 // To toggle dark mode
 const CheckBoxWrapper = styled.div`
@@ -118,15 +117,9 @@ function Nav({ handleDarkMode, language, setLanguage }) {
   return (
     <>
       <Navbar>
-        <LinkStyled to="/">
-          <Li>{text[language].navHome}</Li>
-        </LinkStyled>
-        <LinkStyled to="/maps">
-          <Li>{text[language].navLT}</Li>
-        </LinkStyled>
-        <LinkStyled to="/results">
-          <Li>{text[language].navResults}</Li>
-        </LinkStyled>
+        <LinkStyled to="/">{text[language].navHome}</LinkStyled>
+        <LinkStyled to="/maps">{text[language].navLT}</LinkStyled>
+        <LinkStyled to="/results">{text[language].navResults}</LinkStyled>
         <CheckBoxWrapper>
           <CheckBox id="checkbox" type="checkbox" onClick={handleDarkMode} />
           <CheckBoxLabel htmlFor="checkbox" />

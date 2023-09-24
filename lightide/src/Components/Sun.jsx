@@ -49,9 +49,10 @@ function Sun({
         {text[language].mapsLongitude})
       </h3>
       <Ul>
-        <strong>
-          <u>{text[language].sunInfo}</u>
-        </strong>
+        <u>
+          <strong>{text[language].sunInfo}</strong>
+        </u>
+
         <Li>
           <strong> {text[language].sunSunrise}: </strong>
           <Datetimeformat
