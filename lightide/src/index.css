@@ -25,3 +25,18 @@ code {
   height: 440px;
   width: 650px;
 }
+
+.sun{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tides{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.chart{
+  padding-left: 10px;
+  padding-right: 10px;
+}
