@@ -7,7 +7,9 @@ Get sunset/sunrise details + tide details based on the selected position on the 
 
 #### ✔️🎨 [LighTide](https://lightide.vercel.app/) App's colour scheme has been tested for Protanopia, Deuteranopia, Tritanopia, Achromatopsia, Contrast loss
 
+Accessibility check done using [GovTech's purple hat](https://www.developer.tech.gov.sg/products/categories/design/purple-hats/overview). Adjustments made on a at best effort basis.
 
+<img src="./purple_hats_report.JPG" alt="report">
 
 ## Description
 
