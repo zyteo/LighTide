@@ -121,14 +121,25 @@ function Nav({ handleDarkMode, language, setLanguage }) {
         <LinkStyled to="/maps">{text[language].navLT}</LinkStyled>
         <LinkStyled to="/results">{text[language].navResults}</LinkStyled>
         <CheckBoxWrapper>
-          <CheckBox id="checkbox" type="checkbox" onClick={handleDarkMode} />
+          <CheckBox
+            id="checkbox"
+            type="checkbox"
+            label="darkmode"
+            onClick={handleDarkMode}
+          />
           <CheckBoxLabel htmlFor="checkbox" />
         </CheckBoxWrapper>
         &#127769;
         <Select onChange={(event) => handleLanguage(event)} label="Language">
-          <Option value="English">English</Option>
-          <Option value="简体中文">简体中文</Option>
-          <Option value="繁体中文">繁体中文</Option>
+          <Option value="English" label="English">
+            English
+          </Option>
+          <Option value="简体中文" label="简体中文">
+            简体中文
+          </Option>
+          <Option value="繁体中文" label="繁体中文">
+            繁体中文
+          </Option>
         </Select>
       </Navbar>
     </>

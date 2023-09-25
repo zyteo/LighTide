@@ -336,6 +336,8 @@ Think a sequence diagram would be better but due to time constraints, will leave
 
 22 Sep 2023 - Ran accessibility test with purple hats.
 Got some issues to adjust.
+
+25 Sep 2023 - Adjusted some styling based on purple hats feedback.
 ```
 
 ### Problem-Solving Strategy
