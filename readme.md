@@ -7,6 +7,8 @@ Get sunset/sunrise details + tide details based on the selected position on the 
 
 #### ✔️🎨 [LighTide](https://lightide.vercel.app/) App's colour scheme has been tested for Protanopia, Deuteranopia, Tritanopia, Achromatopsia, Contrast loss
 
+
+
 ## Description
 
 My goal is to create an app which would be useful to researchers/scientists/hobbyists/trekkers/anyone who need information regarding sunlight/tides. Upon selecting a location on the map, the coordinates (lat/long) are parsed into the sunlight&tides API and users can see the results on screen.

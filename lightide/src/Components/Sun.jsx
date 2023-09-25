@@ -48,11 +48,10 @@ function Sun({
         {text[language].mapsLatitude}), {coordinates?.long} (
         {text[language].mapsLongitude})
       </h3>
+      <u>
+        <strong>{text[language].sunInfo}</strong>
+      </u>
       <Ul>
-        <u>
-          <strong>{text[language].sunInfo}</strong>
-        </u>
-
         <Li>
           <strong> {text[language].sunSunrise}: </strong>
           <Datetimeformat

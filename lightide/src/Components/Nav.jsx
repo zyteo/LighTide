@@ -125,6 +125,7 @@ function Nav({ handleDarkMode, language, setLanguage }) {
             id="checkbox"
             type="checkbox"
             label="darkmode"
+            aria-label="darkmode"
             onClick={handleDarkMode}
           />
           <CheckBoxLabel htmlFor="checkbox" />
@@ -132,13 +133,13 @@ function Nav({ handleDarkMode, language, setLanguage }) {
         &#127769;
         <Select onChange={(event) => handleLanguage(event)} label="Language">
           <Option value="English" label="English">
-            English
+            <label>English</label>
           </Option>
           <Option value="简体中文" label="简体中文">
-            简体中文
+            <label>简体中文</label>
           </Option>
           <Option value="繁体中文" label="繁体中文">
-            繁体中文
+            <label>繁体中文</label>
           </Option>
         </Select>
       </Navbar>
