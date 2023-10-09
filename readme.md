@@ -342,6 +342,8 @@ Think a sequence diagram would be better but due to time constraints, will leave
 Got some issues to adjust.
 
 25 Sep 2023 - Adjusted some styling based on purple hats feedback.
+
+9 Oct 2023 - Started drawing sequence diagram.
 ```
 
 ### Problem-Solving Strategy
