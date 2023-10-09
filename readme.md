@@ -344,6 +344,8 @@ Got some issues to adjust.
 25 Sep 2023 - Adjusted some styling based on purple hats feedback.
 
 9 Oct 2023 - Started drawing sequence diagram.
+
+10 Oct 2023 - First draft of sequence diagram done.
 ```
 
 ### Problem-Solving Strategy
