@@ -58,8 +58,6 @@ To use the app, user should:
 
 ```
 
-<img src="lightide/diagram.png"/>
-
 ---
 
 ## Planning and Development Process
