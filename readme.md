@@ -346,6 +346,8 @@ Got some issues to adjust.
 9 Oct 2023 - Started drawing sequence diagram.
 
 10 Oct 2023 - First draft of sequence diagram done.
+
+11 Oct 2023 - Adjusted sequence diagram.
 ```
 
 ### Problem-Solving Strategy
