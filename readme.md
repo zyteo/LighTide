@@ -37,6 +37,10 @@ Technologies used to build this project.
 - Express.js
 ```
 
+### Sequence Diagram
+
+<img src="./sequence_diagram.png" />
+
 ### Wireframes
 
 <img src="Images/wireframe.png"/>
