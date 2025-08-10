@@ -12,7 +12,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("Express on Vercel");
+  res.send("Express on Vercel.");
 });
 
 // set a route which accepts a text and language for the geoapify
